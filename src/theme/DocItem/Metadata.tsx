@@ -11,10 +11,14 @@ export default function DocItemMetadata(): JSX.Element {
 
   return (
     <PageMetadata
-      title={title}
+      title={title ? title : 'Documentation'}
       description={description}
       keywords={frontMatter.keywords}
-      image={assets.image ?? frontMatter.image ?? openGraph({ title: title })}
+      image={
+        assets.image ??
+        frontMatter.image ??
+        openGraph({ title: title ? title : 'Documentation' })
+      }
     />
   );
 }
