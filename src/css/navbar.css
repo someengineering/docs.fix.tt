@@ -1,0 +1,111 @@
+.navbar__item:last-of-type {
+  margin-right: var(--ifm-navbar-item-padding-horizontal);
+}
+
+.navbar__link {
+  white-space: nowrap;
+}
+
+.dropdown--right .dropdown__menu {
+  left: 0px;
+  min-width: 10.5rem;
+}
+
+.dropdown__link {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.dropdown__link:not(.dropdown__link--active):hover {
+  background-color: unset;
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
+.navbar__link--active,
+.dropdown__link--active {
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-menu-color-background-active);
+}
+
+.menu__link,
+.menu__caret,
+.menu__list-item-collapsible {
+  border-radius: 1rem;
+}
+
+.navbar__items .social {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__items .social .link-text {
+  display: none;
+}
+
+.social::before,
+.module::before,
+.docs::before {
+  flex: none;
+  mask-image: var(--icon);
+  -webkit-mask-image: var(--icon);
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  background-color: var(--ifm-navbar-link-color);
+  width: 2em;
+  height: 2em;
+  content: '';
+}
+
+.social:hover::before,
+.dropdown__link:hover::before,
+.dropdown__link--active::before {
+  background-color: var(--ifm-navbar-link-hover-color);
+}
+
+.social::before {
+  margin-left: calc(var(--ifm-navbar-item-padding-horizontal) * -1);
+}
+
+.menu__link.social::before,
+.menu__link.social:hover::before {
+  margin: 0 0.75em 0 0;
+  background-color: var(--ifm-menu-color);
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.menu__link--active::before {
+  background-color: var(--ifm-menu-color-active) !important;
+}
+
+.github::before {
+  --icon: url('../img/social/github.svg');
+}
+
+.discord::before {
+  --icon: url('../img/social/discord.svg');
+}
+
+.linkedin::before {
+  --icon: url('../img/social/linkedin.svg');
+}
+
+.youtube::before {
+  --icon: url('../img/social/youtube.svg');
+}
+
+@media screen and (max-width: 1279px) {
+  .navbar__items .social {
+    display: none;
+  }
+
+  .social::before {
+    background-color: var(--ifm-navbar-link-color);
+  }
+}
