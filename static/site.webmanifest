@@ -1,8 +1,8 @@
 {
   "name": "Fix by Some Engineering Inc.",
   "short_name": "Fix",
-  "theme_color": "#af62f5",
-  "background_color": "#000d19",
+  "theme_color": "#1c4396",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -30,24 +30,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Releases",
-      "url": "./releases"
-    },
-    {
-      "name": "Docs",
-      "url": "./docs"
-    },
-    {
-      "name": "Compare",
-      "url": "./compare"
-    },
-    {
-      "name": "About",
-      "url": "./about"
     }
   ]
 }
