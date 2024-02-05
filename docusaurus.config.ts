@@ -5,7 +5,6 @@ import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import { themes as prismThemes } from 'prism-react-renderer';
 import remarkKroki from 'remark-kroki-plugin';
 import { EnumChangefreq } from 'sitemap';
-import { openGraph } from '@site/src/utils/og';
 
 const isDev = process.env.NODE_ENV === 'development';
 const isBuildFast = isDev || !!process.env.BUILD_FAST;
@@ -88,7 +87,7 @@ const config: Config = {
             './src/css/footer.css',
             './src/css/docs.css',
             './src/css/tabs.css',
-            // './src/css/docsearch.css',
+            './src/css/docsearch.css',
           ],
         },
         sitemap: { changefreq: EnumChangefreq.DAILY, priority: 0.5 },
@@ -169,13 +168,11 @@ const config: Config = {
     footer: {
       copyright: `Copyright © ${new Date().getFullYear()} <a href="https://some.engineering" target="_blank" rel="noopener noreferrer">Some Engineering Inc</a>.`,
     },
-    // algolia: {
-    //   appId: 'DOGNENB96P',
-    //   apiKey: '0e3e7cbce9da253ee147af5fe2f7d91b',
-    //   indexName: 'resoto',
-    //   contextualSearch: true,
-    //   insights: true,
-    // },
+    algolia: {
+      appId: 'ONFTY8JVDC',
+      apiKey: '8c93b28638bd2d1c73b4fa3f9276ebde',
+      indexName: 'fix',
+    },
     prism: {
       theme: prismThemes.github,
     },
