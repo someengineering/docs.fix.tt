@@ -14,4 +14,4 @@
 
 # Code of Conduct
 
-By submitting this pull request, I agree to follow the [code of conduct](https://fix.tt/code-of-conduct).
+By submitting this pull request, I agree to follow the [code of conduct](https://fix.security/code-of-conduct).

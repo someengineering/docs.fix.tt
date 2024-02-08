@@ -1,1 +1,1 @@
-# [Fix Documentation](https://docs.fix.tt)
+# [Fix Documentation](https://docs.fix.security)

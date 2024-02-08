@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 export default function PlausibleToggle(): JSX.Element {
   const [isExcluded, setIsExcluded] = useState<boolean>(false);
   const isProd =
-    useIsBrowser() && new URL(window.location.href).hostname === 'docs.fix.tt';
+    useIsBrowser() &&
+    new URL(window.location.href).hostname === 'docs.fix.security';
   const { pathname } = useLocation();
 
   useEffect(
@@ -23,8 +24,8 @@ export default function PlausibleToggle(): JSX.Element {
         isProd ? (
           <>
             <p>
-              To toggle whether your visits to <code>docs.fix.tt</code> are
-              counted, simply click the following button:
+              To toggle whether your visits to <code>docs.fix.security</code>{' '}
+              are counted, simply click the following button:
             </p>
             <p>
               <button
@@ -57,13 +58,14 @@ export default function PlausibleToggle(): JSX.Element {
           <Admonition type="note">
             <p>
               You are not currently browsing{' '}
-              <Link href="https://docs.fix.tt">
-                <code>docs.fix.tt</code>
+              <Link href="https://docs.fix.security">
+                <code>docs.fix.security</code>
               </Link>
               .{' '}
               <strong>
-                <Link href={`http://docs.fix.tt${pathname}`}>
-                  Click here to view this page on <code>docs.fix.tt</code>.
+                <Link href={`http://docs.fix.security${pathname}`}>
+                  Click here to view this page on <code>docs.fix.security</code>
+                  .
                 </Link>
               </strong>
             </p>

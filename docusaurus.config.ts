@@ -13,7 +13,7 @@ const isProd =
 
 const config: Config = {
   title: 'Fix Documentation',
-  url: 'https://docs.fix.tt',
+  url: 'https://docs.fix.security',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -44,9 +44,9 @@ const config: Config = {
   scripts: isProd
     ? [
         {
-          src: 'https://docs.fix.tt/js/script.js',
+          src: 'https://docs.fix.security/js/script.js',
           defer: true,
-          'data-domain': 'docs.fix.tt',
+          'data-domain': 'docs.fix.security',
         },
       ]
     : [],
@@ -60,7 +60,7 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/someengineering/docs.fix.tt/edit/main/docs/',
+            'https://github.com/someengineering/docs.fix.security/edit/main/docs/',
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           remarkPlugins: [

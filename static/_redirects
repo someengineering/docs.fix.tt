@@ -1,5 +1,8 @@
-https://fix-docs.netlify.app/*          https://docs.fix.tt/:splat 301!
-https://main--fix-docs.netlify.app/*    https://docs.fix.tt/:splat 301!
+https://fix-docs.netlify.app/*          https://docs.fix.security/:splat 301!
+https://main--fix-docs.netlify.app/*    https://docs.fix.security/:splat 301!
+https://docs.fix.tt/*                   https://docs.fix.security/:splat 301!
 
 /js/script.js                           https://plausible.io/js/script.js 200
 /api/event                              https://plausible.io/api/event 200
+
+/docs/*                                 /:splat

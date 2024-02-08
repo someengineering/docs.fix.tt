@@ -12,7 +12,8 @@ export default function FooterWrapper(props: Props): JSX.Element {
   const [timestamp, setTimestamp] = useState(new Date().getTime());
   const { pathname } = useLocation();
   const isProd =
-    useIsBrowser() && new URL(window.location.href).hostname === 'docs.fix.tt';
+    useIsBrowser() &&
+    new URL(window.location.href).hostname === 'docs.fix.security';
 
   useEffect(() => {
     setTimestamp(new Date().getTime());
