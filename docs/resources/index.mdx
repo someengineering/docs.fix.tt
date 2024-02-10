@@ -7,7 +7,7 @@ pagination_next: null
 
 **Fix has a unified data model (UDM) with support for static typing and inheritance.**
 
-When working with multiple clouds, it can be tedious to what resource kinds and attributes are named. To implement org policies (such as "no unencrypted storage volumes" or "every compute instance must have a cost center tag"), you don't want to rewrite those checks for every cloud provider.
+<!-- When working with multiple clouds, it can be tedious to what resource kinds and attributes are named. To implement org policies (such as "no unencrypted storage volumes" or "every compute instance must have a cost center tag"), you don't want to rewrite those checks for every cloud provider.
 
 While Fix has knowledge of cloud-specific resource kinds like [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume) and [`gcp_disk`](./gcp.mdx#gcp_disk), both of those kinds inherit from the base `volume` kind, which in turn inherits from the `resource` kind:
 
@@ -23,7 +23,7 @@ When searching for unencrypted volumes, `search is(volume) and encrypted = false
 
 You can also perform searches using virtual attributes like `age` across all resources without having to worry about provider-specific naming of the creation timestamp.
 
-At the same time, you can still search by cloud provider-specific properties (e.g., AWS KMS Key ID or Google Cloud "last attach" timestamp).
+At the same time, you can still search by cloud provider-specific properties (e.g., AWS KMS Key ID or Google Cloud "last attach" timestamp). -->
 
 ## `resource` Base Kind
 
@@ -41,7 +41,7 @@ At the same time, you can still search by cloud provider-specific properties (e.
 | `atime` | Last accessed time as of the most recent resource collection<br /><br /><Admonition type="note">Fix attempts to synthesize the last access timestamp when the cloud provider does not provide this value.</Admonition> |
 | `mtime` | Last modified time as of the most recent resource collection<br /><br /><Admonition type="note">Fix attempts to synthesize the last modified timestamp when the cloud provider does not provide this value.</Admonition> |
 
-## Resource Hierarchy
+<!-- ## Resource Hierarchy
 
 **Fix's resource hierarchy abstracts over data models from different cloud providers to deliver a unified data model that allows for data retrieval across clouds.**
 
@@ -69,11 +69,11 @@ Fix also introduces abstract model classes for different resource types, making 
   A [Google Cloud Disk resource](https://cloud.google.com/compute/docs/reference/rest/v1/disks) is conceptually similar to an AWS EC2 Volume and the two resource types have many properties in common.
 
 </div>
-</details>
+</details> -->
 
 ## Supported Resource Types
 
-Fix has built-in support for resource types from the following cloud providers:
+<!-- Fix has built-in support for resource types from the following cloud providers: -->
 
 <DocCardList />
 
