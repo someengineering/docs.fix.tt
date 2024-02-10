@@ -52,7 +52,17 @@ const config: Config = {
         },
       ]
     : [],
-  markdown: { mermaid: true },
+  markdown: {
+    mermaid: true,
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+
+      result.frontMatter.pagination_prev = null;
+      result.frontMatter.pagination_next = null;
+
+      return result;
+    },
+  },
   themes: ['@docusaurus/theme-mermaid'],
   presets: [
     [

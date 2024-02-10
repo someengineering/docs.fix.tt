@@ -1,15 +1,10 @@
----
-pagination_prev: null
-pagination_next: null
----
-
 # Resource Models
 
 **Fix has a unified data model (UDM) with support for static typing and inheritance.**
 
 <!-- When working with multiple clouds, it can be tedious to what resource kinds and attributes are named. To implement org policies (such as "no unencrypted storage volumes" or "every compute instance must have a cost center tag"), you don't want to rewrite those checks for every cloud provider.
 
-While Fix has knowledge of cloud-specific resource kinds like [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume) and [`gcp_disk`](./gcp.mdx#gcp_disk), both of those kinds inherit from the base `volume` kind, which in turn inherits from the `resource` kind:
+While Fix has knowledge of cloud-specific resource kinds like [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume) and `gcp_disk`, both of those kinds inherit from the base `volume` kind, which in turn inherits from the `resource` kind:
 
 - The `resource` kind defines basic attributes common to all resources (e.g.: name, creation time, etc.).
 
@@ -24,6 +19,12 @@ When searching for unencrypted volumes, `search is(volume) and encrypted = false
 You can also perform searches using virtual attributes like `age` across all resources without having to worry about provider-specific naming of the creation timestamp.
 
 At the same time, you can still search by cloud provider-specific properties (e.g., AWS KMS Key ID or Google Cloud "last attach" timestamp). -->
+
+## Supported Resource Types
+
+<!-- Fix has built-in support for resource types from the following cloud providers: -->
+
+<DocCardList />
 
 ## `resource` Base Kind
 
@@ -70,12 +71,6 @@ Fix also introduces abstract model classes for different resource types, making 
 
 </div>
 </details> -->
-
-## Supported Resource Types
-
-<!-- Fix has built-in support for resource types from the following cloud providers: -->
-
-<DocCardList />
 
 ## Resource Kinds \{#kinds}
 
