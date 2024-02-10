@@ -1,7 +1,9 @@
+import type { Options as StoredDataOptions } from '@1password/docusaurus-plugin-stored-data';
 import type { Options as PwaOptions } from '@docusaurus/plugin-pwa';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import remarkA11yEmoji from '@fec/remark-a11y-emoji';
+import path from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import remarkKroki from 'remark-kroki-plugin';
 import { EnumChangefreq } from 'sitemap';
@@ -122,6 +124,28 @@ const config: Config = {
           },
         ],
       } satisfies PwaOptions,
+    ],
+    [
+      '@1password/docusaurus-plugin-stored-data',
+      {
+        data: {
+          [`aws-ResotoOrgList`]: path.resolve(
+            __dirname,
+            'iam/aws',
+            'ResotoOrgList.json',
+          ),
+          [`aws-ResotoCollect`]: path.resolve(
+            __dirname,
+            'iam/aws',
+            'ResotoCollect.json',
+          ),
+          // [`gcp-resoto_access`]: path.resolve(
+          //   __dirname,
+          //   'iam/gcp',
+          //   'resoto_access.json',
+          // ),
+        },
+      } satisfies StoredDataOptions,
     ],
   ],
   themeConfig: {
