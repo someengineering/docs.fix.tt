@@ -13225,6 +13225,8 @@ class aws_organizational_root {
 class aws_resource {
 **arn**: string
 }
+class organizational_root {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -13238,7 +13240,9 @@ class resource {
 **tags**: dictionary[string, string]
 }
 aws_resource <|--- aws_organizational_root
+organizational_root <|--- aws_organizational_root
 resource <|--- aws_resource
+resource <|--- organizational_root
 @enduml
 ```
 
@@ -13318,6 +13322,8 @@ class aws_organizational_unit {
 class aws_resource {
 **arn**: string
 }
+class organizational_unit {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -13331,7 +13337,9 @@ class resource {
 **tags**: dictionary[string, string]
 }
 aws_resource <|--- aws_organizational_unit
+organizational_unit <|--- aws_organizational_unit
 resource <|--- aws_resource
+resource <|--- organizational_unit
 @enduml
 ```
 
@@ -22179,10 +22187,10 @@ class aws_waf_request_inspection_acfp {
 **username_field**: string
 }
 class aws_waf_response_inspection {
-**body_contains**: aws_waf_response_inspection
-**header**: aws_waf_response_inspection
-**json**: aws_waf_response_inspection
-**status_code**: aws_waf_response_inspection
+**failure_values**: string[]
+**identifier**: string
+**name**: string
+**success_values**: string[]
 }
 class aws_waf_rule {
 **action**: aws_waf_rule_action
@@ -22332,7 +22340,6 @@ aws_waf_regex_match_statement --> aws_waf_field_to_match
 aws_waf_regex_match_statement --> aws_waf_text_transformation
 aws_waf_regex_pattern_set_reference_statement --> aws_waf_field_to_match
 aws_waf_regex_pattern_set_reference_statement --> aws_waf_text_transformation
-aws_waf_response_inspection --> aws_waf_response_inspection
 aws_waf_rule --> aws_waf_captcha_config
 aws_waf_rule --> aws_waf_challenge_config
 aws_waf_rule --> aws_waf_override_action
