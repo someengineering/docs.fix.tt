@@ -11,7 +11,7 @@ export default function DocItemMetadata(): JSX.Element {
 
   return (
     <PageMetadata
-      title={title ? title : 'Documentation'}
+      title={title}
       description={description}
       keywords={frontMatter.keywords}
       image={
