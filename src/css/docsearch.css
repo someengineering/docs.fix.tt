@@ -10,6 +10,10 @@
   --docsearch-footer-background: var(--ifm-color-white);
 }
 
+.DocSearch-Button {
+  border-radius: 0.5rem !important;
+}
+
 .DocSearch-Button-Key {
   font-weight: 700;
 }
