@@ -3,14 +3,14 @@ import { sortedUniq } from 'lodash';
 
 export type Provider = 'aws' | 'gcp';
 
-const awsPolicyNames = ['ResotoOrgList', 'ResotoCollect'] as const;
+const awsPolicyNames = ['FixOrgList', 'FixCollect'] as const;
 export type AwsPolicyName = (typeof awsPolicyNames)[number];
 export interface AwsPolicy {
   Version: string;
   Statement: { Effect: string; Resource: string; Action: string[] }[];
 }
 
-const gcpPolicyNames = ['resoto_access'] as const;
+const gcpPolicyNames = ['fix_access'] as const;
 export type GcpPolicyName = (typeof gcpPolicyNames)[number];
 export interface GcpPolicy {
   title: string;

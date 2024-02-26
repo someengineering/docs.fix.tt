@@ -139,20 +139,20 @@ const config: Config = {
       '@1password/docusaurus-plugin-stored-data',
       {
         data: {
-          [`aws-ResotoOrgList`]: path.resolve(
+          [`aws-FixOrgList`]: path.resolve(
             __dirname,
             'iam/aws',
-            'ResotoOrgList.json',
+            'FixOrgList.json',
           ),
-          [`aws-ResotoCollect`]: path.resolve(
+          [`aws-FixCollect`]: path.resolve(
             __dirname,
             'iam/aws',
-            'ResotoCollect.json',
+            'FixCollect.json',
           ),
-          // [`gcp-resoto_access`]: path.resolve(
+          // [`gcp-fix_access`]: path.resolve(
           //   __dirname,
           //   'iam/gcp',
-          //   'resoto_access.json',
+          //   'fix_access.json',
           // ),
         },
       } satisfies StoredDataOptions,
