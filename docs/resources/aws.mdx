@@ -8617,7 +8617,7 @@ class aws_ecs_container_instance {
 **running_tasks_count**: int64
 **status**: string
 **status_reason**: string
-**version**: int64
+**version**: string
 **version_info**: aws_ecs_version_info
 }
 class aws_ecs_container_instance_health_status {
@@ -9888,7 +9888,6 @@ class aws_eks_cluster {
 **cluster_client_request_token**: string
 **cluster_connector_config**: aws_eks_connector_config
 **cluster_encryption_config**: aws_eks_encryption_config[]
-**cluster_endpoint**: string
 **cluster_identity**: aws_eks_identity
 **cluster_kubernetes_network_config**: aws_eks_kubernetes_network_config_response
 **cluster_logging**: aws_eks_logging
@@ -9896,7 +9895,6 @@ class aws_eks_cluster {
 **cluster_resources_vpc_config**: aws_eks_vpc_config_response
 **cluster_role_arn**: string
 **cluster_status**: string
-**cluster_version**: string
 }
 class aws_eks_connector_config {
 **activation_code**: string
@@ -9936,6 +9934,10 @@ class aws_eks_vpc_config_response {
 class aws_resource {
 **arn**: string
 }
+class managed_kubernetes_cluster_provider {
+**endpoint**: string
+**version**: string
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -9955,8 +9957,10 @@ aws_eks_cluster --> aws_eks_kubernetes_network_config_response
 aws_eks_cluster --> aws_eks_logging
 aws_eks_cluster --> aws_eks_vpc_config_response
 aws_resource <|--- aws_eks_cluster
+managed_kubernetes_cluster_provider <|--- aws_eks_cluster
 aws_eks_logging --> aws_eks_log_setup
 resource <|--- aws_resource
+resource <|--- managed_kubernetes_cluster_provider
 @enduml
 ```
 
