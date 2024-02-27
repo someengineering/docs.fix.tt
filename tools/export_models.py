@@ -48,7 +48,7 @@ def get_url(url: str, params: dict = None) -> Response:
 
 def get_kinds() -> Dict[str, List[Any]]:
     kinds = defaultdict(list)
-    for kind in get_url(f"{core}/graph/resoto/model").json():
+    for kind in get_url(f"{core}/graph/fix/model").json():
         groups = [a for a in providers if kind["fqn"].startswith(f"{a}_") and kind.get("aggregate_root", False)]
         if groups:
             kinds[groups[0]].append(kind)
@@ -80,7 +80,7 @@ def write_md(provider: str, kinds: list):
                 re.sub(
                     r"\n+",
                     "\n",
-                    get_url(f"{core}/graph/resoto/model/uml", params={"output": "puml", "show": name}).text,
+                    get_url(f"{core}/graph/fix/model/uml", params={"output": "puml", "show": name}).text,
                 ).strip()
             )
             file.write("\n```\n\n")
@@ -94,7 +94,7 @@ def write_md(provider: str, kinds: list):
                     r"\n+",
                     "\n",
                     get_url(
-                        f"{core}/graph/resoto/model/uml",
+                        f"{core}/graph/fix/model/uml",
                         params={
                             "output": "puml",
                             "show": name,

@@ -25,3 +25,7 @@
 .theme-doc-version-badge {
   display: none;
 }
+
+nav.menu {
+  margin-bottom: 0 !important;
+}

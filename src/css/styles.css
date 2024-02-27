@@ -22,14 +22,6 @@
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   --ifm-background-color: #ffffff;
   --ifm-container-width-xxl: 1500px;
-  --ifm-text-gradient: linear-gradient(
-    45deg,
-    #e373f5,
-    #db46f2 25%,
-    #9a43ff 50%,
-    #b06cff 75%,
-    #c596ff
-  );
 }
 
 article header {
