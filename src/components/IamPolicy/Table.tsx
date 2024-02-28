@@ -1,4 +1,4 @@
-import { Provider, actionsByNamespace } from '@site/src/utils/iamPolicyUtils';
+import { Provider, actionsByNamespace } from '@site/src/utils/iamPolicy';
 
 export default function IamPolicyTable({
   provider,
