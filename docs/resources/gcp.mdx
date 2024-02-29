@@ -1420,7 +1420,6 @@ class gcp_container_cluster {
 **default_max_pods_constraint**: string
 **enable_kubernetes_alpha**: boolean
 **enable_tpu**: boolean
-**endpoint**: string
 **etag**: string
 **expire_time**: datetime
 **identity_service_config**: boolean
@@ -1729,6 +1728,10 @@ class gcp_resource {
 **label_fingerprint**: string
 **link**: string
 }
+class managed_kubernetes_cluster_provider {
+**endpoint**: string
+**version**: string
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -1770,6 +1773,7 @@ gcp_container_cluster --> gcp_container_resource_usage_export_config
 gcp_container_cluster --> gcp_container_status_condition
 gcp_container_cluster --> gcp_deprecation_status
 gcp_resource <|--- gcp_container_cluster
+managed_kubernetes_cluster_provider <|--- gcp_container_cluster
 gcp_container_cluster_autoscaling --> gcp_container_autoprovisioning_node_pool_defaults
 gcp_container_cluster_autoscaling --> gcp_container_resource_limit
 gcp_container_logging_config --> gcp_container_logging_component_config
@@ -1805,6 +1809,7 @@ gcp_container_update_info --> gcp_container_blue_green_info
 gcp_container_upgrade_settings --> gcp_container_blue_green_settings
 gcp_resource --> gcp_deprecation_status
 resource <|--- gcp_resource
+resource <|--- managed_kubernetes_cluster_provider
 @enduml
 ```
 
