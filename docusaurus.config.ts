@@ -6,7 +6,6 @@ import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import path from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import remarkKroki from 'remark-kroki-plugin';
-import { EnumChangefreq } from 'sitemap';
 
 const isDev = process.env.NODE_ENV === 'development';
 const isBuildFast = isDev || !!process.env.BUILD_FAST;
@@ -103,7 +102,11 @@ const config: Config = {
             './src/css/docsearch.css',
           ],
         },
-        sitemap: { changefreq: EnumChangefreq.DAILY, priority: 0.5 },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: null,
+          priority: null,
+        },
       } satisfies Preset.Options,
     ],
   ],
