@@ -54,6 +54,27 @@ const config: Config = {
     : [],
   markdown: {
     mermaid: true,
+    preprocessor: ({ fileContent }) => {
+      return fileContent
+        .replace(
+          /(skinparam (stereotype[A-Z]BackgroundColor|Note\w+Color)) #[a-f1-9]{6}\n/g,
+          '',
+        )
+        .replace(/(skinparam Arrow\w*Color) #[a-f1-9]{6}/g, '$1 #111827')
+        .replace(
+          /(skinparam (ClassBackgroundColor)) #[a-f1-9]{6}/g,
+          '$1 #eef7ff',
+        )
+        .replace(/(skinparam ClassBorderColor) #[a-f1-9]{6}/g, '$1 #3d58d3')
+        .replace(
+          /(skinparam Class(Attribute)?FontColor) #[a-f1-9]{6}/g,
+          '$1 #000000',
+        )
+        .replace(
+          /skinparam ClassFontName \w+/g,
+          'skinparam ClassFontName monospace',
+        );
+    },
     parseFrontMatter: async (params) => {
       const result = await params.defaultParseFrontMatter(params);
 
@@ -118,9 +139,17 @@ const config: Config = {
         swRegister: false,
         pwaHead: [
           { tagName: 'link', rel: 'manifest', href: 'site.webmanifest' },
-          { tagName: 'link', rel: 'icon', href: 'img/icon-192.maskable.png' },
-          { tagName: 'link', rel: 'icon', href: 'img/icon-512.maskable.png' },
-          { tagName: 'meta', name: 'theme-color', content: '#1946b4' },
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: 'img/android-chrome-192x192.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: 'img/android-chrome-512x512.png',
+          },
+          { tagName: 'meta', name: 'theme-color', content: '#3d58d3' },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-capable',
@@ -129,12 +158,12 @@ const config: Config = {
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-status-bar-style',
-            content: '#000d19',
+            content: '#3d58d3',
           },
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: 'img/apple-icon-180.png',
+            href: 'img/apple-touch-icon.png',
           },
         ],
       } satisfies PwaOptions,

@@ -1,35 +1,22 @@
 {
-  "name": "Fix by Some Engineering Inc.",
-  "short_name": "Fix",
-  "theme_color": "#1946b4",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "./",
+  "name": "Fix Documentation",
+  "short_name": "Fix Docs",
   "start_url": "./",
   "icons": [
     {
-      "src": "./img/icon-192.maskable.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "./img/icon-192.maskable.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "./img/icon-512.maskable.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./img/icon-512.maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "theme_color": "#3d58d3",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }
