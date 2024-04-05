@@ -41,7 +41,7 @@ const config: Config = {
     },
   ],
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap',
+    'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap',
   ],
   scripts: isProd
     ? [
@@ -213,8 +213,8 @@ const config: Config = {
     tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 5 },
     navbar: {
       hideOnScroll: true,
-      title: 'Fix Documentation',
-      logo: { src: 'img/logo.svg', alt: '', width: 36, height: 36 },
+      title: 'Documentation',
+      logo: { src: 'img/logo.svg', alt: 'Fix', width: 36, height: 36 },
       items: [
         {
           label: 'LinkedIn',
