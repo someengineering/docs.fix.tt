@@ -57,23 +57,24 @@ const config: Config = {
     preprocessor: ({ fileContent }) => {
       return fileContent
         .replace(
-          /(skinparam (stereotype[A-Z]BackgroundColor|Note\w+Color)) #[a-f1-9]{6}\n/g,
+          /(skinparam (stereotype[A-Z]BackgroundColor|Note\w+Color)) #[a-f0-9]{6}\n/g,
           '',
         )
-        .replace(/(skinparam Arrow\w*Color) #[a-f1-9]{6}/g, '$1 #111827')
+        .replace(/(skinparam Arrow\w*Color) #[a-f0-9]{6}/g, '$1 #111827')
         .replace(
-          /(skinparam (ClassBackgroundColor)) #[a-f1-9]{6}/g,
+          /(skinparam (ClassBackgroundColor)) #[a-f0-9]{6}/g,
           '$1 #eef7ff',
         )
-        .replace(/(skinparam ClassBorderColor) #[a-f1-9]{6}/g, '$1 #3d58d3')
+        .replace(/(skinparam ClassBorderColor) #[a-f0-9]{6}/g, '$1 #3d58d3')
         .replace(
-          /(skinparam Class(Attribute)?FontColor) #[a-f1-9]{6}/g,
+          /(skinparam Class(Attribute)?FontColor) #[a-f0-9]{6}/g,
           '$1 #000000',
         )
         .replace(
           /skinparam ClassFontName \w+/g,
-          'skinparam ClassFontName monospace',
-        );
+          'skinparam ClassFontName Consolas',
+        )
+        .replace(/Helvetica/g, 'Plus Jakarta Sans');
     },
     parseFrontMatter: async (params) => {
       const result = await params.defaultParseFrontMatter(params);
