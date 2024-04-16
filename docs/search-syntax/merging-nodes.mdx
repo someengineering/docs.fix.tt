@@ -22,16 +22,7 @@ Resources reference the region node, while the region node references the accoun
 In this example, we search for nodes of kind `volume`. For every element that is returned, a nested search is executed, which will traverse the graph inbound until it finds a node of kind `account`.
 
 ```bash
-> search is(volume) { account: <-[0:]- is(account) } limit 1 | dump
-# highlight-start
-​reported:
-​    .
-​    .
-​account:
-​    reported:
-​        .
-​        .
-# highlight-end
+is(volume) { account: <-[0:]- is(account) } limit 1
 ```
 
 The result of this nested search is merged with the volume node on root level under the name account.
@@ -57,19 +48,7 @@ If the expected result of the nested search is a list, than the merge name has t
 The following search will traverse inbound on every element and collect all predecessors under the name `predecessors`). Please note the square brackets in the name `predecessors[]` - which will tell the search engine to return all predecessors, not only the first one. As a result the node is returned with a new property, which contains the list of all predecessors.
 
 ```bash
-> search is(volume) { predecessors[]: <-- all } limit 1 | dump
-# highlight-start
-​reported:
-​    .
-​    .
-​predecessors:
-​- reported:
-​    .
-​    .
-​- reported:
-​    .
-​    .
-# highlight-end
+is(volume) { predecessors[]: <-- all } limit 1
 ```
 
 :::
@@ -81,33 +60,20 @@ It is also possible to define multiple merge queries in one `search` statement.
 As a result every node that is returned has two additional properties: `account` holds the complete data of the account node, as well `region`, which contains the related region node.
 
 ```bash
-> search is(volume) { account: <-[0:]- is(account), region: <-[0:]- is(region) } limit 1 | dump
-# highlight-start
-​reported:
-​    .
-​    .
-​account:
-​    reported:
-​        .
-​        .
-​region:
-​    reported:
-​        .
-​        .
-# highlight-end
+is(volume) { account: <-[0:]- is(account), region: <-[0:]- is(region) } limit 1
 ```
 
 ![Example Merge Diagram](./img/merge_nodes.png)
 
-You will notice that the account, cloud, region, and zone are displayed for every resource. The data is available in the `/ancestors` node section. :::
+You will notice that the account, cloud, region, and zone are displayed for every resource. The data is available in the `/ancestors` node section.
+
+:::
 
 A nested search can even be defined using nested searches:
 
 ```bash
-> search = <pre_filter> { <merge_name_1>: <query>, .., <merge_name_n>: <query> } <post_filter>
+<pre_filter> { <merge_name_1>: <query>, .., <merge_name_n>: <query> } <post_filter>
 ```
-
-:::
 
 :::note
 
@@ -126,7 +92,7 @@ Fix provides the `ancestors` and `descendants` section as part of every resource
 If we want to filter resources in a specific account by their identifiers, we can simply add a filter expression:
 
 ```bash
-> search is(volume) and /ancestors.account.reported.id==dev limit 1
+is(volume) and /ancestors.account.reported.id==dev limit 1
 ```
 
 Let's break down the filter expression:
@@ -150,7 +116,7 @@ It is possible to access every property of every parent or child resource in thi
 This is the nested search that is automatically created for the above example:
 
 ```bash
-> search is(volume) {/ancestors.account: <-[1:]- is(account)} /ancestors.account.reported.id==dev
+is(volume) {/ancestors.account: <-[1:]- is(account)} /ancestors.account.reported.id==dev
 ```
 
 ### Cloud, Account, Region, and Zone

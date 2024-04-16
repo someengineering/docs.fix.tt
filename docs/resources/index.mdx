@@ -110,19 +110,19 @@ Fix also introduces some additional simple types like `datetime` or `date`. The 
 According to the model, we would need to filter for the `ctime` property. Since Fix knows the type `ctime` (which is of kind `datetime`), it can interpret the value given by the user.
 
 ```bash
-> search ctime < "2018-09-28"
+ctime < "2018-09-28"
 ```
 
 `ctime` is of type `datetime`. `datetime` values in Fix are always stored as ISO-formatted datetime strings, so `"2018-09-28"` is coerced into a valid `datetime`. Depending on the server time, the value would be evaluated to something like:
 
 ```bash
-> search ctime < "2021-09-28T22:00:00Z"
+ctime < "2021-09-28T22:00:00Z"
 ```
 
 **This also allows the usage of relative times.** If we want to query resources that have been created in the last 3 days, we could express this with a relative datetime string:
 
 ```bash
-> search ctime > "-3d"
+ctime > "-3d"
 ```
 
 This translates `"-3d"` using the current server time into a valid datetime string.

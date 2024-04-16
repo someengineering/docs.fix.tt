@@ -8,7 +8,7 @@ sidebar_label: Filters
 ## Selecting Nodes by [Kind](../inventory-graph/index.mdx#resource-kinds) \{#selecting-nodes-by-kind}
 
 ```bash title="Filter by kind"
-> search is(instance)
+is(instance)
 ```
 
 In order to select [nodes](../inventory-graph/index.mdx#nodes) by a specific type, the search syntax supports the `is(<kind>)` function. The term `is(instance)` would select the EC2 instance above, but also all other instances, e.g. Google Cloud instances, while the term `is(aws_ec2_instance)` would select only EC2 instances from AWS.
@@ -18,7 +18,7 @@ You can get a list of all available kinds via the `kind` CLI command.
 ## Selecting Nodes by ID
 
 ```bash title="Filter by internal ID"
-> search id(id2345)
+id(id2345)
 ```
 
 Fix will add a synthetic `id` property to each [node](../inventory-graph/index.mdx#nodes) that is globally unique, no matter which cloud provider you are using. Nodes can be selected by their internal ID via the `id(xyz)` function.
@@ -26,7 +26,7 @@ Fix will add a synthetic `id` property to each [node](../inventory-graph/index.m
 ## Selecting Nodes by Predicate
 
 ```bash title="Filter by predicate"
-> search name=~"my-.*" and age>30d
+name=~"my-.*" and age>30d
 ```
 
 In order to filter for specific attributes of a [node](../inventory-graph/index.mdx#nodes), it is possible to define predicates. A predicate always has the syntax `<property_path> <operation> <value>` (e.g., `answer != 42`).
@@ -189,23 +189,23 @@ It is possible to negate a simple predicate or more complex term with `not`.
 :::tip[Examples]
 
 ```bash title="Select nodes where reported.name is either sunrise or sunset"
-> search name in [sunset, sunrise]
+name in [sunset, sunrise]
 ```
 
 ```bash title="Select instance nodes where reported.name is sunrise"
-> search is(instance) and name==sunrise
+is(instance) and name == sunrise
 ```
 
 ```bash title="Select aws_ec2_instance nodes of specific type or more than 2 cores"
-> search is(aws_ec2_instance) and (instance_type=="m5a.large" or instance_cores>2)
+is(aws_ec2_instance) and (instance_type == "m5a.large" or instance_cores>2)
 ```
 
 ```bash title="Select instance nodes in an account which name includes the term "engineering"
-> search is(instance) and /ancestors.account.reported.name=~engineering
+is(instance) and /ancestors.account.reported.name=~engineering
 ```
 
 ```bash title="Select all instance nodes wich are not in the engineering account"
-> search is(instance) and not /ancestors.account.reported.name==engineering
+is(instance) and not /ancestors.account.reported.name==engineering
 ```
 
 :::
@@ -253,13 +253,13 @@ We want to select resources that allow SSH access (port 22) from everywhere on t
 - at least one `cidr` that contains `0.0.0.0`.
 
 ```bash title="This query will not do what we want!"
-> search group_ip_permissions[*].from_port>=22 and group_ip_permissions[*].to_port<=22 and group_ip_permissions[*].ip_ranges[*].cidr_ip~"0.0.0.0"
+group_ip_permissions[*].from_port>=22 and group_ip_permissions[*].to_port<=22 and group_ip_permissions[*].ip_ranges[*].cidr_ip~"0.0.0.0"
 ```
 
 A simple combination of the same properties is not sufficient. It would eventually match more items than expected, since every filter criteria has to be fulfilled in at least one of the group permissions. What we actually wanted to express: all the criteria should match in any of the nested complex objects.
 
 ```bash title="Correct query using context notation"
-> search group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].cidr_ip~"0.0.0.0"}
+group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].cidr_ip~"0.0.0.0"}
 ```
 
 :::
@@ -283,7 +283,7 @@ path[*].{predicate1, nested[*].{predicate2, ...}, ...}
 Here is another example of context notation using the example JSON document above:
 
 ```bash title="Example with nested context"
-> search group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].{cidr_ip~"0.0.0.0" or description~"Office access"}}
+group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].{cidr_ip~"0.0.0.0" or description~"Office access"}}
 ```
 
 :::
@@ -319,7 +319,7 @@ Every resource in Fix is represented by a JSON document with the following struc
 Values coming from the cloud provider are available in the `reported` section, and the CLI interprets property paths relative to the `reported` section by default. Thus, the path to property `reported.name` can simply be written as `name`. To target properties not in the `reported` section, prefix the property path with a slash (`/`) for it to be interpreted as an absolute path:
 
 ```bash title="Find nodes where reported.cpu_count is greater than 3 in the 123 account."
-> search cpu_count > 3 and /ancestors.account.reported.name=="123"
+cpu_count > 3 and /ancestors.account.reported.name=="123"
 ```
 
 ## Selecting Nodes by Property Key
@@ -331,7 +331,7 @@ Nodes can be selected based on the fact that a specific property exists, no matt
 We want to find all volumes that are tagged with the tag `owner`.
 
 ```bash title="Select all volumes that are tagged with the tag owner"
-> search is(volume) and has_key(tags, owner)
+is(volume) and has_key(tags, owner)
 ```
 
 (**Note:** We could have used the search `search is(volume) and tags.owner!=null` instead. This would select all volumes with an owner tag, where the owner tag is not null. The `has_key` function ignores the value of the property and only returns if the property exists.)
@@ -347,7 +347,7 @@ For resources with IPv4 addresses, it is possible to select nodes in a specific 
 We want to find all load balancer, where the public IPv4 address is in the subnet range `167.123.0.0/16`.
 
 ```bash title="Select all load balancers in a specific subnet range"
-> search is(load_balancer) and in_subnet(public_ip_address, "167.123.0.0/16")
+is(load_balancer) and in_subnet(public_ip_address, "167.123.0.0/16")
 ```
 
 :::
