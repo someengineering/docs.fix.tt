@@ -2543,9 +2543,9 @@
     "@types/estree" "*"
 
 "@types/eslint@*", "@types/eslint@7 || 8":
-  version "8.56.9"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.56.9.tgz#403e9ced04a34e63f1c383c5b8ee1a94442c8cc4"
-  integrity sha512-W4W3KcqzjJ0sHg2vAq9vfml6OhsJ53TcUjUqfzzZf/EChUtwspszj/S0pzMxnfRcO55/iGq47dscXw71Fxc4Zg==
+  version "8.56.10"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.56.10.tgz#eb2370a73bf04a901eeba8f22595c7ee0f7eb58d"
+  integrity sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -3225,9 +3225,9 @@ ajv@^8.0.0, ajv@^8.11.0, ajv@^8.6.0, ajv@^8.9.0:
     uri-js "^4.2.2"
 
 algoliasearch-helper@^3.13.3:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.17.0.tgz#b8f2f98c9a49d9affb51205f8df116164050a842"
-  integrity sha512-R5422OiQjvjlK3VdpNQ/Qk7KsTIGeM5ACm8civGifOVWdRRV/3SgXuKmeNxe94Dz6fwj/IgpVmXbHutU4mHubg==
+  version "3.18.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.18.0.tgz#e3651090cc6c41f244a6db2573bdd116ca4b7085"
+  integrity sha512-ZXvA8r6VG46V343jnIE7Tei8Xr0/9N8YhD27joC0BKxeogQyvNu7O37i510wA7FnrDjoa/tFhK90WUaBlkaqnw==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -5173,9 +5173,9 @@ ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.668:
-  version "1.4.741"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.741.tgz#0ca6502689294beeef260889f35331e2c857451d"
-  integrity sha512-AyTBZqDoS7/mvQK22gOQpjxbeV8iPeUBTvYlEh/1S9dKAHgQdxuF49g9rLbj0cRKtqH8PzLJzqT3nAdl+qoZTA==
+  version "1.4.742"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.742.tgz#92a8f08f8a7cac64c20fc7e53dbfe86017093160"
+  integrity sha512-EhE+z1d5RNytAq/qnGAxPR+ie3UzKbv7qqQc0wnEbOh+KDUplgfzkGSCy9d78B+S+nVNTS42BabHXB6Ni+Ud4w==
 
 elkjs@^0.9.0:
   version "0.9.3"
