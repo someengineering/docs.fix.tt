@@ -10,7 +10,7 @@ export default function PosthogProvider({
 }) {
   const {
     siteConfig: {
-      customFields: { isDev, isNetlify, posthogProjectApiKey },
+      customFields: { isDev, isNetlify, isProd, posthogProjectApiKey },
     },
   } = useDocusaurusContext();
 
@@ -19,6 +19,8 @@ export default function PosthogProvider({
       posthog.init(posthogProjectApiKey as string, {
         api_host: isNetlify ? '/api/ingest' : 'https://eu.posthog.com',
         ui_host: 'https://eu.posthog.com',
+        cross_subdomain_cookie: !!isProd,
+        secure_cookie: !!isNetlify,
         debug: !!isDev,
         capture_pageview: false, // Page views are captured manually
 
@@ -30,7 +32,7 @@ export default function PosthogProvider({
         enable_recording_console_log: false,
       });
     }
-  }, [isDev, isNetlify, posthogProjectApiKey]);
+  }, [isDev, isNetlify, isProd, posthogProjectApiKey]);
 
   return <Provider client={posthog}>{children}</Provider>;
 }
