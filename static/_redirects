@@ -1,12 +1,18 @@
-https://fix-docs.netlify.app/*          https://docs.fix.security/:splat 301!
-https://main--fix-docs.netlify.app/*    https://docs.fix.security/:splat 301!
-https://docs.fix.tt/*                   https://docs.fix.security/:splat 301!
-https://origin.docs.fix.security/*      https://docs.fix.security/:splat 301!
+https://fix-docs.netlify.app/*                https://docs.fix.security/:splat 301!
+https://main--fix-docs.netlify.app/*          https://docs.fix.security/:splat 301!
+https://docs.fix.tt/*                         https://docs.fix.security/:splat 301!
+https://origin.docs.fix.security/*            https://docs.fix.security/:splat 301!
 
-/js/script.js                           https://plausible.io/js/script.js 200
-/api/event                              https://plausible.io/api/event 200
+/js/script.js                                 https://plausible.io/js/script.js 200
+/api/event                                    https://plausible.io/api/event 200
 
-/api/ingest/static/*                    https://eu-assets.i.posthog.com/static/:splat 200
-/api/ingest/*                           https://eu.i.posthog.com/:splat 200
+/api/ingest/static/*                          https://eu-assets.i.posthog.com/static/:splat 200
+/api/ingest/*                                 https://eu.i.posthog.com/:splat 200
 
-/docs/*                                 /:splat
+/code-of-conduct                              https://fix.security/code-of-conduct
+/cookie*                                      https://fix.security/cookie-policy
+/privacy*                                     https://fix.security/privacy-policy
+/terms*                                       https://fix.security/terms-and-conditions
+/website-analytics                            https://fix.security/cookie-policy
+
+/docs/*                                       /:splat
