@@ -6,4 +6,7 @@ https://origin.docs.fix.security/*      https://docs.fix.security/:splat 301!
 /js/script.js                           https://plausible.io/js/script.js 200
 /api/event                              https://plausible.io/api/event 200
 
+/api/ingest/static/*                    https://eu-assets.i.posthog.com/static/:splat 200
+/api/ingest/*                           https://eu.i.posthog.com/:splat 200
+
 /docs/*                                 /:splat

@@ -1,6 +1,7 @@
 import { useWindowSize } from '@docusaurus/theme-common';
 import { useDoc } from '@docusaurus/theme-common/internal';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import { openGraph } from '@site/src/utils/og';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import DocItemContent from '@theme/DocItem/Content';
 import DocItemFooter from '@theme/DocItem/Footer';
@@ -11,7 +12,6 @@ import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import clsx from 'clsx';
-import { openGraph } from '@site/src/utils/og';
 import styles from './styles.module.css';
 
 /**
