@@ -9,8 +9,8 @@ import remarkKroki from 'remark-kroki-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
 const isBuildFast = isDev || !!process.env.BUILD_FAST;
-const isProd =
-  !isDev && !!process.env.NETLIFY && process.env.CONTEXT !== 'deploy-preview';
+const isNetlify = !!process.env.NETLIFY;
+const isProd = isNetlify && process.env.CONTEXT === 'production';
 
 const config: Config = {
   title: 'Fix Documentation',
@@ -23,6 +23,12 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   trailingSlash: false,
   noIndex: !isProd,
+  customFields: {
+    isDev,
+    isNetlify,
+    isProd,
+    posthogProjectApiKey: process.env.POSTHOG_PROJECT_API_KEY,
+  },
   headTags: [
     {
       tagName: 'link',
