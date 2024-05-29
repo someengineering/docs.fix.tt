@@ -1,10 +1,10 @@
 # Inventory Graph
 
-Fix scrapes resources from your cloud providers. This data is the source of truth for all of Fix's features. All resources from all cloud providers, accounts, regions and all resource types become nodes in the graph.
+Fix Security scrapes resources from your cloud providers. This data is the source of truth for all of Fix Security's features. All resources from all cloud providers, accounts, regions and all resource types become nodes in the graph.
 
-Fix also knows how resources relate to each other. For example, a compute instance might have a volume and is attached to a network interface. The same compute instance might be the target of a load balancer, which is inside a security group, which itself is inside a VPC. All of these relationships are encoded as edges in the graph.
+Fix Security also knows how resources relate to each other. For example, a compute instance might have a volume and is attached to a network interface. The same compute instance might be the target of a load balancer, which is inside a security group, which itself is inside a VPC. All of these relationships are encoded as edges in the graph.
 
-The superpower of Fix is the ability to provide a complete picture of your cloud assets and how they relate to each other.
+The superpower of Fix Security is the ability to provide a complete picture of your cloud assets and how they relate to each other.
 
 ## Graph Nodes \{#nodes}
 
@@ -18,7 +18,7 @@ You can expect the following properties on every resource:
 | -------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
 | `id`     | string   | The cloud providers unique ID of a resource. This identifier might not be unique over different cloud providers. |
 | `kind`   | string   | The kind of the resource. See [Resource Kinds](#resource-kinds) below for details.                               |
-| `name`   | string   | The name of the resource. Fix tries its best to map the relevant property for that matter.                       |
+| `name`   | string   | The name of the resource. Fix Security tries its best to map the relevant property for that matter.              |
 | `ctime`  | datetime | The time the resource has been created.                                                                          |
 | `mtime`  | datetime | The time the resource has been modified the last time.                                                           |
 | `atime`  | datetime | The time the resource has been accessed the last time.                                                           |
@@ -27,9 +27,9 @@ Resources have additional properties in addition to those above. The structure o
 
 ### Resource Kinds
 
-There is a plethora of resource types. Fix captures all of this information and makes it available to you.
+There is a plethora of resource types. Fix Security captures all of this information and makes it available to you.
 
-To ensure you get consistent data, Fix defines a set of resource kinds. Each resource type is mapped to one of these kinds. Fix ensures that the data you get for a specific kind adheres to the schema defined for that kind.
+To ensure you get consistent data, Fix Security defines a set of resource kinds. Each resource type is mapped to one of these kinds. Fix Security ensures that the data you get for a specific kind adheres to the schema defined for that kind.
 
 The kind of resource is defined in the `kind` property of the resource.
 
@@ -51,7 +51,7 @@ This is useful if you want to search the graph using more abstract concepts. For
 
 ## Graph Edges \{#edges}
 
-Fix also captures the relationships between resources by encoding the relationships as edges in the graph. This makes it possible to traverse the graph and walk from one resource to another based on a specific relationship. The relationship itself does not have any additional properties.
+Fix Security also captures the relationships between resources by encoding the relationships as edges in the graph. This makes it possible to traverse the graph and walk from one resource to another based on a specific relationship. The relationship itself does not have any additional properties.
 
 The list of possible edges are defined explicitly in [Resource Models](../resources/index.mdx).
 
@@ -65,7 +65,7 @@ This documentation describes how a resource might be connected. This does not me
 
 ## Graph Traversal \{#traversal}
 
-In order to traverse the graph in a meaningful way, it is important to understand the structure. The following diagram serves as an example graph you will find in Fix to illustrates how we can "walk" edges in a graph:
+In order to traverse the graph in a meaningful way, it is important to understand the structure. The following diagram serves as an example graph you will find in Fix Security to illustrates how we can "walk" edges in a graph:
 
 ![Edge Data Model](./img/graph_query_graph_edges.png)
 

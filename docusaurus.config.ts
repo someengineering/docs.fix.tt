@@ -13,7 +13,7 @@ const isNetlify = !!process.env.NETLIFY;
 const isProd = isNetlify && process.env.CONTEXT === 'production';
 
 const config: Config = {
-  title: 'Fix Documentation',
+  title: 'Fix Security Documentation',
   url: 'https://docs.fix.security',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -193,7 +193,7 @@ const config: Config = {
         name: 'description',
         property: 'og:description',
         content:
-          'Fix is an all-in-one dashboard for security engineers. Prioritize top risks by combining user, resource, and configuration data. Plus, get actionable remediation recommendations for your DevOps team.',
+          'Fix Security is an all-in-one dashboard for security engineers. Prioritize top risks by combining user, resource, and configuration data. Plus, get actionable remediation recommendations for your DevOps team.',
       },
       { property: 'og:type', content: 'website' },
     ],
@@ -201,7 +201,7 @@ const config: Config = {
     navbar: {
       hideOnScroll: true,
       title: 'Documentation',
-      logo: { src: 'img/logo.svg', alt: 'Fix', width: 36, height: 36 },
+      logo: { src: 'img/logo.svg', alt: 'Fix Security', width: 36, height: 36 },
       items: [
         {
           label: 'LinkedIn',

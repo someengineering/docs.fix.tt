@@ -21,7 +21,7 @@ You can get a list of all available kinds via the `kind` CLI command.
 id(id2345)
 ```
 
-Fix will add a synthetic `id` property to each [node](../inventory-graph/index.mdx#nodes) that is globally unique, no matter which cloud provider you are using. Nodes can be selected by their internal ID via the `id(xyz)` function.
+Fix Security will add a synthetic `id` property to each [node](../inventory-graph/index.mdx#nodes) that is globally unique, no matter which cloud provider you are using. Nodes can be selected by their internal ID via the `id(xyz)` function.
 
 ## Selecting Nodes by Predicate
 
@@ -264,7 +264,7 @@ group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].cidr_ip~"0.0.0
 
 :::
 
-Fix supports context notation, which allows us to reference a single position in all predicates. Context notation combines several predicates into a single term which is matched to a nested structure. The path to this structure is defined by a path which can contain arrays that use the wildcard index `[*]`.
+Fix Security supports context notation, which allows us to reference a single position in all predicates. Context notation combines several predicates into a single term which is matched to a nested structure. The path to this structure is defined by a path which can contain arrays that use the wildcard index `[*]`.
 
 The syntax of context notation is:
 
@@ -292,7 +292,7 @@ With context notation you can match deeply nested objects by describing the stru
 
 ## Property Sections
 
-Every resource in Fix is represented by a JSON document with the following structure:
+Every resource in Fix Security is represented by a JSON document with the following structure:
 
 ```json
 {

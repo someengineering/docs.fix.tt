@@ -1,6 +1,6 @@
 {
-  "name": "Fix Documentation",
-  "short_name": "Fix Docs",
+  "name": "Fix Security Documentation",
+  "short_name": "Fix Security Docs",
   "start_url": "./",
   "icons": [
     {

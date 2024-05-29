@@ -89,7 +89,7 @@ is(aws_alb_target_groups) <-[2:2]- is(aws_iam_instance_profile)
 is(aws_account) and name==sunshine -[0:]->
 ```
 
-This query will select the aws account with name `sunshine` and then select all nodes outbound to this node. This will select everything Fix knows about nodes in this account.
+This query will select the aws account with name `sunshine` and then select all nodes outbound to this node. This will select everything Fix Security knows about nodes in this account.
 
 :::
 
@@ -111,7 +111,7 @@ Every [edge](../inventory-graph/index.mdx#edges) has a type which defines the re
 
 The types of edge can be specified via the graph traversal: `-<edge_type>[<start>:<until>]->`. If more than one type should be used for the traversal, the types need to be separated by comma.
 
-Fix currently supports two types of edges.
+Fix Security currently supports two types of edges.
 
 ### Default Edges
 
@@ -124,7 +124,7 @@ graph LR;
   instance --default--> network_interface;
 ```
 
-A volume or network interface might be attached to a volume. The dependency between the 2 is expressed as default edge. Every resource in Fix is connected via an edge of type default.
+A volume or network interface might be attached to a volume. The dependency between the 2 is expressed as default edge. Every resource in Fix Security is connected via an edge of type default.
 
 ### Delete Edges
 

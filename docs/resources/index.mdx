@@ -1,10 +1,10 @@
 # Resource Models
 
-**Fix has a unified data model (UDM) with support for static typing and inheritance.**
+**Fix Security has a unified data model (UDM) with support for static typing and inheritance.**
 
 <!-- When working with multiple clouds, it can be tedious to what resource kinds and attributes are named. To implement org policies (such as "no unencrypted storage volumes" or "every compute instance must have a cost center tag"), you don't want to rewrite those checks for every cloud provider.
 
-While Fix has knowledge of cloud-specific resource kinds like [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume) and `gcp_disk`, both of those kinds inherit from the base `volume` kind, which in turn inherits from the `resource` kind:
+While Fix Security has knowledge of cloud-specific resource kinds like [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume) and `gcp_disk`, both of those kinds inherit from the base `volume` kind, which in turn inherits from the `resource` kind:
 
 - The `resource` kind defines basic attributes common to all resources (e.g.: name, creation time, etc.).
 
@@ -22,13 +22,13 @@ At the same time, you can still search by cloud provider-specific properties (e.
 
 ## Supported Resource Types
 
-<!-- Fix has built-in support for resource types from the following cloud providers: -->
+<!-- Fix Security has built-in support for resource types from the following cloud providers: -->
 
 <DocCardList />
 
 ## `resource` Base Kind
 
-**Every resource collected by Fix has the `resource` base kind, which defines properties common to all resources.**
+**Every resource collected by Fix Security has the `resource` base kind, which defines properties common to all resources.**
 
 ![Base Resource Data Model](./img/resource.svg)
 
@@ -36,19 +36,19 @@ At the same time, you can still search by cloud provider-specific properties (e.
 | --- | --- |
 | `id` | Resource identifier (does not need to be unique across all resources) |
 | `name` | Cloud-specific resource name |
-| `kind` | Resource kind in Fix<br /><br /><Admonition type="tip" title="Example">[AWS EC2 Volumes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html) are of kind [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume).</Admonition> |
+| `kind` | Resource kind in Fix Security<br /><br /><Admonition type="tip" title="Example">[AWS EC2 Volumes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html) are of kind [`aws_ec2_volume`](./aws.mdx#aws_ec2_volume).</Admonition> |
 | `tags` | Key-value `string` pairs held in a dictionary |
-| `ctime` | Resource creation time<br /><br /><Admonition type="note">Fix uses the time this resource was first discovered when the cloud provider does not provide this value.</Admonition> |
-| `atime` | Last accessed time as of the most recent resource collection<br /><br /><Admonition type="note">Fix attempts to synthesize the last access timestamp when the cloud provider does not provide this value.</Admonition> |
-| `mtime` | Last modified time as of the most recent resource collection<br /><br /><Admonition type="note">Fix attempts to synthesize the last modified timestamp when the cloud provider does not provide this value.</Admonition> |
+| `ctime` | Resource creation time<br /><br /><Admonition type="note">Fix Security uses the time this resource was first discovered when the cloud provider does not provide this value.</Admonition> |
+| `atime` | Last accessed time as of the most recent resource collection<br /><br /><Admonition type="note">Fix Security attempts to synthesize the last access timestamp when the cloud provider does not provide this value.</Admonition> |
+| `mtime` | Last modified time as of the most recent resource collection<br /><br /><Admonition type="note">Fix Security attempts to synthesize the last modified timestamp when the cloud provider does not provide this value.</Admonition> |
 
 <!-- ## Resource Hierarchy
 
-**Fix's resource hierarchy abstracts over data models from different cloud providers to deliver a unified data model that allows for data retrieval across clouds.**
+**Fix Security's resource hierarchy abstracts over data models from different cloud providers to deliver a unified data model that allows for data retrieval across clouds.**
 
-Every resource in Fix has the `resource` base kind as its root.
+Every resource in Fix Security has the `resource` base kind as its root.
 
-Fix also introduces abstract model classes for different resource types, making it easy to query and reason about common data.
+Fix Security also introduces abstract model classes for different resource types, making it easy to query and reason about common data.
 
 <details>
 <summary>Example</summary>
@@ -80,7 +80,7 @@ We have looked at complex kinds so far: a complex kind has a name and a set of p
 
 Each property has a name and also a kind. The kind of such a property can be a complex or a simple kind.
 
-There are several simple kinds that are available in Fix out of the box:
+There are several simple kinds that are available in Fix Security out of the box:
 
 | Kind       | JSON Type           | Example                                           |
 | ---------- | ------------------- | ------------------------------------------------- |
@@ -97,9 +97,9 @@ There are several simple kinds that are available in Fix out of the box:
 
 \* The special type `any` is only used in scenarios where the type is really not known and could be anything. Coercing is not possible for such a type.
 
-Since Fix uses JSON in order to exchange data, all the different simple types have to be expressed as simple type.
+Since Fix Security uses JSON in order to exchange data, all the different simple types have to be expressed as simple type.
 
-Fix also introduces some additional simple types like `datetime` or `date`. The reason for this is the ability to coerce proper values from values given to Fix.
+Fix Security also introduces some additional simple types like `datetime` or `date`. The reason for this is the ability to coerce proper values from values given to Fix Security.
 
 <details>
 <summary>Example</summary>
@@ -107,13 +107,13 @@ Fix also introduces some additional simple types like `datetime` or `date`. The 
 
 **Assume a user wants to query a resource by creation time.**
 
-According to the model, we would need to filter for the `ctime` property. Since Fix knows the type `ctime` (which is of kind `datetime`), it can interpret the value given by the user.
+According to the model, we would need to filter for the `ctime` property. Since Fix Security knows the type `ctime` (which is of kind `datetime`), it can interpret the value given by the user.
 
 ```bash
 ctime < "2018-09-28"
 ```
 
-`ctime` is of type `datetime`. `datetime` values in Fix are always stored as ISO-formatted datetime strings, so `"2018-09-28"` is coerced into a valid `datetime`. Depending on the server time, the value would be evaluated to something like:
+`ctime` is of type `datetime`. `datetime` values in Fix Security are always stored as ISO-formatted datetime strings, so `"2018-09-28"` is coerced into a valid `datetime`. Depending on the server time, the value would be evaluated to something like:
 
 ```bash
 ctime < "2021-09-28T22:00:00Z"
