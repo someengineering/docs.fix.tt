@@ -19,15 +19,18 @@ export default function PosthogProvider({
       posthog.init(posthogProjectApiKey as string, {
         api_host: isNetlify ? '/api/ingest' : 'https://eu.posthog.com',
         ui_host: 'https://eu.posthog.com',
+        debug: !!isDev,
+
+        persistence: 'cookie',
         cross_subdomain_cookie: !!isProd,
         secure_cookie: !!isNetlify,
-        debug: !!isDev,
-        capture_pageview: false, // Page views are captured manually
-        capture_pageleave: true,
 
         opt_out_capturing_by_default: true,
         opt_out_capturing_persistence_type: 'cookie',
         opt_out_persistence_by_default: true,
+
+        capture_pageview: false, // Page views are captured manually
+        capture_pageleave: true,
 
         disable_session_recording: true,
         disable_surveys: true,
