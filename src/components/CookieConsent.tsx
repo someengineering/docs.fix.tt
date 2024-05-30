@@ -1,37 +1,16 @@
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Cookies from 'js-cookie';
 import { usePostHog } from 'posthog-js/react';
 import { useEffect, useState } from 'react';
 
 export default function CookieConsent() {
-  const {
-    siteConfig: {
-      customFields: { isDev, isProd, posthogProjectApiKey },
-    },
-  } = useDocusaurusContext();
   const posthog = usePostHog();
   const [showConsent, setShowConsent] = useState(false);
 
   useEffect(() => {
-    if (Cookies.get('cookie_consent') === 'true') {
-      posthog.opt_in_capturing({ enable_persistence: true });
-    } else if (!posthog.has_opted_in_capturing()) {
-      setShowConsent(Cookies.get('cookie_consent') !== 'false');
-    }
+    setShowConsent(posthog.consent.consent === -1);
+  }, [posthog]);
 
-    if (
-      Cookies.get('cookie_consent') !== 'true' &&
-      Cookies.get('cookie_consent') !== 'false'
-    ) {
-      Cookies.remove('cookie_consent', {
-        domain: isProd ? '.fix.security' : undefined,
-        secure: !isDev,
-      });
-    }
-  }, [isDev, isProd, posthog]);
-
-  if (!posthogProjectApiKey || !showConsent) {
+  if (!posthog.__loaded || !showConsent) {
     return null;
   }
 
@@ -80,12 +59,7 @@ export default function CookieConsent() {
             onClick={(e) => {
               e.preventDefault();
               setShowConsent(false);
-              Cookies.set('cookie_consent', 'true', {
-                domain: isProd ? '.fix.security' : undefined,
-                secure: !isDev,
-                expires: 365,
-              });
-              posthog.opt_in_capturing({ enable_persistence: true });
+              posthog.opt_in_capturing();
             }}
           >
             Accept
@@ -95,10 +69,6 @@ export default function CookieConsent() {
             onClick={(e) => {
               e.preventDefault();
               setShowConsent(false);
-              Cookies.set('cookie_consent', 'false', {
-                domain: isProd ? '.fix.security' : undefined,
-                secure: !isDev,
-              });
               posthog.opt_out_capturing();
             }}
           >

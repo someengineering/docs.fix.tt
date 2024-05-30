@@ -25,8 +25,9 @@ export default function PosthogProvider({
         capture_pageview: false, // Page views are captured manually
         capture_pageleave: true,
 
-        opt_out_persistence_by_default: true,
         opt_out_capturing_by_default: true,
+        opt_out_capturing_persistence_type: 'cookie',
+        opt_out_persistence_by_default: true,
 
         disable_session_recording: true,
         disable_surveys: true,
