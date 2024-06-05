@@ -55,12 +55,7 @@ const config: Config = {
         .replace(
           /(skinparam Class(Attribute)?FontColor) #[a-f0-9]{6}/g,
           '$1 #000000',
-        )
-        .replace(
-          /skinparam ClassFontName \w+/g,
-          'skinparam ClassFontName Consolas',
-        )
-        .replace(/Helvetica/g, 'Plus Jakarta Sans');
+        );
     },
     parseFrontMatter: async (params) => {
       const result = await params.defaultParseFrontMatter(params);

@@ -1,10 +1,9 @@
 ---
 sidebar_position: 7
-sidebar_label: with Clause
-title: with Search Clause
+title: '"with" search clause'
 ---
 
-# `with` Search Clause
+# `with` search clause
 
 The `with` clause can be useful, in case you want to select elements and ensure a certain "position" in the graph, meaning that you want to make sure there are specific edges existent to specific other nodes.
 
@@ -38,7 +37,7 @@ is(aws_alb_target_group) with (empty, --> is(aws_ec2_instance))
 
 The `with` clause has three forms:
 
-### Empty Match
+### Empty match
 
 No result is allowed in order to select the node.
 
@@ -52,7 +51,7 @@ No result is allowed in order to select the node.
 
 The first filter will select elements. With every element a graph traversal is done following the navigation and filter in the with clause.
 
-### At Least One Match
+### At least one match
 
 The `with` clause needs to select at least one matching node in order to select the filtered node.
 
@@ -64,7 +63,7 @@ The `with` clause needs to select at least one matching node in order to select 
 
 :::
 
-### Exact Number of Matches
+### Exact number of matches
 
 The `with` clause needs to select the specified amount of matching nodes in order to select the filtered node.
 

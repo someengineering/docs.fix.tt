@@ -1,9 +1,9 @@
 ---
 sidebar_position: 6
-sidebar_label: Merging Nodes
+sidebar_label: Merging nodes
 ---
 
-# Merging Nodes in Search
+# Merging nodes in search
 
 While it is possible to search and retrieve a filtered part of the graph, it is sometimes helpful to retrieve structural graph data as part of the node.
 
@@ -81,7 +81,7 @@ Be aware that a nested search is executed for every node of the original search 
 
 :::
 
-## Ancestors and Descendants
+## Ancestors and descendants
 
 A rather common use case is to walk the graph until you find a node of specific `kind`, and merge it with the current node.
 
@@ -119,7 +119,7 @@ This is the nested search that is automatically created for the above example:
 is(volume) {/ancestors.account: <-[1:]- is(account)} /ancestors.account.reported.id==dev
 ```
 
-### Cloud, Account, Region, and Zone
+### Cloud, account, region, and zone
 
 Nested merge queries are powerful, and the shorthand notation using `/ancestors` or `/descendants` allows accessing properties of any kind in the hierarchy easily.
 

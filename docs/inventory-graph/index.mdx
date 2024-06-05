@@ -1,4 +1,4 @@
-# Inventory Graph
+# Inventory graph
 
 Fix Security scrapes resources from your cloud providers. This data is the source of truth for all of Fix Security's features. All resources from all cloud providers, accounts, regions and all resource types become nodes in the graph.
 
@@ -6,7 +6,7 @@ Fix Security also knows how resources relate to each other. For example, a compu
 
 The superpower of Fix Security is the ability to provide a complete picture of your cloud assets and how they relate to each other.
 
-## Graph Nodes \{#nodes}
+## Graph nodes \{#nodes}
 
 Each collected resource is a node in the asset inventory graph.
 
@@ -25,7 +25,7 @@ You can expect the following properties on every resource:
 
 Resources have additional properties in addition to those above. The structure of the [<abbr title="JavaScript Object Notation">JSON</abbr>](https://json.org) document is defined by the resource kind.
 
-### Resource Kinds
+### Resource kinds
 
 There is a plethora of resource types. Fix Security captures all of this information and makes it available to you.
 
@@ -45,15 +45,15 @@ The kind of resource is defined in the `kind` property of the resource.
 
 </ZoomPanPinch>
 
-The same resource can adhere to multiple resource kinds. This makes it possible to allow to view the same resource in more than one way. For example, an AWS EC2 volume can be viewed as `aws_ec2_volume`, as compute `volume`, as `aws_resource` and as `resource`.
+The same resource can adhere to multiple resource kinds. This makes it possible to allow to view the same resource in more than one way. For example, an AWS EC2 volume can be viewed as [`aws_ec2_volume`](../resources/aws.mdx#aws_ec2_volume), as compute [`volume`](../resources/base-kinds.mdx#volume), as `aws_resource` and as [`resource`](../resources/index.mdx#resource-base-kind).
 
 This is useful if you want to search the graph using more abstract concepts. For example, it allows for the selection of all volumes regardless of cloud provider.
 
-## Graph Edges \{#edges}
+## Graph edges \{#edges}
 
 Fix Security also captures the relationships between resources by encoding the relationships as edges in the graph. This makes it possible to traverse the graph and walk from one resource to another based on a specific relationship. The relationship itself does not have any additional properties.
 
-The list of possible edges are defined explicitly in [Resource Models](../resources/index.mdx).
+The list of possible edges are defined explicitly in [Resource models](../resources/index.mdx).
 
 <ZoomPanPinch>
 
@@ -63,7 +63,7 @@ The list of possible edges are defined explicitly in [Resource Models](../resour
 
 This documentation describes how a resource might be connected. This does not mean that every relationship has to exist. For example, a compute instance might not have a volume attached to it. In this case, there is no edge between the compute instance and the volume.
 
-## Graph Traversal \{#traversal}
+## Graph traversal \{#traversal}
 
 In order to traverse the graph in a meaningful way, it is important to understand the structure. The following diagram serves as an example graph you will find in Fix Security to illustrates how we can "walk" edges in a graph:
 
@@ -103,6 +103,6 @@ All resources in AWS are placed in a region. The region is a node in the graph. 
 
 ![Ancestors](./img/graph_edges_ancestors.png)
 
-## Further Reading
+## Further reading
 
 - [Search Traversals](../search-syntax/traversals.mdx)

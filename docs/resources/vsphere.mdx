@@ -1,9 +1,8 @@
 ---
-sidebar_label: vSphere
 draft: true
 ---
 
-# vSphere Resources
+# vSphere resources
 
 ## `vsphere_cluster`
 
@@ -35,6 +34,16 @@ skinparam stereotypeIBackgroundColor #e98df7
 class phantom_resource {
 }
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_cluster {
 }
@@ -48,7 +57,7 @@ phantom_resource <|--- zone
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -114,8 +123,21 @@ skinparam stereotypeIBackgroundColor #e98df7
 class phantom_resource {
 }
 class region {
+**latitude**: double
+**long_name**: string
+**longitude**: double
 }
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_data_center {
 }
@@ -127,7 +149,7 @@ region <|--- vsphere_data_center
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -191,6 +213,16 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_datastore {
 }
@@ -200,7 +232,7 @@ resource <|--- vsphere_datastore
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -264,6 +296,16 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_datastore_cluster {
 }
@@ -273,7 +315,7 @@ resource <|--- vsphere_datastore_cluster
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -337,6 +379,16 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_esxi_host {
 }
@@ -346,7 +398,7 @@ resource <|--- vsphere_esxi_host
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -412,6 +464,16 @@ skinparam stereotypeIBackgroundColor #e98df7
 class account {
 }
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_host {
 }
@@ -422,7 +484,7 @@ account <|--- vsphere_host
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -486,8 +548,22 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class instance {
+**instance_cores**: double
+**instance_memory**: double
+**instance_status**: instance_status
+**instance_type**: string
 }
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_instance {
 }
@@ -501,7 +577,7 @@ vsphere_resource <|--- vsphere_instance
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -565,6 +641,16 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_resource_pool {
 }
@@ -574,7 +660,7 @@ resource <|--- vsphere_resource_pool
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 
@@ -638,6 +724,16 @@ skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
 }
 class vsphere_resource {
 }
@@ -650,7 +746,7 @@ vsphere_resource <|--- vsphere_template
 
 </ZoomPanPinch>
 <details>
-<summary>Relationships to Other Resources</summary>
+<summary>Relationships to other resources</summary>
 <div>
 <ZoomPanPinch>
 

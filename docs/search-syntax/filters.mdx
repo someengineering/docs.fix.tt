@@ -3,9 +3,9 @@ sidebar_position: 2
 sidebar_label: Filters
 ---
 
-# Search Filters
+# Search filters
 
-## Selecting Nodes by [Kind](../inventory-graph/index.mdx#resource-kinds) \{#selecting-nodes-by-kind}
+## Selecting nodes by [kind](../inventory-graph/index.mdx#resource-kinds) \{#selecting-nodes-by-kind}
 
 ```bash title="Filter by kind"
 is(instance)
@@ -15,7 +15,7 @@ In order to select [nodes](../inventory-graph/index.mdx#nodes) by a specific typ
 
 You can get a list of all available kinds via the `kind` CLI command.
 
-## Selecting Nodes by ID
+## Selecting nodes by ID
 
 ```bash title="Filter by internal ID"
 id(id2345)
@@ -23,7 +23,7 @@ id(id2345)
 
 Fix Security will add a synthetic `id` property to each [node](../inventory-graph/index.mdx#nodes) that is globally unique, no matter which cloud provider you are using. Nodes can be selected by their internal ID via the `id(xyz)` function.
 
-## Selecting Nodes by Predicate
+## Selecting nodes by predicate
 
 ```bash title="Filter by predicate"
 name=~"my-.*" and age>30d
@@ -180,7 +180,7 @@ name in ["sunset", "sunrise"]
 
 :::
 
-## Combining Selections
+## Combining selections
 
 All listed selections can be combined with `and` and `or` clauses. In order to define precedence, enclose terms with parentheses. If no brackets are defined, the terms are evaluated from left to right.
 
@@ -210,7 +210,7 @@ is(instance) and not /ancestors.account.reported.name==engineering
 
 :::
 
-## Nested Predicates
+## Nested predicates
 
 There are entities that contain complex, deeply nested structures. As explained above, you can [reference a nested property using its path](#property-path) and [access specific array elements using index notation](#arrays). But what if we don't know the position of the target element in the array, or want to match multiple properties of an array element?
 
@@ -290,7 +290,7 @@ group_ip_permissions[*].{from_port>=22, to_port<=22, ip_ranges[*].{cidr_ip~"0.0.
 
 With context notation you can match deeply nested objects by describing the structure and the predicates that should be matched in a single term. The nested context notation is not limited to arrays, but they are useful in combination with the wildcard index `[*]`.
 
-## Property Sections
+## Property sections
 
 Every resource in Fix Security is represented by a JSON document with the following structure:
 
@@ -322,7 +322,7 @@ Values coming from the cloud provider are available in the `reported` section, a
 cpu_count > 3 and /ancestors.account.reported.name=="123"
 ```
 
-## Selecting Nodes by Property Key
+## Selecting nodes by property key
 
 Nodes can be selected based on the fact that a specific property exists, no matter which value this property has. The `has_key(parent, property)` function will select all nodes where the property `parent` has property `property`.
 
@@ -338,7 +338,7 @@ is(volume) and has_key(tags, owner)
 
 :::
 
-## Selecting Nodes by IPv4 Address
+## Selecting nodes by IPv4 address
 
 For resources with IPv4 addresses, it is possible to select nodes in a specific subnet range. The function `in_subnet(ipv4_property, cidr)` will select all nodes where the property `ipv4_property` is in the subnet range `cidr`.
 
