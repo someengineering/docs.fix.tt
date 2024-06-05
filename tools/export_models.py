@@ -18,10 +18,13 @@ core = "https://localhost:8900"
 # This list is used as filter: only providers listed here get exported
 providers = [
     "aws",
+    "gcp",
+]
+# This list is used to filter out unsupported providers from base kind diagrams
+unsupported_providers = [
     "azure",
     "digitalocean",
     "dockerhub",
-    "gcp",
     "github",
     "kubernetes",
     "onelogin",
@@ -90,6 +93,8 @@ def write_md(provider: str,
             file.write(f"<ZoomPanPinch>\n\n")
             file.write(f'```kroki imgType="plantuml" imgAlt="Diagram of {name} data model"\n')
             img_str = get_url(f"{core}/graph/fix/model/uml", params=properties(name)).text
+            img_str = re.sub(rf"class\s+({'|'.join(unsupported_providers)})\w+\s+{{\s+}}\s+", "", img_str)
+            img_str = re.sub(rf"\w+\s+<\|---\s+({'|'.join(unsupported_providers)})\w+\s+", "", img_str)
             file.write(re.sub(r"\n+", "\n", img_str).strip())
             file.write("\n```\n\n")
             file.write("</ZoomPanPinch>\n")

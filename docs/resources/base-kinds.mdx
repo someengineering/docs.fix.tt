@@ -97,23 +97,7 @@ class account {
 }
 class aws_account {
 }
-class azure_subscription {
-}
-class digitalocean_team {
-}
-class dockerhub_namespace {
-}
 class gcp_project {
-}
-class github_account {
-}
-class kubernetes_cluster {
-}
-class onelogin_account {
-}
-class onprem_location {
-}
-class posthog_project {
 }
 class resource {
 **age**: duration
@@ -127,26 +111,9 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class scarf_organization {
-}
-class slack_team {
-}
-class vsphere_host {
-}
 resource <|--- account
 account <|--- aws_account
-account <|--- azure_subscription
-account <|--- digitalocean_team
-account <|--- dockerhub_namespace
 account <|--- gcp_project
-account <|--- github_account
-account <|--- kubernetes_cluster
-account <|--- onelogin_account
-account <|--- onprem_location
-account <|--- posthog_project
-account <|--- scarf_organization
-account <|--- slack_team
-account <|--- vsphere_host
 @enduml
 ```
 
@@ -185,8 +152,6 @@ class autoscaling_group {
 }
 class aws_autoscaling_group {
 }
-class azure_virtual_machine_scale_set {
-}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -201,7 +166,6 @@ class resource {
 }
 resource <|--- autoscaling_group
 autoscaling_group <|--- aws_autoscaling_group
-autoscaling_group <|--- azure_virtual_machine_scale_set
 @enduml
 ```
 
@@ -236,11 +200,7 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_s3_bucket {
 }
-class azure_blob_container {
-}
 class bucket {
-}
-class digitalocean_space {
 }
 class resource {
 **age**: duration
@@ -255,9 +215,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 bucket <|--- aws_s3_bucket
-bucket <|--- azure_blob_container
 resource <|--- bucket
-bucket <|--- digitalocean_space
 @enduml
 ```
 
@@ -297,8 +255,6 @@ class certificate {
 **expires**: datetime
 **sha1_fingerprint**: string
 }
-class digitalocean_certificate {
-}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -313,7 +269,6 @@ class resource {
 }
 certificate <|--- aws_iam_server_certificate
 resource <|--- certificate
-certificate <|--- digitalocean_certificate
 @enduml
 ```
 
@@ -361,8 +316,6 @@ class database {
 **volume_iops**: int64
 **volume_size**: int64
 }
-class digitalocean_database {
-}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -378,7 +331,6 @@ class resource {
 database <|--- aws_rds_cluster
 database <|--- aws_rds_instance
 resource <|--- database
-database <|--- digitalocean_database
 @enduml
 ```
 
@@ -413,8 +365,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_route53_resource_record {
 }
-class digitalocean_domain_record {
-}
 class dns_record {
 **record_data**: string
 **record_expire**: int64
@@ -446,7 +396,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 dns_record <|--- aws_route53_resource_record
-dns_record <|--- digitalocean_domain_record
 resource <|--- dns_record
 @enduml
 ```
@@ -535,8 +484,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_route53_zone {
 }
-class digitalocean_domain {
-}
 class dns_zone {
 }
 class resource {
@@ -552,7 +499,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 dns_zone <|--- aws_route53_zone
-dns_zone <|--- digitalocean_domain
 resource <|--- dns_zone
 @enduml
 ```
@@ -588,8 +534,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc_endpoint {
 }
-class digitalocean_cdn_endpoint {
-}
 class endpoint {
 }
 class resource {
@@ -605,7 +549,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 endpoint <|--- aws_vpc_endpoint
-endpoint <|--- digitalocean_cdn_endpoint
 resource <|--- endpoint
 @enduml
 ```
@@ -639,8 +582,6 @@ skinparam RoundCorner 5
 skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
-class azure_firewall {
-}
 class firewall {
 }
 class resource {
@@ -655,7 +596,6 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-firewall <|--- azure_firewall
 resource <|--- firewall
 @enduml
 ```
@@ -693,12 +633,6 @@ class aws_ec2_internet_gateway {
 }
 class aws_ec2_nat_gateway {
 }
-class azure_application_gateway {
-}
-class azure_express_route_gateway {
-}
-class azure_vpn_gateway {
-}
 class gateway {
 }
 class resource {
@@ -715,9 +649,6 @@ class resource {
 }
 gateway <|--- aws_ec2_internet_gateway
 gateway <|--- aws_ec2_nat_gateway
-gateway <|--- azure_application_gateway
-gateway <|--- azure_express_route_gateway
-gateway <|--- azure_vpn_gateway
 resource <|--- gateway
 @enduml
 ```
@@ -767,11 +698,8 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class slack_usergroup {
-}
 group <|--- aws_iam_group
 resource <|--- group
-group <|--- slack_usergroup
 @enduml
 ```
 
@@ -858,14 +786,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_instance {
 }
-class azure_virtual_machine {
-}
-class azure_virtual_machine_base {
-}
-class azure_virtual_machine_scale_set_instance {
-}
-class digitalocean_droplet {
-}
 class gcp_instance {
 }
 class instance {
@@ -873,10 +793,6 @@ class instance {
 **instance_memory**: double
 **instance_status**: instance_status
 **instance_type**: string
-}
-class kubernetes_node {
-}
-class onprem_instance {
 }
 class resource {
 **age**: duration
@@ -890,18 +806,9 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class vsphere_instance {
-}
 instance <|--- aws_ec2_instance
-azure_virtual_machine_base <|--- azure_virtual_machine
-instance <|--- azure_virtual_machine_base
-azure_virtual_machine_base <|--- azure_virtual_machine_scale_set_instance
-instance <|--- digitalocean_droplet
 instance <|--- gcp_instance
 resource <|--- instance
-instance <|--- kubernetes_node
-instance <|--- onprem_instance
-instance <|--- vsphere_instance
 @enduml
 ```
 
@@ -986,10 +893,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_instance_type {
 }
-class azure_virtual_machine_size {
-}
-class digitalocean_droplet_size {
-}
 class gcp_machine_type {
 }
 class instance_type {
@@ -1018,8 +921,6 @@ class resource {
 class type {
 }
 instance_type <|--- aws_ec2_instance_type
-instance_type <|--- azure_virtual_machine_size
-instance_type <|--- digitalocean_droplet_size
 instance_type <|--- gcp_machine_type
 type <|--- instance_type
 resource <|--- phantom_resource
@@ -1059,8 +960,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_elastic_ip {
 }
-class digitalocean_floating_ip {
-}
 class ip_address {
 **ip_address**: string
 **ip_address_family**: string
@@ -1078,7 +977,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 ip_address <|--- aws_ec2_elastic_ip
-ip_address <|--- digitalocean_floating_ip
 resource <|--- ip_address
 @enduml
 ```
@@ -1112,8 +1010,6 @@ skinparam RoundCorner 5
 skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
-class digitalocean_ssh_key {
-}
 class keypair {
 **fingerprint**: string
 }
@@ -1129,7 +1025,6 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-keypair <|--- digitalocean_ssh_key
 resource <|--- keypair
 @enduml
 ```
@@ -1167,14 +1062,6 @@ class aws_alb {
 }
 class aws_elb {
 }
-class azure_load_balancer {
-}
-class digitalocean_load_balancer {
-}
-class kubernetes_ingress {
-}
-class kubernetes_service {
-}
 class load_balancer {
 **backends**: string[]
 **lb_type**: string
@@ -1194,10 +1081,6 @@ class resource {
 }
 load_balancer <|--- aws_alb
 load_balancer <|--- aws_elb
-load_balancer <|--- azure_load_balancer
-load_balancer <|--- digitalocean_load_balancer
-load_balancer <|--- kubernetes_ingress
-load_balancer <|--- kubernetes_service
 resource <|--- load_balancer
 @enduml
 ```
@@ -1233,8 +1116,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_eks_cluster {
 }
-class digitalocean_kubernetes_cluster {
-}
 class gcp_container_cluster {
 }
 class managed_kubernetes_cluster_provider {
@@ -1254,7 +1135,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 managed_kubernetes_cluster_provider <|--- aws_eks_cluster
-managed_kubernetes_cluster_provider <|--- digitalocean_kubernetes_cluster
 managed_kubernetes_cluster_provider <|--- gcp_container_cluster
 resource <|--- managed_kubernetes_cluster_provider
 @enduml
@@ -1291,13 +1171,7 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc {
 }
-class azure_virtual_network {
-}
-class digitalocean_vpc {
-}
 class network {
-}
-class onprem_network {
 }
 class resource {
 **age**: duration
@@ -1312,10 +1186,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 network <|--- aws_vpc
-network <|--- azure_virtual_network
-network <|--- digitalocean_vpc
 resource <|--- network
-network <|--- onprem_network
 @enduml
 ```
 
@@ -1454,8 +1325,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_efs_file_system {
 }
-class azure_file_share {
-}
 class network_share {
 **share_encrypted**: boolean
 **share_iops**: int64
@@ -1477,7 +1346,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 network_share <|--- aws_efs_file_system
-network_share <|--- azure_file_share
 resource <|--- network_share
 @enduml
 ```
@@ -1613,8 +1481,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc_peering_connection {
 }
-class azure_vpn_site {
-}
 class peering_connection {
 }
 class resource {
@@ -1630,7 +1496,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 peering_connection <|--- aws_vpc_peering_connection
-peering_connection <|--- azure_vpn_site
 resource <|--- peering_connection
 @enduml
 ```
@@ -1666,8 +1531,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_iam_policy {
 }
-class azure_firewall_policy {
-}
 class policy {
 }
 class resource {
@@ -1683,7 +1546,6 @@ class resource {
 **tags**: dictionary[string, string]
 }
 policy <|--- aws_iam_policy
-policy <|--- azure_firewall_policy
 resource <|--- policy
 @enduml
 ```
@@ -1719,19 +1581,7 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_region {
 }
-class azure_location {
-}
-class digitalocean_region {
-}
 class gcp_region {
-}
-class github_region {
-}
-class kubernetes_namespace {
-}
-class onelogin_region {
-}
-class onprem_region {
 }
 class phantom_resource {
 }
@@ -1752,22 +1602,10 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class slack_region {
-}
-class vsphere_data_center {
-}
 region <|--- aws_region
-region <|--- azure_location
-region <|--- digitalocean_region
 region <|--- gcp_region
-region <|--- github_region
-region <|--- kubernetes_namespace
-region <|--- onelogin_region
-region <|--- onprem_region
 resource <|--- phantom_resource
 phantom_resource <|--- region
-region <|--- slack_region
-region <|--- vsphere_data_center
 @enduml
 ```
 
@@ -2001,10 +1839,6 @@ class aws_ec2_snapshot {
 }
 class aws_rds_snapshot {
 }
-class azure_virtual_machine_snapshot {
-}
-class digitalocean_snapshot {
-}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -2028,8 +1862,6 @@ class snapshot {
 }
 snapshot <|--- aws_ec2_snapshot
 snapshot <|--- aws_rds_snapshot
-snapshot <|--- azure_virtual_machine_snapshot
-snapshot <|--- digitalocean_snapshot
 resource <|--- snapshot
 @enduml
 ```
@@ -2217,12 +2049,6 @@ class aws_ec2_instance_type {
 }
 class aws_ec2_volume_type {
 }
-class azure_disk_type {
-}
-class azure_virtual_machine_size {
-}
-class digitalocean_droplet_size {
-}
 class gcp_disk_type {
 }
 class gcp_machine_type {
@@ -2251,9 +2077,6 @@ class volume_type {
 }
 instance_type <|--- aws_ec2_instance_type
 volume_type <|--- aws_ec2_volume_type
-volume_type <|--- azure_disk_type
-instance_type <|--- azure_virtual_machine_size
-instance_type <|--- digitalocean_droplet_size
 volume_type <|--- gcp_disk_type
 instance_type <|--- gcp_machine_type
 type <|--- instance_type
@@ -2299,10 +2122,6 @@ class aws_iam_user {
 }
 class aws_root_user {
 }
-class github_user {
-}
-class onelogin_user {
-}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -2315,16 +2134,11 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class slack_user {
-}
 class user {
 }
 user <|--- aws_cognito_user
 user <|--- aws_iam_user
 user <|--- aws_root_user
-user <|--- github_user
-user <|--- onelogin_user
-user <|--- slack_user
 resource <|--- user
 @enduml
 ```
@@ -2360,13 +2174,7 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_volume {
 }
-class azure_disk {
-}
-class digitalocean_volume {
-}
 class gcp_disk {
-}
-class kubernetes_persistent_volume {
 }
 class resource {
 **age**: duration
@@ -2390,10 +2198,7 @@ class volume {
 **volume_type**: string
 }
 volume <|--- aws_ec2_volume
-volume <|--- azure_disk
-volume <|--- digitalocean_volume
 volume <|--- gcp_disk
-volume <|--- kubernetes_persistent_volume
 resource <|--- volume
 @enduml
 ```
@@ -2429,8 +2234,6 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_volume_type {
 }
-class azure_disk_type {
-}
 class gcp_disk_type {
 }
 class phantom_resource {
@@ -2456,7 +2259,6 @@ class volume_type {
 **volume_type**: string
 }
 volume_type <|--- aws_ec2_volume_type
-volume_type <|--- azure_disk_type
 volume_type <|--- gcp_disk_type
 resource <|--- phantom_resource
 phantom_resource <|--- quota
@@ -2510,13 +2312,10 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
-class vsphere_cluster {
-}
 class zone {
 }
 zone <|--- gcp_zone
 resource <|--- phantom_resource
-zone <|--- vsphere_cluster
 phantom_resource <|--- zone
 @enduml
 ```
