@@ -3,7 +3,7 @@ sidebar_position: 4
 sidebar_label: Traversals
 ---
 
-# Search Traversals
+# Search traversals
 
 `<--` traverses the inventory graph inbound, while `-->` traverses the graph outbound.
 
@@ -35,11 +35,11 @@ This query would return a list of all matching regions.
 is(aws_ec2_instance) <-- is(aws_region)
 ```
 
-![Inbound Traversal Example Query Diagram](./img/graph_query_inbound_example.png)
+![Inbound traversal example query diagram](./img/graph_query_inbound_example.png)
 
 :::
 
-## Including the Current Node
+## Including the current node
 
 `-[0:1]->` traverses the graph outbound, starting from the current node **(0)** until the next level **(1)**. The result will contain the current node plus all nodes one level outbound. The same applies for inbound with this statement `<-[0:1]-`.
 
@@ -49,7 +49,7 @@ is(aws_ec2_instance) <-- is(aws_region)
 is(aws_region) -[0:1]->`
 ```
 
-![Example Query Diagram](./img/graph_query_01.png)
+![Example query diagram](./img/graph_query_01.png)
 
 :::
 
@@ -61,13 +61,13 @@ is(aws_region) and name==global <-[0:1]-
 
 :::
 
-## By Depth
+## By depth
 
 ### Range
 
 `-[start:until]->` traverses the graph outbound starting from a user defined depth to a user defined depth. The graph will be traversed from the current node according to this specification. All matching nodes will be returned. The same applies for inbound traversals with `<-[start:until]-`.
 
-![Traversal by Depth Diagram](./img/graph_query_startuntil.png)
+![Traversal by depth diagram](./img/graph_query_startuntil.png)
 
 :::tip[Example]
 
@@ -79,7 +79,7 @@ is(aws_alb_target_groups) <-[2:2]- is(aws_iam_instance_profile)
 
 :::
 
-### One-Sided Range
+### One-sided range
 
 `-[start:]->` traverses the graph outbound starting from a user defined depth to the leafs of the graph. The graph will be traversed from the current node according to this specification. All matching nodes will be returned. The same applies for inbound traversals with `<-[start:]-`.
 
@@ -93,7 +93,7 @@ This query will select the aws account with name `sunshine` and then select all 
 
 :::
 
-### Bi-Directional
+### Bi-directional
 
 `<-[start:until]->` traverses the graph inbound and outbound starting from a user defined depth to a user defined depth. The graph will be traversed from the current node according to this specification. All matching nodes will be returned.
 
@@ -105,7 +105,7 @@ name="sunset" and is(aws_account) <-[0:]->
 
 :::
 
-## By Edge Type
+## By edge type
 
 Every [edge](../inventory-graph/index.mdx#edges) has a type which defines the relationship between two [nodes](../inventory-graph/index.mdx#nodes).
 
@@ -113,7 +113,7 @@ The types of edge can be specified via the graph traversal: `-<edge_type>[<start
 
 Fix Security currently supports two types of edges.
 
-### Default Edges
+### Default edges
 
 Default edges are assumed if no specific edge type is defined or requested. This usually means the "logical" dependency between two resources.
 
@@ -126,7 +126,7 @@ graph LR;
 
 A volume or network interface might be attached to a volume. The dependency between the 2 is expressed as default edge. Every resource in Fix Security is connected via an edge of type default.
 
-### Delete Edges
+### Delete edges
 
 If a resource has dependencies of type `delete`, then this resource can not be deleted right away. All transitive dependencies need to be deleted first, while the order is also defined in the graph. You can see the blast radius of a delete operation by following all transitive dependencies.
 

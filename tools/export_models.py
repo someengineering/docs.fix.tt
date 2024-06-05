@@ -70,7 +70,6 @@ def write_md(provider: str,
              kinds: list,
              properties: Callable[[str], Dict[str, str]],
              relationship: Optional[Callable[[str], Dict[str, str]]] = None) -> None:
-    # os.makedirs(f"./{provider}/img", exist_ok=True)  # make sure the provider directory exists
     if os.path.exists(f"./{provider}.mdx"):
         # in case the file exists, read the header section until the first h2 (##)
         with (open(f"./{provider}.mdx", "r+")) as file:
@@ -79,7 +78,7 @@ def write_md(provider: str,
         # provider file does not exist, create default header
         lines = [
             f"---\nsidebar_label: {provider.capitalize()}\n---\n\n",
-            f"# {provider.capitalize()} Resource Data Models\n\n",
+            f"# {provider.capitalize()} resources\n\n",
         ]
 
     with open(f"./{provider}.mdx", "w+") as file:
@@ -95,13 +94,14 @@ def write_md(provider: str,
             file.write("\n```\n\n")
             file.write("</ZoomPanPinch>\n")
             if relationship is not None:
-                file.write(f"<details>\n<summary>Relationships to Other Resources</summary>\n<div>\n")
+                file.write(f"<details>\n<summary>Relationships to other resources</summary>\n<div>\n")
                 file.write(
                     f'<ZoomPanPinch>\n\n```kroki imgType="plantuml" imgAlt="Diagram of {name} resource relationships"\n'
                 )
                 img_str = get_url(f"{core}/graph/fix/model/uml", params=relationship(name)).text
                 file.write(re.sub(r"\n+", "\n", img_str).strip())
-                file.write(f"\n```\n\n</ZoomPanPinch>\n</div>\n</details>\n\n")
+                file.write(f"\n```\n\n</ZoomPanPinch>\n</div>\n</details>\n")
+            file.write("\n")
 
 
 def load_valid_kinds() -> Tuple[Dict[str, Any], Dict[str, List[Any]]]:
@@ -151,7 +151,7 @@ def export() -> None:
 
     all_kinds, kinds = load_valid_kinds()
     print(f"Create base kinds")
-    write_md("unified_resources", [all_kinds[bk] for bk in base_kinds if bk in all_kinds], show_base_diagram)
+    write_md("base-kinds", [all_kinds[bk] for bk in base_kinds if bk in all_kinds], show_base_diagram)
     for provider in providers:
         if len(kinds.get(provider, [])) > 0:
             print("---------------------------")

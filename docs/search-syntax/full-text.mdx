@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Full-Text Search
+# Full-text search
 
 Each resource property value is indexed and searchable by Fix Security. Full-text search criteria is always enclosed in double quotes.
 
@@ -12,7 +12,7 @@ Each resource property value is indexed and searchable by Fix Security. Full-tex
 
 This command will search for above IP address in all properties of all resources. It splits the search term into tokens and matches those against the index.
 
-## Combining Different Search Terms
+## Combining search terms
 
 It is possible to combine different search criteria with `and` and `or`. Above search could also be expressed like this:
 
@@ -27,7 +27,7 @@ but allows for any other combination.
   "13.102"
 ```
 
-## Combining Other Filters
+## Combining other filters
 
 Full-text search queries can be combined with other [filters](./filters.mdx) to narrow down the search results. Take following example as inspiration, that uses a [kind filter](./filters.mdx#selecting-nodes-by-kind) and [predicates](./filters.mdx#selecting-nodes-by-predicate) in combination with a full-text search term.
 
