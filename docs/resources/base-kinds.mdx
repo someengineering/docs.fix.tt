@@ -152,6 +152,8 @@ class autoscaling_group {
 }
 class aws_autoscaling_group {
 }
+class gcp_autoscaler {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -166,6 +168,7 @@ class resource {
 }
 resource <|--- autoscaling_group
 autoscaling_group <|--- aws_autoscaling_group
+autoscaling_group <|--- gcp_autoscaler
 @enduml
 ```
 
@@ -202,6 +205,10 @@ class aws_s3_bucket {
 }
 class bucket {
 }
+class gcp_backend_bucket {
+}
+class gcp_bucket {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -216,6 +223,8 @@ class resource {
 }
 bucket <|--- aws_s3_bucket
 resource <|--- bucket
+bucket <|--- gcp_backend_bucket
+bucket <|--- gcp_bucket
 @enduml
 ```
 
@@ -255,6 +264,8 @@ class certificate {
 **expires**: datetime
 **sha1_fingerprint**: string
 }
+class gcp_ssl_certificate {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -269,6 +280,7 @@ class resource {
 }
 certificate <|--- aws_iam_server_certificate
 resource <|--- certificate
+certificate <|--- gcp_ssl_certificate
 @enduml
 ```
 
@@ -308,13 +320,15 @@ class aws_rds_instance {
 class database {
 **db_endpoint**: string
 **db_publicly_accessible**: boolean
-**db_status**: string
+**db_status**: database_instance_status
 **db_type**: string
 **db_version**: string
 **instance_type**: string
 **volume_encrypted**: boolean
 **volume_iops**: int64
 **volume_size**: int64
+}
+class gcp_sql_database_instance {
 }
 class resource {
 **age**: duration
@@ -331,6 +345,7 @@ class resource {
 database <|--- aws_rds_cluster
 database <|--- aws_rds_instance
 resource <|--- database
+database <|--- gcp_sql_database_instance
 @enduml
 ```
 
@@ -584,6 +599,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class firewall {
 }
+class gcp_firewall {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -597,6 +614,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 resource <|--- firewall
+firewall <|--- gcp_firewall
 @enduml
 ```
 
@@ -635,6 +653,10 @@ class aws_ec2_nat_gateway {
 }
 class gateway {
 }
+class gcp_external_vpn_gateway {
+}
+class gcp_vpn_gateway {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -650,6 +672,8 @@ class resource {
 gateway <|--- aws_ec2_internet_gateway
 gateway <|--- aws_ec2_nat_gateway
 resource <|--- gateway
+gateway <|--- gcp_external_vpn_gateway
+gateway <|--- gcp_vpn_gateway
 @enduml
 ```
 
@@ -732,6 +756,8 @@ skinparam RoundCorner 5
 skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
+class gcp_health_check {
+}
 class health_check {
 **check_interval**: int64
 **health_check_type**: string
@@ -751,6 +777,7 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
+health_check <|--- gcp_health_check
 resource <|--- health_check
 @enduml
 ```
@@ -960,6 +987,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_elastic_ip {
 }
+class gcp_address {
+}
 class ip_address {
 **ip_address**: string
 **ip_address_family**: string
@@ -977,6 +1006,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 ip_address <|--- aws_ec2_elastic_ip
+ip_address <|--- gcp_address
 resource <|--- ip_address
 @enduml
 ```
@@ -1062,6 +1092,8 @@ class aws_alb {
 }
 class aws_elb {
 }
+class gcp_forwarding_rule {
+}
 class load_balancer {
 **backends**: string[]
 **lb_type**: string
@@ -1081,6 +1113,7 @@ class resource {
 }
 load_balancer <|--- aws_alb
 load_balancer <|--- aws_elb
+load_balancer <|--- gcp_forwarding_rule
 resource <|--- load_balancer
 @enduml
 ```
@@ -1171,6 +1204,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc {
 }
+class gcp_network {
+}
 class network {
 }
 class resource {
@@ -1186,6 +1221,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 network <|--- aws_vpc
+network <|--- gcp_network
 resource <|--- network
 @enduml
 ```
@@ -1839,6 +1875,8 @@ class aws_ec2_snapshot {
 }
 class aws_rds_snapshot {
 }
+class gcp_snapshot {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -1862,6 +1900,7 @@ class snapshot {
 }
 snapshot <|--- aws_ec2_snapshot
 snapshot <|--- aws_rds_snapshot
+snapshot <|--- gcp_snapshot
 resource <|--- snapshot
 @enduml
 ```
@@ -1950,6 +1989,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_subnet {
 }
+class gcp_subnetwork {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -1965,6 +2006,7 @@ class resource {
 class subnet {
 }
 subnet <|--- aws_ec2_subnet
+subnet <|--- gcp_subnetwork
 resource <|--- subnet
 @enduml
 ```
@@ -1998,6 +2040,8 @@ skinparam RoundCorner 5
 skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
+class gcp_vpn_tunnel {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -2012,6 +2056,7 @@ class resource {
 }
 class tunnel {
 }
+tunnel <|--- gcp_vpn_tunnel
 resource <|--- tunnel
 @enduml
 ```
