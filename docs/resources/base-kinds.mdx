@@ -97,6 +97,8 @@ class account {
 }
 class aws_account {
 }
+class azure_subscription {
+}
 class gcp_project {
 }
 class resource {
@@ -113,6 +115,7 @@ class resource {
 }
 resource <|--- account
 account <|--- aws_account
+account <|--- azure_subscription
 account <|--- gcp_project
 @enduml
 ```
@@ -152,6 +155,8 @@ class autoscaling_group {
 }
 class aws_autoscaling_group {
 }
+class azure_virtual_machine_scale_set {
+}
 class gcp_autoscaler {
 }
 class resource {
@@ -168,6 +173,7 @@ class resource {
 }
 resource <|--- autoscaling_group
 autoscaling_group <|--- aws_autoscaling_group
+autoscaling_group <|--- azure_virtual_machine_scale_set
 autoscaling_group <|--- gcp_autoscaler
 @enduml
 ```
@@ -203,6 +209,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_s3_bucket {
 }
+class azure_blob_container {
+}
 class bucket {
 }
 class gcp_backend_bucket {
@@ -222,6 +230,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 bucket <|--- aws_s3_bucket
+bucket <|--- azure_blob_container
 resource <|--- bucket
 bucket <|--- gcp_backend_bucket
 bucket <|--- gcp_bucket
@@ -597,6 +606,8 @@ skinparam RoundCorner 5
 skinparam Shadowing false
 skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
+class azure_firewall {
+}
 class firewall {
 }
 class gcp_firewall {
@@ -613,6 +624,7 @@ class resource {
 **name**: string
 **tags**: dictionary[string, string]
 }
+firewall <|--- azure_firewall
 resource <|--- firewall
 firewall <|--- gcp_firewall
 @enduml
@@ -651,6 +663,12 @@ class aws_ec2_internet_gateway {
 }
 class aws_ec2_nat_gateway {
 }
+class azure_application_gateway {
+}
+class azure_express_route_gateway {
+}
+class azure_vpn_gateway {
+}
 class gateway {
 }
 class gcp_external_vpn_gateway {
@@ -671,6 +689,9 @@ class resource {
 }
 gateway <|--- aws_ec2_internet_gateway
 gateway <|--- aws_ec2_nat_gateway
+gateway <|--- azure_application_gateway
+gateway <|--- azure_express_route_gateway
+gateway <|--- azure_vpn_gateway
 resource <|--- gateway
 gateway <|--- gcp_external_vpn_gateway
 gateway <|--- gcp_vpn_gateway
@@ -813,6 +834,12 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_instance {
 }
+class azure_virtual_machine {
+}
+class azure_virtual_machine_base {
+}
+class azure_virtual_machine_scale_set_instance {
+}
 class gcp_instance {
 }
 class instance {
@@ -834,6 +861,9 @@ class resource {
 **tags**: dictionary[string, string]
 }
 instance <|--- aws_ec2_instance
+azure_virtual_machine_base <|--- azure_virtual_machine
+instance <|--- azure_virtual_machine_base
+azure_virtual_machine_base <|--- azure_virtual_machine_scale_set_instance
 instance <|--- gcp_instance
 resource <|--- instance
 @enduml
@@ -920,6 +950,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_instance_type {
 }
+class azure_virtual_machine_size {
+}
 class gcp_machine_type {
 }
 class instance_type {
@@ -948,6 +980,7 @@ class resource {
 class type {
 }
 instance_type <|--- aws_ec2_instance_type
+instance_type <|--- azure_virtual_machine_size
 instance_type <|--- gcp_machine_type
 type <|--- instance_type
 resource <|--- phantom_resource
@@ -1092,6 +1125,8 @@ class aws_alb {
 }
 class aws_elb {
 }
+class azure_load_balancer {
+}
 class gcp_forwarding_rule {
 }
 class load_balancer {
@@ -1113,6 +1148,7 @@ class resource {
 }
 load_balancer <|--- aws_alb
 load_balancer <|--- aws_elb
+load_balancer <|--- azure_load_balancer
 load_balancer <|--- gcp_forwarding_rule
 resource <|--- load_balancer
 @enduml
@@ -1204,6 +1240,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc {
 }
+class azure_virtual_network {
+}
 class gcp_network {
 }
 class network {
@@ -1221,6 +1259,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 network <|--- aws_vpc
+network <|--- azure_virtual_network
 network <|--- gcp_network
 resource <|--- network
 @enduml
@@ -1361,6 +1400,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_efs_file_system {
 }
+class azure_file_share {
+}
 class network_share {
 **share_encrypted**: boolean
 **share_iops**: int64
@@ -1382,6 +1423,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 network_share <|--- aws_efs_file_system
+network_share <|--- azure_file_share
 resource <|--- network_share
 @enduml
 ```
@@ -1517,6 +1559,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_vpc_peering_connection {
 }
+class azure_vpn_site {
+}
 class peering_connection {
 }
 class resource {
@@ -1532,6 +1576,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 peering_connection <|--- aws_vpc_peering_connection
+peering_connection <|--- azure_vpn_site
 resource <|--- peering_connection
 @enduml
 ```
@@ -1567,6 +1612,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_iam_policy {
 }
+class azure_firewall_policy {
+}
 class policy {
 }
 class resource {
@@ -1582,6 +1629,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 policy <|--- aws_iam_policy
+policy <|--- azure_firewall_policy
 resource <|--- policy
 @enduml
 ```
@@ -1617,6 +1665,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_region {
 }
+class azure_location {
+}
 class gcp_region {
 }
 class phantom_resource {
@@ -1639,6 +1689,7 @@ class resource {
 **tags**: dictionary[string, string]
 }
 region <|--- aws_region
+region <|--- azure_location
 region <|--- gcp_region
 resource <|--- phantom_resource
 phantom_resource <|--- region
@@ -1875,6 +1926,8 @@ class aws_ec2_snapshot {
 }
 class aws_rds_snapshot {
 }
+class azure_virtual_machine_snapshot {
+}
 class gcp_snapshot {
 }
 class resource {
@@ -1900,6 +1953,7 @@ class snapshot {
 }
 snapshot <|--- aws_ec2_snapshot
 snapshot <|--- aws_rds_snapshot
+snapshot <|--- azure_virtual_machine_snapshot
 snapshot <|--- gcp_snapshot
 resource <|--- snapshot
 @enduml
@@ -2094,6 +2148,10 @@ class aws_ec2_instance_type {
 }
 class aws_ec2_volume_type {
 }
+class azure_disk_type {
+}
+class azure_virtual_machine_size {
+}
 class gcp_disk_type {
 }
 class gcp_machine_type {
@@ -2122,6 +2180,8 @@ class volume_type {
 }
 instance_type <|--- aws_ec2_instance_type
 volume_type <|--- aws_ec2_volume_type
+volume_type <|--- azure_disk_type
+instance_type <|--- azure_virtual_machine_size
 volume_type <|--- gcp_disk_type
 instance_type <|--- gcp_machine_type
 type <|--- instance_type
@@ -2219,6 +2279,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_volume {
 }
+class azure_disk {
+}
 class gcp_disk {
 }
 class resource {
@@ -2243,6 +2305,7 @@ class volume {
 **volume_type**: string
 }
 volume <|--- aws_ec2_volume
+volume <|--- azure_disk
 volume <|--- gcp_disk
 resource <|--- volume
 @enduml
@@ -2279,6 +2342,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_ec2_volume_type {
 }
+class azure_disk_type {
+}
 class gcp_disk_type {
 }
 class phantom_resource {
@@ -2304,6 +2369,7 @@ class volume_type {
 **volume_type**: string
 }
 volume_type <|--- aws_ec2_volume_type
+volume_type <|--- azure_disk_type
 volume_type <|--- gcp_disk_type
 resource <|--- phantom_resource
 phantom_resource <|--- quota
