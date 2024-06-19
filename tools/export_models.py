@@ -4,7 +4,7 @@ import re
 import time
 from collections import defaultdict
 from itertools import takewhile
-from typing import Any, Dict, List, Callable, Tuple, Optional
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import requests
 import urllib3
@@ -18,11 +18,11 @@ core = "https://localhost:8900"
 # This list is used as filter: only providers listed here get exported
 providers = [
     "aws",
+    "azure",
     "gcp",
 ]
 # This list is used to filter out unsupported providers from base kind diagrams
 unsupported_providers = [
-    "azure",
     "digitalocean",
     "dockerhub",
     "github",
@@ -36,13 +36,51 @@ unsupported_providers = [
 ]
 urllib3.disable_warnings(InsecureRequestWarning)
 
-base_kinds = ["access_key", "account", "autoscaling_group", "bucket", "certificate", "database", "dns_record",
-              "dns_record_set", "dns_zone", "endpoint", "firewall", "gateway", "group", "health_check", "instance",
-              "instance_profile", "instance_type", "ip_address", "keypair", "load_balancer",
-              "managed_kubernetes_cluster_provider", "network", "network_acl", "network_interface", "network_share",
-              "organizational_root", "organizational_unit", "peering_connection", "policy", "region", "role",
-              "routing_table", "security_group", "serverless_function", "snapshot", "stack", "subnet", "tunnel", "type",
-              "user", "volume", "volume_type", "zone"]
+base_kinds = [
+    "access_key",
+    "account",
+    "autoscaling_group",
+    "bucket",
+    "certificate",
+    "database",
+    "dns_record",
+    "dns_record_set",
+    "dns_zone",
+    "endpoint",
+    "firewall",
+    "gateway",
+    "group",
+    "health_check",
+    "instance",
+    "instance_profile",
+    "instance_type",
+    "ip_address",
+    "keypair",
+    "load_balancer",
+    "managed_kubernetes_cluster_provider",
+    "network",
+    "network_acl",
+    "network_interface",
+    "network_share",
+    "organizational_root",
+    "organizational_unit",
+    "peering_connection",
+    "policy",
+    "region",
+    "role",
+    "routing_table",
+    "security_group",
+    "serverless_function",
+    "snapshot",
+    "stack",
+    "subnet",
+    "tunnel",
+    "type",
+    "user",
+    "volume",
+    "volume_type",
+    "zone",
+]
 
 
 def get_url(url: str, params: dict = None) -> Response:
@@ -62,20 +100,26 @@ def get_kinds() -> Tuple[Dict[str, Any], Dict[str, List[Any]]]:
     all_kinds: Dict[str, Any] = {}
     for kind in get_url(f"{core}/graph/fix/model").json():
         all_kinds[kind["fqn"]] = kind
-        groups = [a for a in providers if kind["fqn"].startswith(f"{a}_") and kind.get("aggregate_root", False)]
+        groups = [
+            a
+            for a in providers
+            if kind["fqn"].startswith(f"{a}_") and kind.get("aggregate_root", False)
+        ]
         if groups:
             kinds[groups[0]].append(kind)
 
     return all_kinds, kinds
 
 
-def write_md(provider: str,
-             kinds: list,
-             properties: Callable[[str], Dict[str, str]],
-             relationship: Optional[Callable[[str], Dict[str, str]]] = None) -> None:
+def write_md(
+    provider: str,
+    kinds: list,
+    properties: Callable[[str], Dict[str, str]],
+    relationship: Optional[Callable[[str], Dict[str, str]]] = None,
+) -> None:
     if os.path.exists(f"./{provider}.mdx"):
         # in case the file exists, read the header section until the first h2 (##)
-        with (open(f"./{provider}.mdx", "r+")) as file:
+        with open(f"./{provider}.mdx", "r+") as file:
             lines = takewhile(lambda ll: not ll.startswith("## "), file.readlines())
     else:
         # provider file does not exist, create default header
@@ -91,19 +135,35 @@ def write_md(provider: str,
         for name in sorted(a["fqn"] for a in kinds):
             file.write(f"## `{name}`\n\n")
             file.write(f"<ZoomPanPinch>\n\n")
-            file.write(f'```kroki imgType="plantuml" imgAlt="Diagram of {name} data model"\n')
-            img_str = get_url(f"{core}/graph/fix/model/uml", params=properties(name)).text
-            img_str = re.sub(rf"class\s+({'|'.join(unsupported_providers)})\w+\s+{{\s+}}\s+", "", img_str)
-            img_str = re.sub(rf"\w+\s+<\|---\s+({'|'.join(unsupported_providers)})\w+\s+", "", img_str)
+            file.write(
+                f'```kroki imgType="plantuml" imgAlt="Diagram of {name} data model"\n'
+            )
+            img_str = get_url(
+                f"{core}/graph/fix/model/uml", params=properties(name)
+            ).text
+            img_str = re.sub(
+                rf"class\s+({'|'.join(unsupported_providers)})\w+\s+{{\s+}}\s+",
+                "",
+                img_str,
+            )
+            img_str = re.sub(
+                rf"\w+\s+<\|---\s+({'|'.join(unsupported_providers)})\w+\s+",
+                "",
+                img_str,
+            )
             file.write(re.sub(r"\n+", "\n", img_str).strip())
             file.write("\n```\n\n")
             file.write("</ZoomPanPinch>\n")
             if relationship is not None:
-                file.write(f"<details>\n<summary>Relationships to other resources</summary>\n<div>\n")
+                file.write(
+                    f"<details>\n<summary>Relationships to other resources</summary>\n<div>\n"
+                )
                 file.write(
                     f'<ZoomPanPinch>\n\n```kroki imgType="plantuml" imgAlt="Diagram of {name} resource relationships"\n'
                 )
-                img_str = get_url(f"{core}/graph/fix/model/uml", params=relationship(name)).text
+                img_str = get_url(
+                    f"{core}/graph/fix/model/uml", params=relationship(name)
+                ).text
                 file.write(re.sub(r"\n+", "\n", img_str).strip())
                 file.write(f"\n```\n\n</ZoomPanPinch>\n</div>\n</details>\n")
             file.write("\n")
@@ -156,11 +216,17 @@ def export() -> None:
 
     all_kinds, kinds = load_valid_kinds()
     print(f"Create base kinds")
-    write_md("base-kinds", [all_kinds[bk] for bk in base_kinds if bk in all_kinds], show_base_diagram)
+    write_md(
+        "base-kinds",
+        [all_kinds[bk] for bk in base_kinds if bk in all_kinds],
+        show_base_diagram,
+    )
     for provider in providers:
         if len(kinds.get(provider, [])) > 0:
             print("---------------------------")
-            print(f"Create provider file: {provider} with {len(kinds[provider])} service kinds")
+            print(
+                f"Create provider file: {provider} with {len(kinds[provider])} service kinds"
+            )
             write_md(provider, kinds[provider], class_diagram, relationship_diagram)
 
 
