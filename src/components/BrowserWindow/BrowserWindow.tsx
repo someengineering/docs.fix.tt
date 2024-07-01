@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './BrowserWindow.css';
 
 interface Area {
@@ -23,6 +23,40 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
   url = 'https://app.fix.security',
   alt = 'Website Screenshot',
 }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [scaledAreas, setScaledAreas] = useState<Area[]>([]);
+
+  useEffect(() => {
+    const scaleAreas = () => {
+      const image = imgRef.current;
+      if (image && areas) {
+        const { naturalWidth, naturalHeight, clientWidth, clientHeight } =
+          image;
+        const widthRatio = clientWidth / naturalWidth;
+        const heightRatio = clientHeight / naturalHeight;
+
+        const newAreas = areas.map((area) => {
+          const coordsArray = area.coords.split(',').map(Number);
+          const scaledCoords = coordsArray
+            .map((coord, index) =>
+              Math.round((index % 2 === 0 ? widthRatio : heightRatio) * coord),
+            )
+            .join(',');
+          return { ...area, coords: scaledCoords };
+        });
+
+        setScaledAreas(newAreas);
+      }
+    };
+
+    scaleAreas();
+    window.addEventListener('resize', scaleAreas);
+
+    return () => {
+      window.removeEventListener('resize', scaleAreas);
+    };
+  }, [areas, imageSrc]); // Re-run effect if the image source or areas change
+
   return (
     <div className="browser-window">
       <div className="browser-header">
@@ -37,13 +71,14 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
       </div>
       <div className="browser-content">
         <img
+          ref={imgRef}
           src={imageSrc}
           alt={alt}
           useMap={mapName ? `#${mapName}` : undefined}
         />
-        {mapName && areas && (
+        {mapName && scaledAreas.length > 0 && (
           <map name={mapName}>
-            {areas.map((area, index) => (
+            {scaledAreas.map((area, index) => (
               <area
                 key={index}
                 shape={area.shape}
