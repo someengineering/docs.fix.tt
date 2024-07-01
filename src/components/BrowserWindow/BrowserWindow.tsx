@@ -55,7 +55,7 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
     return () => {
       window.removeEventListener('resize', scaleAreas);
     };
-  }, [areas, imageSrc]); // Re-run effect if the image source or areas change
+  }, [areas, imageSrc]);
 
   return (
     <div className="browser-window">
