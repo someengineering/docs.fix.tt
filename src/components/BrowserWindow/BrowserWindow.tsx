@@ -10,6 +10,7 @@ interface Area {
 }
 
 interface BrowserWindowProps {
+  id: string;
   imageSrc: string;
   url: string;
   mapName?: string;
@@ -18,6 +19,7 @@ interface BrowserWindowProps {
 }
 
 const BrowserWindow: React.FC<BrowserWindowProps> = ({
+  id,
   imageSrc,
   mapName,
   areas,
@@ -57,8 +59,13 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
     };
   }, [scaleAreas]);
 
+  const handleUrlClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    window.open(url, '_blank');
+  };
+
   return (
-    <div className="browser-window">
+    <div id={id} className="browser-window">
       <div className="browser-header">
         <div className="buttons">
           <span className="button close"></span>
@@ -66,7 +73,13 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
           <span className="button maximize"></span>
         </div>
         <div className="url-bar">
-          <input type="text" value={url} readOnly />
+          <input
+            type="text"
+            value={url}
+            readOnly
+            onClick={handleUrlClick}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </div>
       <div className="browser-content">

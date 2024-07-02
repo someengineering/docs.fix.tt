@@ -1,0 +1,65 @@
+import BrowserWindow from '@site/src/components/BrowserWindow/BrowserWindow';
+
+# Inventory
+
+<BrowserWindow 
+    imageSrc={require('./img/inventory_closed.png').default}
+    alt="Inventory Overview"
+    url="https://app.fix.security/inventory"
+    id="inventory-overview"
+/>
+
+This is the Inventory screen, where you can search through your entire cloud infrastructure. You can perform a full-text search to find specific resources and use filters to refine your search by account and other properties. The screen also allows you to switch between a Form-based search for guided queries and an Advanced search for free-form search inputs. In the center, you have a list of example searches that highlight common queries to help you quickly identify issues or resources within your environment.
+
+## Search Results
+
+<BrowserWindow
+    imageSrc={require('./img/inventory_search_easy.png').default}
+    alt="Inventory Search Easy"
+    url="https://app.fix.security/inventory"
+    id="inventory-search-easy"
+/>
+
+The search results are displayed in a columnar format for easy viewing and analysis. Each result is presented with a set of default columns, including the kind, ID, name, volume status, last access, age, cloud, and account. Additionally, any column that is part of your search filter is automatically included in this view. On the right side, there is a download button that allows you to export all the results as a CSV file, enabling further analysis and reporting outside the application.
+
+<BrowserWindow
+    imageSrc={require('./img/inventory_search_advanced.png').default}
+    alt="Inventory Search Advanced"
+    url="https://app.fix.security/inventory"
+    id="inventory-search-advanced"
+/>
+
+This is the same search using the advanced search feature. Here you can enter free-form search queries.
+
+## Resource Details
+
+<BrowserWindow
+    imageSrc={require('./img/inventory_resource.png').default}
+    alt="Inventory Resource Neighbors"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-neighbors"
+/>
+
+Clicking on any row in the search results opens the Resource View. At the top of this view, you will see a Neighborhood Map, which visually displays the connections between the selected resource and other resources in your infrastructure. This helps you understand the relationships and dependencies between various components.
+
+Below the Neighborhood Map, you will find the Basic Information section. This section provides key details about the resource, such as its name, ID, and creation date, giving you a quick overview of the resource's essential attributes.
+
+Further down, you will see the Tags section. This area lists all the tags associated with the resource, allowing you to view and manage metadata that can help with organizing and identifying resources within your cloud environment.
+
+<BrowserWindow 
+    imageSrc={require('./img/benchmark_resource_details.png').default}
+    alt="Inventory Resource Details"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-details"
+/>
+
+Scrolling down even further, you can unfold the Resource Details section. This section shows every property of the resource in detail. Any of these properties can be searched for.
+
+<BrowserWindow 
+    imageSrc={require('./img/benchmark_resource_issues_changes.png').default}
+    alt="Inventory Resource Issues & Changes"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-issues-changes"
+/>
+
+At the bottom, you will find sections for Security Issues and Changes. The Security Issues section highlights any security concerns related to the resource, such as unencrypted snapshots or non-compliance with security policies. The Changelog provides a historical record of changes made to the resource, including the creation date and any detected security issues, allowing you to track its lifecycle and changes over time.
