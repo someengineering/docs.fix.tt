@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useHistory } from '@docusaurus/router';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './BrowserWindow.css';
 
 interface Area {
@@ -23,39 +24,38 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
   url = 'https://app.fix.security',
   alt = 'Website Screenshot',
 }) => {
+  const history = useHistory();
   const imgRef = useRef<HTMLImageElement>(null);
   const [scaledAreas, setScaledAreas] = useState<Area[]>([]);
 
+  const scaleAreas = useCallback(() => {
+    const image = imgRef.current;
+    if (image && areas) {
+      const { naturalWidth, naturalHeight, clientWidth, clientHeight } = image;
+      const widthRatio = clientWidth / naturalWidth;
+      const heightRatio = clientHeight / naturalHeight;
+
+      const newAreas = areas.map((area) => {
+        const coordsArray = area.coords.split(',').map(Number);
+        const scaledCoords = coordsArray
+          .map((coord, index) =>
+            Math.round((index % 2 === 0 ? widthRatio : heightRatio) * coord),
+          )
+          .join(',');
+        return { ...area, coords: scaledCoords };
+      });
+
+      setScaledAreas(newAreas);
+    }
+  }, [areas]);
+
   useEffect(() => {
-    const scaleAreas = () => {
-      const image = imgRef.current;
-      if (image && areas) {
-        const { naturalWidth, naturalHeight, clientWidth, clientHeight } =
-          image;
-        const widthRatio = clientWidth / naturalWidth;
-        const heightRatio = clientHeight / naturalHeight;
-
-        const newAreas = areas.map((area) => {
-          const coordsArray = area.coords.split(',').map(Number);
-          const scaledCoords = coordsArray
-            .map((coord, index) =>
-              Math.round((index % 2 === 0 ? widthRatio : heightRatio) * coord),
-            )
-            .join(',');
-          return { ...area, coords: scaledCoords };
-        });
-
-        setScaledAreas(newAreas);
-      }
-    };
-
-    scaleAreas();
     window.addEventListener('resize', scaleAreas);
 
     return () => {
       window.removeEventListener('resize', scaleAreas);
     };
-  }, [areas, imageSrc]);
+  }, [scaleAreas]);
 
   return (
     <div className="browser-window">
@@ -75,6 +75,7 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
           src={imageSrc}
           alt={alt}
           useMap={mapName ? `#${mapName}` : undefined}
+          onLoad={scaleAreas}
         />
         {mapName && scaledAreas.length > 0 && (
           <map name={mapName}>
@@ -85,6 +86,10 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
                 coords={area.coords}
                 href={area.href}
                 alt={area.alt}
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push(area.href);
+                }}
               />
             ))}
           </map>
