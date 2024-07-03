@@ -164,11 +164,11 @@ const config: Config = {
             'iam/aws',
             'FixCollect.json',
           ),
-          // [`gcp-fix_access`]: path.resolve(
-          //   __dirname,
-          //   'iam/gcp',
-          //   'fix_access.json',
-          // ),
+          [`gcp-fix_access`]: path.resolve(
+            __dirname,
+            'iam/gcp',
+            'fix_access.json',
+          ),
         },
       } satisfies StoredDataOptions,
     ],

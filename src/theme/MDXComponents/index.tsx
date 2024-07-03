@@ -1,3 +1,4 @@
+import BrowserWindow from '@site/src/components/BrowserWindow';
 import SectionedDocCardList from '@site/src/components/SectionedDocCardList';
 import ZoomPanPinch from '@site/src/components/ZoomPanPinch';
 import MDXComponents from '@theme-original/MDXComponents';
@@ -14,4 +15,5 @@ export default {
   TabItem,
   Tabs,
   ZoomPanPinch,
+  BrowserWindow,
 };

@@ -1,6 +1,14 @@
 import { useHistory } from '@docusaurus/router';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import './BrowserWindow.css';
+import clsx from 'clsx';
+import {
+  FC,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import styles from './styles.module.css';
 
 interface Area {
   shape: 'rect' | 'circle' | 'poly';
@@ -18,7 +26,7 @@ interface BrowserWindowProps {
   alt?: string;
 }
 
-const BrowserWindow: React.FC<BrowserWindowProps> = ({
+const BrowserWindow: FC<BrowserWindowProps> = ({
   id,
   imageSrc,
   mapName,
@@ -59,20 +67,20 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
     };
   }, [scaleAreas]);
 
-  const handleUrlClick = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleUrlClick = (e: MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
     window.open(url, '_blank');
   };
 
   return (
-    <div id={id} className="browser-window">
-      <div className="browser-header">
-        <div className="browser-buttons">
-          <span className="browser-button close"></span>
-          <span className="browser-button minimize"></span>
-          <span className="browser-button maximize"></span>
+    <div id={id} className={styles.window}>
+      <div className={styles.header}>
+        <div className={styles.buttons}>
+          <span className={clsx(styles.button, styles.close)}></span>
+          <span className={clsx(styles.button, styles.minimize)}></span>
+          <span className={clsx(styles.button, styles.maximize)}></span>
         </div>
-        <div className="url-bar">
+        <div className={styles.urlBar}>
           <input
             type="text"
             value={url}
@@ -82,7 +90,7 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
           />
         </div>
       </div>
-      <div className="browser-content">
+      <div className={styles.content}>
         <img
           ref={imgRef}
           src={imageSrc}
