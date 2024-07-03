@@ -1,5 +1,7 @@
 # Benchmarks
 
+Clicking on a benchmark opens the detailed Benchmark View, which shows the status of various security controls and their compliance with the selected framework.
+
 <BrowserWindow 
     imageSrc={require('../img/benchmark_view.png').default}
     alt="Benchmark View"
@@ -7,21 +9,21 @@
     id="benchmark-view"
 />
 
-Clicking on a benchmark opens the detailed Benchmark View, which shows the status of various security controls and their compliance with the selected framework.
-
-### Control List
+### Control list
 
 On the left side, you see a list of control categories that have been checked, organized by sections of the benchmark. Each section is marked with an icon indicating its status.
 
-### Benchmark Details
+### Benchmark details
 
 On the right side, you see details about the benchmark, including the framework name (e.g., ISO 27001), version, and a brief description of the standard. Below this, a summary shows the number of checks that have failed out of the total checks performed.
 
-### Failing Checks
+### Failing checks
 
 The table lists the failing checks with details such as severity, the number of failing resources, and the specific check name. This section allows you to identify which controls need attention and remediation to improve your compliance status.
 
-## Control Details
+## Control details
+
+When you open a section on the left and click on a specific control, detailed information about that control, as well as the affected resources, is displayed.
 
 <BrowserWindow 
     imageSrc={require('../img/benchmark_details.png').default}
@@ -30,9 +32,7 @@ The table lists the failing checks with details such as severity, the number of 
     id="benchmark-details"
 />
 
-When you open a section on the left and click on a specific control, detailed information about that control, as well as the affected resources, is displayed.
-
-### Control Information
+### Control information
 
 On the top of the right side, you see detailed information about the selected control. This includes:
 
@@ -40,19 +40,21 @@ On the top of the right side, you see detailed information about the selected co
 - Description: An explanation of the control, defining its purpose and the rules for effective cryptography, such as using key management to secure data during storage and transmission.
 - Link to Inventory: The "Inspect Detection Search in Inventory" button takes you to the [Inventory](../inventory.mdx) screen, using the same search this control uses to identify affected resources.
 
-### Why Does It Matter?
+### Why does it matter?
 
 This section explains the importance of the control. For instance, it might highlight the risks associated with unencrypted RDS snapshots, such as potential data breaches, financial loss, and reputational damage if sensitive data is intercepted or accessed by unauthorized parties.
 
-### How to Fix
+### How to fix
 
 Provides practical guidance on how to address the issue. For example, it may suggest encrypting all existing and future RDS snapshots using AWS Key Management Service (KMS) keys and creating new snapshots with encryption enabled for existing unencrypted snapshots.
 
-### Affected Resources
+### Affected resources
 
 This table lists the resources impacted by the failing control. Clicking on a resource opens the Resource View, where you can see more details about the resource and its connections to other resources in your cloud environment.
 
 ## Resource View
+
+Clicking on an affected resource in the Benchmark Control Details opens the Resource View, providing in-depth information about the selected resource.
 
 <BrowserWindow 
     imageSrc={require('../img/benchmark_resource.png').default}
@@ -60,7 +62,5 @@ This table lists the resources impacted by the failing control. Clicking on a re
     url="https://app.fix.security/benchmark/iso27001"
     id="benchmark-resource"
 />
-
-Clicking on an affected resource in the Benchmark Control Details opens the Resource View, providing in-depth information about the selected resource.
 
 This view is identical to the [Inventory Resource View](../inventory.mdx#resource-details), with the same sections for Basic Information, Tags, Resource Details, Security Issues, and Changes.

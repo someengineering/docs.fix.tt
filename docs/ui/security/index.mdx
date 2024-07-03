@@ -1,4 +1,4 @@
-# Security Dashboard
+# Security dashboard
 
 The Security Dashboard provides a comprehensive overview of your cloud infrastructure's security status and recent changes.
 
@@ -9,11 +9,11 @@ The Security Dashboard provides a comprehensive overview of your cloud infrastru
     id="security-dashboard"
 />
 
-### Security Score
+### Security score
 
 On the right side, you can see the overall Security Score, a weighted number ranging from 0 to 100, with 100 being the best possible score, indicating no security issues. Critical issues impact the score more significantly than medium or low severity issues, reflecting their importance.
 
-### Top Security Enhancements
+### Top security enhancements
 
 Below the Security Score, this section lists the top 5 recommended security enhancements. These represent some of the most critical issues in your cloud infrastructure. Addressing these enhancements will significantly improve your security score. Each enhancement includes its associated resource type and severity to help you prioritize your actions.
 
@@ -29,14 +29,14 @@ This section shows the number of resources that have been improved or remediated
 
 ## Benchmarks
 
+The Benchmarks matrix provides a visual representation of the compliance scores for different security frameworks across your various cloud accounts. Each cell in the matrix corresponds to a specific account and framework, displaying a score that indicates how well that account adheres to the specified framework's standards.
+
 <BrowserWindow 
     imageSrc={require('../img/security_dashboard_benchmarks.png').default}
     alt="Security Dashboard Benchmarks"
     url="https://app.fix.security/security"
     id="security-dashboard-benchmarks"
 />
-
-The Benchmarks matrix provides a visual representation of the compliance scores for different security frameworks across your various cloud accounts. Each cell in the matrix corresponds to a specific account and framework, displaying a score that indicates how well that account adheres to the specified framework's standards.
 
 Clicking on a benchmark or on a score will open the [Benchmark Details](./benchmark.mdx) view, providing a detailed breakdown which controls are passing or failing, and the severity of the issues detected.
 
@@ -51,7 +51,7 @@ Clicking on a benchmark or on a score will open the [Benchmark Details](./benchm
 
 The Failing Check Timeline provides a visual representation of how your security posture has changed over time.
 
-## Accounts Summary
+## Accounts summary
 
 <BrowserWindow 
     imageSrc={require('../img/security_dashboard_accounts_summary.png').default}
