@@ -3,10 +3,10 @@
 Clicking on a benchmark opens the detailed Benchmark View, which shows the status of various security controls and their compliance with the selected framework.
 
 <BrowserWindow 
-    imageSrc={require('../img/benchmark_view.png').default}
-    alt="Benchmark View"
-    url="https://app.fix.security/benchmark/iso27001"
-    id="benchmark-view"
+  imageSrc={require('../img/benchmark_view.png').default}
+  alt="Benchmark View"
+  url="https://app.fix.security/benchmark/iso27001"
+  id="benchmark-view"
 />
 
 ### Control list
@@ -26,19 +26,19 @@ The table lists the failing checks with details such as severity, the number of 
 When you open a section on the left and click on a specific control, detailed information about that control, as well as the affected resources, is displayed.
 
 <BrowserWindow 
-    imageSrc={require('../img/benchmark_details.png').default}
-    alt="Benchmark Details"
-    url="https://app.fix.security/benchmark/iso27001"
-    id="benchmark-details"
+  imageSrc={require('../img/benchmark_details.png').default}
+  alt="Benchmark Details"
+  url="https://app.fix.security/benchmark/iso27001"
+  id="benchmark-details"
 />
 
 ### Control information
 
 On the top of the right side, you see detailed information about the selected control. This includes:
 
-- Control Name: The specific control being examined, e.g., "Ensure All AWS RDS Cluster and Instance Snapshots Are Encrypted."
-- Description: An explanation of the control, defining its purpose and the rules for effective cryptography, such as using key management to secure data during storage and transmission.
-- Link to Inventory: The "Inspect Detection Search in Inventory" button takes you to the [Inventory](../inventory.mdx) screen, using the same search this control uses to identify affected resources.
+- **Control Name:** The specific control being examined, e.g., "Ensure All AWS RDS Cluster and Instance Snapshots Are Encrypted."
+- **Description:** An explanation of the control, defining its purpose and the rules for effective cryptography, such as using key management to secure data during storage and transmission.
+- **Link to Inventory:** The "Inspect Detection Search in Inventory" button takes you to the [Inventory](../inventory.mdx) screen, using the same search this control uses to identify affected resources.
 
 ### Why does it matter?
 
@@ -57,10 +57,10 @@ This table lists the resources impacted by the failing control. Clicking on a re
 Clicking on an affected resource in the Benchmark Control Details opens the Resource View, providing in-depth information about the selected resource.
 
 <BrowserWindow 
-    imageSrc={require('../img/benchmark_resource.png').default}
-    alt="Benchmark Resource"
-    url="https://app.fix.security/benchmark/iso27001"
-    id="benchmark-resource"
+  imageSrc={require('../img/benchmark_resource.png').default}
+  alt="Benchmark Resource"
+  url="https://app.fix.security/benchmark/iso27001"
+  id="benchmark-resource"
 />
 
 This view is identical to the [Inventory Resource View](../inventory.mdx#resource-details), with the same sections for Basic Information, Tags, Resource Details, Security Issues, and Changes.
