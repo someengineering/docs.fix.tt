@@ -1,4 +1,4 @@
-*                     @TheCatLady
+-                     @TheCatLady @lloesche
 
-/docs/                @TheCatLady @lloesche @aquamatthias @meln1k
-/tools/*.py           @TheCatLady @aquamatthias
+/docs/ @TheCatLady @lloesche @aquamatthias @meln1k
+/tools/\*.py @TheCatLady @aquamatthias
