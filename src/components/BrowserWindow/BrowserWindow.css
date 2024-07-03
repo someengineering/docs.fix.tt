@@ -19,13 +19,13 @@
   position: relative;
 }
 
-.buttons {
+.browser-buttons {
   align-items: center;
   display: flex;
   gap: 8px;
 }
 
-.button {
+.browser-button {
   all: unset;
   display: inline-block;
   width: 12px;
@@ -35,15 +35,15 @@
   flex-shrink: 0;
 }
 
-.button.close {
+.browser-button.close {
   background-color: #ff5f56;
 }
 
-.button.minimize {
+.browser-button.minimize {
   background-color: #ffbd2e;
 }
 
-.button.maximize {
+.browser-button.maximize {
   background-color: #27c93f;
 }
 

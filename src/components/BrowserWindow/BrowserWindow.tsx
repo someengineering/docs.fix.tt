@@ -67,10 +67,10 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
   return (
     <div id={id} className="browser-window">
       <div className="browser-header">
-        <div className="buttons">
-          <span className="button close"></span>
-          <span className="button minimize"></span>
-          <span className="button maximize"></span>
+        <div className="browser-buttons">
+          <span className="browser-button close"></span>
+          <span className="browser-button minimize"></span>
+          <span className="browser-button maximize"></span>
         </div>
         <div className="url-bar">
           <input
