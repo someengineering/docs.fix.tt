@@ -1,5 +1,12 @@
 import { useHistory } from '@docusaurus/router';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  FC,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import './BrowserWindow.css';
 
 interface Area {
@@ -10,7 +17,7 @@ interface Area {
 }
 
 interface BrowserWindowProps {
-  id: string;
+  id?: string;
   imageSrc: string;
   url: string;
   mapName?: string;
@@ -18,7 +25,7 @@ interface BrowserWindowProps {
   alt?: string;
 }
 
-const BrowserWindow: React.FC<BrowserWindowProps> = ({
+const BrowserWindow: FC<BrowserWindowProps> = ({
   id,
   imageSrc,
   mapName,
@@ -59,7 +66,7 @@ const BrowserWindow: React.FC<BrowserWindowProps> = ({
     };
   }, [scaleAreas]);
 
-  const handleUrlClick = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleUrlClick = (e: MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
     window.open(url, '_blank');
   };

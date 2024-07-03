@@ -1,13 +1,9 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import posthog from 'posthog-js';
 import { PostHogProvider as Provider } from 'posthog-js/react';
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 
-export default function PosthogProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PosthogProvider({ children }: { children: ReactNode }) {
   const {
     siteConfig: {
       customFields: { isDev, isNetlify, isProd, posthogProjectApiKey },
