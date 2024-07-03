@@ -42,12 +42,19 @@ This is the same search using the advanced search feature. Here you can enter fr
 
 Clicking on any row in the search results opens the Resource View. At the top of this view, you will see a Neighborhood Map, which visually displays the connections between the selected resource and other resources in your infrastructure. This helps you understand the relationships and dependencies between various components.
 
+<BrowserWindow
+    imageSrc={require('./img/inventory_basic_information.png').default}
+    alt="Inventory Resource Basic Information"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-basic-information"
+/>
+
 Below the Neighborhood Map, you will find the Basic Information section. This section provides key details about the resource, such as its name, ID, and creation date, giving you a quick overview of the resource's essential attributes.
 
 Further down, you will see the Tags section. This area lists all the tags associated with the resource, allowing you to view and manage metadata that can help with organizing and identifying resources within your cloud environment.
 
 <BrowserWindow 
-    imageSrc={require('./img/benchmark_resource_details.png').default}
+    imageSrc={require('./img/inventory_details.png').default}
     alt="Inventory Resource Details"
     url="https://app.fix.security/inventory"
     id="inventory-resource-details"
@@ -56,10 +63,28 @@ Further down, you will see the Tags section. This area lists all the tags associ
 Scrolling down even further, you can unfold the Resource Details section. This section shows every property of the resource in detail. Any of these properties can be searched for.
 
 <BrowserWindow 
-    imageSrc={require('./img/benchmark_resource_issues_changes.png').default}
+    imageSrc={require('./img/inventory_security_issues.png').default}
     alt="Inventory Resource Issues & Changes"
     url="https://app.fix.security/inventory"
     id="inventory-resource-issues-changes"
 />
 
-At the bottom, you will find sections for Security Issues and Changes. The Security Issues section highlights any security concerns related to the resource, such as unencrypted snapshots or non-compliance with security policies. The Changelog provides a historical record of changes made to the resource, including the creation date and any detected security issues, allowing you to track its lifecycle and changes over time.
+Further down, you will find sections for Security Issues and Changes. The Security Issues section highlights any security concerns related to the resource, such as non-compliance with security policies.
+
+<BrowserWindow 
+    imageSrc={require('./img/inventory_changes.png').default}
+    alt="Inventory Resource Issues & Changes"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-issues-changes"
+/>
+
+The Changes timeline provides a historical record of changes made to the resource, including the creation date and any detected security issues, allowing you to track its lifecycle and changes over time.
+
+<BrowserWindow 
+    imageSrc={require('./img/inventory_config_diff.png').default}
+    alt="Inventory Resource Config Diff"
+    url="https://app.fix.security/inventory"
+    id="inventory-resource-config-diff"
+/>
+
+Clicking on one of the "Configuration changed" entries in the Changes timeline, shows you the configuration differences between the selected version and the previous one. This allows you to see what has changed and when.
