@@ -1,0 +1,67 @@
+import BrowserWindow from '@site/src/components/BrowserWindow/BrowserWindow';
+
+# Security Dashboard
+
+The Security Dashboard provides a comprehensive overview of your cloud infrastructure's security status and recent changes.
+
+<BrowserWindow 
+    imageSrc={require('../img/security_dashboard_closed.png').default}
+    alt="Security Dashboard"
+    url="https://app.fix.security/security"
+    id="security-dashboard"
+/>
+
+### Security Score
+
+On the right side, you can see the overall Security Score, a weighted number ranging from 0 to 100, with 100 being the best possible score, indicating no security issues. Critical issues impact the score more significantly than medium or low severity issues, reflecting their importance.
+
+### Top Security Enhancements
+
+Below the Security Score, this section lists the top 5 recommended security enhancements. These represent some of the most critical issues in your cloud infrastructure. Addressing these enhancements will significantly improve your security score. Each enhancement includes its associated resource type and severity to help you prioritize your actions.
+
+### Changes in the past 7 days
+
+#### Compliance
+
+This section highlights the number of new non-compliant resources detected in the past week. It categorizes these non-compliant resources by severity (Critical, High, Medium, Low, and Info) and lists the most non-compliant accounts and resources to help you prioritize your remediation efforts.
+
+#### Improved
+
+This section shows the number of resources that have been improved or remediated in the past week, again categorized by severity. It also highlights the accounts and resources that have seen the most improvement.
+
+## Benchmarks
+
+<BrowserWindow 
+    imageSrc={require('../img/security_dashboard_benchmarks.png').default}
+    alt="Security Dashboard Benchmarks"
+    url="https://app.fix.security/security"
+    id="security-dashboard-benchmarks"
+/>
+
+The Benchmarks matrix provides a visual representation of the compliance scores for different security frameworks across your various cloud accounts. Each cell in the matrix corresponds to a specific account and framework, displaying a score that indicates how well that account adheres to the specified framework's standards.
+
+Clicking on a benchmark or on a score will open the [Benchmark Details](/ui/security/benchmark) view, providing a detailed breakdown which controls are passing or failing, and the severity of the issues detected.
+
+## Timeline
+
+<BrowserWindow 
+    imageSrc={require('../img/security_dashboard_timeline.png').default}
+    alt="Security Dashboard Timeline"
+    url="https://app.fix.security/security"
+    id="security-dashboard-timeline"
+/>
+
+The Failing Check Timeline provides a visual representation of how your security posture has changed over time.
+
+## Accounts Summary
+
+<BrowserWindow 
+    imageSrc={require('../img/security_dashboard_accounts_summary.png').default}
+    alt="Security Dashboard Accounts Summary"
+    url="https://app.fix.security/security"
+    id="security-dashboard-accounts-summary"
+/>
+
+The Accounts Summary provides a detailed overview of your security scores on a per-account basis. Each account is represented with its respective security score, helping you quickly assess the security posture of each cloud account in your workspace.
+
+Hovering over an account will display a detailed breakdown of the security score, including the number of critical, high, medium, and low severity issues detected in that account.
