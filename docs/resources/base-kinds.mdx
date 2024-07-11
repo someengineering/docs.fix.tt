@@ -101,6 +101,8 @@ class azure_subscription {
 }
 class gcp_project {
 }
+class microsoft_graph_organization {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -117,6 +119,7 @@ resource <|--- account
 account <|--- aws_account
 account <|--- azure_subscription
 account <|--- gcp_project
+account <|--- microsoft_graph_organization
 @enduml
 ```
 
@@ -1699,6 +1702,8 @@ class azure_location {
 }
 class gcp_region {
 }
+class microsoft_graph_organization_root {
+}
 class phantom_resource {
 }
 class region {
@@ -1721,6 +1726,7 @@ class resource {
 region <|--- aws_region
 region <|--- azure_location
 region <|--- gcp_region
+region <|--- microsoft_graph_organization_root
 resource <|--- phantom_resource
 phantom_resource <|--- region
 @enduml
@@ -1757,6 +1763,8 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 class aws_iam_role {
 }
+class microsoft_graph_role {
+}
 class resource {
 **age**: duration
 **atime**: datetime
@@ -1772,6 +1780,7 @@ class resource {
 class role {
 }
 role <|--- aws_iam_role
+role <|--- microsoft_graph_role
 resource <|--- role
 @enduml
 ```
