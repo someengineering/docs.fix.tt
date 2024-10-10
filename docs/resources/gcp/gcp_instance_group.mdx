@@ -9,9 +9,11 @@ sidebar_label: Instance Group
 - Provider Link: [Instance Group](https://cloud.google.com/compute/docs/instance-groups)
 
 ## Description
+
 A GCP Instance Group is a collection of virtual machine instances that operate as a single entity. It manages multiple identical instances, distributes incoming traffic, and automatically adjusts the number of instances based on demand. Instance Groups provide load balancing, auto-scaling, and rolling updates to maintain application availability and performance in Google Cloud Platform.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Group data model"
@@ -85,8 +87,8 @@ resource <|--- gcp_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Group resource relationships"
@@ -139,7 +141,3 @@ gcp_subnetwork -[#1A83AF]-> gcp_instance_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

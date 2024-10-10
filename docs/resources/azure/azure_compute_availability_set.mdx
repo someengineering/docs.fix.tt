@@ -9,9 +9,11 @@ sidebar_label: Compute Availability Set
 - Provider Link: [Compute Availability Set](https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview)
 
 ## Description
+
 Azure Compute Availability Set is a feature that groups virtual machines to distribute them across multiple physical servers, racks, storage units, and network switches. This configuration helps maintain service continuity during planned maintenance or hardware failures by ensuring that at least one virtual machine remains operational, reducing downtime and improving overall reliability for applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Compute Availability Set data model"
@@ -86,8 +88,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Compute Availability Set resource relationships"
@@ -131,7 +133,3 @@ azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machi
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Network Route Table
 - Provider Link: [Network Route Table](https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table)
 
 ## Description
+
 Azure Network Route Table is a networking component in Microsoft Azure that controls traffic routing within virtual networks. It defines custom routes to direct network traffic between subnets, virtual networks, and on-premises networks. Route tables override Azure's default system routes, providing granular control over data flow and enhancing network security by specifying next-hop destinations for network traffic.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Route Table data model"
@@ -86,8 +88,8 @@ resource <|--- routing_table
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Route Table resource relationships"
@@ -126,7 +128,3 @@ azure_network_subnet -[#1A83AF]-> azure_network_route_table
 ```
 
 </ZoomPanPinch>
-
-
-
-

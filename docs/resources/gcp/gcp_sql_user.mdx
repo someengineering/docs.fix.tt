@@ -9,9 +9,11 @@ sidebar_label: SQL User
 - Provider Link: [SQL User](https://cloud.google.com/sql/docs/mysql/users)
 
 ## Description
+
 A GCP SQL User is an account within Google Cloud Platform's Cloud SQL service that has permissions to access and manage databases. It can connect to databases, execute queries, modify data, and perform administrative tasks based on its assigned privileges. GCP SQL Users are created and managed by database administrators to control access to Cloud SQL instances.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL User data model"
@@ -102,8 +104,8 @@ gcp_sql_user_password_validation_policy --> gcp_sql_password_status
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL User resource relationships"
@@ -142,7 +144,3 @@ gcp_sql_database_instance -[#1A83AF]-> gcp_sql_user
 ```
 
 </ZoomPanPinch>
-
-
-
-

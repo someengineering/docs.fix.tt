@@ -9,9 +9,11 @@ sidebar_label: KMS Key
 - Provider Link: [KMS Key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys)
 
 ## Description
+
 AWS KMS Key is a managed service that creates and controls cryptographic keys used to protect data in AWS services and applications. It generates, stores, and manages keys for encryption and decryption operations. KMS Keys integrate with other AWS services, providing a centralized system for key management and helping users meet compliance requirements for data security and access control.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of KMS Key data model"
@@ -105,8 +107,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of KMS Key resource relationships"
@@ -332,7 +334,3 @@ aws_sqs_queue -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

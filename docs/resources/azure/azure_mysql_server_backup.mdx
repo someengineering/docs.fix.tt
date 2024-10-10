@@ -9,9 +9,11 @@ sidebar_label: MySQL Server Backup
 - Provider Link: [MySQL Server Backup](https://learn.microsoft.com/en-us/azure/mysql/single-server/concepts-backup)
 
 ## Description
+
 Azure MySQL Server Backup is a service that creates and manages backups of MySQL databases hosted on Azure. It performs regular automated backups, stores them securely, and provides options for point-in-time restoration. Users can configure backup frequency, retention periods, and geo-redundancy settings. The service helps protect data and supports disaster recovery scenarios.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of MySQL Server Backup data model"
@@ -79,8 +81,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of MySQL Server Backup resource relationships"
@@ -119,7 +121,3 @@ azure_mysql_server -[#1A83AF]-> azure_mysql_server_backup
 ```
 
 </ZoomPanPinch>
-
-
-
-

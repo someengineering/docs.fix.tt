@@ -9,9 +9,11 @@ sidebar_label: RDS Cluster Snapshot
 - Provider Link: [RDS Cluster Snapshot](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CreateSnapshotCluster.html)
 
 ## Description
+
 An AWS RDS Cluster Snapshot is a point-in-time backup of an entire Amazon Aurora database cluster. It captures data from all instances in the cluster, including the primary and replicas. Users can create manual snapshots or configure automated backups. These snapshots are used for data recovery, cloning databases, or migrating data between regions.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Cluster Snapshot data model"
@@ -86,8 +88,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Cluster Snapshot resource relationships"
@@ -135,7 +137,3 @@ aws_vpc -[#1A83AF]-> aws_rds_cluster_snapshot
 ```
 
 </ZoomPanPinch>
-
-
-
-

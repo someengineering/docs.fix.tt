@@ -9,9 +9,11 @@ sidebar_label: CloudWatch Log Group
 - Provider Link: [CloudWatch Log Group](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html)
 
 ## Description
+
 AWS CloudWatch Log Group is a container for log streams in Amazon CloudWatch. It organizes and stores log data from various AWS resources and applications. Users can set retention policies, apply metric filters, and configure alarms based on log content. Log Groups facilitate centralized monitoring, analysis, and troubleshooting of systems and applications within the AWS ecosystem.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Log Group data model"
@@ -68,8 +70,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Log Group resource relationships"
@@ -112,7 +114,3 @@ aws_cloudwatch_log_group -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

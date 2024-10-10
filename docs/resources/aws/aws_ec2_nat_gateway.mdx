@@ -9,9 +9,11 @@ sidebar_label: EC2 NAT Gateway
 - Provider Link: [EC2 NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
 
 ## Description
+
 AWS EC2 NAT Gateway is a managed service that provides Network Address Translation for Amazon EC2 instances in private subnets. It routes outbound internet traffic from these instances while preventing inbound connections from the internet. NAT Gateway handles network address translation, improving security and facilitating internet access for resources in private subnets within a Virtual Private Cloud.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 NAT Gateway data model"
@@ -90,8 +92,8 @@ resource <|--- gateway
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 NAT Gateway resource relationships"
@@ -148,7 +150,3 @@ aws_vpc -[#1A83AF]-> aws_ec2_subnet
 ```
 
 </ZoomPanPinch>
-
-
-
-

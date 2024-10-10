@@ -9,9 +9,11 @@ sidebar_label: Route53 Zone
 - Provider Link: [Route53 Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-working-with.html)
 
 ## Description
+
 AWS Route 53 Zone is a DNS hosting service that manages domain names and routes internet traffic. It translates human-readable domain names into IP addresses, stores DNS records, and handles DNS queries. Route 53 Zone supports various record types, provides global distribution for low-latency responses, and integrates with other AWS services for DNS management.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Zone data model"
@@ -88,8 +90,8 @@ resource <|--- dns_zone
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Zone resource relationships"
@@ -132,7 +134,3 @@ aws_route53_zone -[#1A83AF]-> aws_route53_resource_record_set
 ```
 
 </ZoomPanPinch>
-
-
-
-

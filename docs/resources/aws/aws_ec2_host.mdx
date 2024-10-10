@@ -9,9 +9,11 @@ sidebar_label: EC2 Host
 - Provider Link: [EC2 Host](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html)
 
 ## Description
+
 AWS EC2 Host is a virtual server in Amazon's Elastic Compute Cloud (EC2) service. It provides computing capacity in the cloud, letting users run applications on Amazon's infrastructure. EC2 Hosts offer various instance types with different CPU, memory, storage, and networking capabilities. Users can start, stop, and terminate instances as needed, paying only for the resources they use.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Host data model"
@@ -103,8 +105,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Host resource relationships"
@@ -143,7 +145,3 @@ aws_ec2_host -[#1A83AF]-> aws_ec2_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: EC2 Internet Gateway
 - Provider Link: [EC2 Internet Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
 
 ## Description
+
 An AWS EC2 Internet Gateway is a component that connects a Virtual Private Cloud (VPC) to the internet. It acts as a bridge between the VPC and the public internet, facilitating inbound and outbound traffic. The Internet Gateway provides a target for route tables and performs network address translation for instances with public IP addresses.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Internet Gateway data model"
@@ -74,8 +76,8 @@ resource <|--- gateway
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Internet Gateway resource relationships"
@@ -119,7 +121,3 @@ aws_vpc -[#1A83AF]-> aws_ec2_internet_gateway
 ```
 
 </ZoomPanPinch>
-
-
-
-

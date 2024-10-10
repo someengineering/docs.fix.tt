@@ -9,9 +9,11 @@ sidebar_label: Target HTTPS Proxy
 - Provider Link: [Target HTTPS Proxy](https://cloud.google.com/load-balancing/docs/target-https-proxy)
 
 ## Description
+
 A GCP Target HTTPS Proxy is a component in Google Cloud Platform that routes HTTPS requests to backend services. It terminates SSL connections, performs SSL offloading, and directs traffic based on URL maps. This proxy works with load balancers to distribute incoming requests across multiple backend instances, enhancing security and performance for web applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target HTTPS Proxy data model"
@@ -84,8 +86,8 @@ gcp_resource <|--- gcp_target_https_proxy
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target HTTPS Proxy resource relationships"
@@ -136,7 +138,3 @@ gcp_target_https_proxy -[#1A83AF]-> gcp_url_map
 ```
 
 </ZoomPanPinch>
-
-
-
-

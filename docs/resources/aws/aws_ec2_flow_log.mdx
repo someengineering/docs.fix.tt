@@ -9,9 +9,11 @@ sidebar_label: EC2 Flow Log
 - Provider Link: [EC2 Flow Log](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
 
 ## Description
+
 AWS EC2 Flow Logs capture network traffic information for EC2 instances, VPCs, and subnet interfaces. They record details about IP traffic, including source and destination addresses, ports, protocols, and packet counts. This data helps monitor network traffic patterns, troubleshoot connectivity issues, and enhance security by identifying potential threats or anomalies within AWS infrastructure.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Flow Log data model"
@@ -82,8 +84,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Flow Log resource relationships"
@@ -126,7 +128,3 @@ aws_vpc -[#1A83AF]-> aws_ec2_flow_log
 ```
 
 </ZoomPanPinch>
-
-
-
-

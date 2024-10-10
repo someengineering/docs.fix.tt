@@ -9,9 +9,11 @@ sidebar_label: API Gateway Deployment
 - Provider Link: [API Gateway Deployment](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html)
 
 ## Description
+
 AWS API Gateway Deployment is a process that publishes an API to a specific stage, making it accessible to clients. It creates a snapshot of the API configuration and resources, which can be invoked through a unique URL. Deployments manage versioning and facilitate updates to APIs without disrupting existing users or applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Deployment data model"
@@ -66,8 +68,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Deployment resource relationships"
@@ -110,7 +112,3 @@ aws_apigateway_rest_api -[#1A83AF]-> aws_apigateway_deployment
 ```
 
 </ZoomPanPinch>
-
-
-
-

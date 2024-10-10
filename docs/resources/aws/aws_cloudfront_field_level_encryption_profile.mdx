@@ -9,9 +9,11 @@ sidebar_label: CloudFront Field Level Encryption Profile
 - Provider Link: [CloudFront Field Level Encryption Profile](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html)
 
 ## Description
+
 AWS CloudFront Field Level Encryption Profile is a security feature that encrypts specific data fields in web forms before transmitting them to origin servers. It uses public key cryptography to protect sensitive information, ensuring that only authorized systems with the corresponding private key can decrypt the data. This adds an extra layer of protection for user-submitted data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Field Level Encryption Profile data model"
@@ -71,8 +73,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Field Level Encryption Profile resource relationships"
@@ -115,7 +117,3 @@ aws_cloudfront_field_level_encryption_profile -[#1A83AF]-> aws_cloudfront_public
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: ALB
 - Provider Link: [ALB](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 
 ## Description
+
 AWS Application Load Balancer (ALB) is a Layer 7 load balancing service that distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses. It supports content-based routing, can handle HTTP/HTTPS traffic, and provides features like SSL termination, health checks, and integration with other AWS services for improved application performance and availability.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ALB data model"
@@ -182,8 +184,8 @@ resource <|--- load_balancer
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ALB resource relationships"
@@ -259,7 +261,3 @@ aws_waf_web_acl -[#1A83AF]-> aws_alb
 ```
 
 </ZoomPanPinch>
-
-
-
-

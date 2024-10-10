@@ -9,9 +9,11 @@ sidebar_label: Route53 Resource Record Set
 - Provider Link: [Route53 Resource Record Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html)
 
 ## Description
+
 AWS Route 53 Resource Record Set is a collection of DNS records for a domain. It defines how traffic is routed to resources like websites, email servers, or other services. These records include types such as A, AAAA, CNAME, MX, and TXT, each serving specific purposes in DNS resolution and domain configuration.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Resource Record Set data model"
@@ -98,8 +100,8 @@ resource <|--- dns_record_set
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Resource Record Set resource relationships"
@@ -142,7 +144,3 @@ aws_route53_zone -[#1A83AF]-> aws_route53_resource_record_set
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: EKS Cluster
 - Provider Link: [EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/clusters.html)
 
 ## Description
+
 AWS EKS Cluster is a managed Kubernetes service that runs and orchestrates containerized applications on Amazon Web Services. It automates the deployment, scaling, and management of Kubernetes control plane and worker nodes. EKS integrates with AWS services for networking, storage, and security, providing a platform for running distributed applications across multiple availability zones.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EKS Cluster data model"
@@ -122,8 +124,8 @@ resource <|--- managed_kubernetes_cluster_provider
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EKS Cluster resource relationships"
@@ -171,7 +173,3 @@ aws_region -[#1A83AF]-> aws_iam_role
 ```
 
 </ZoomPanPinch>
-
-
-
-

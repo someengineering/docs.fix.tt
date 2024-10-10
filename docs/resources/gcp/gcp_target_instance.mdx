@@ -9,9 +9,11 @@ sidebar_label: Target Instance
 - Provider Link: [Target Instance](https://cloud.google.com/compute/docs/protocol-forwarding#targetinstances)
 
 ## Description
+
 A GCP Target Instance is a network resource in Google Cloud Platform that receives and handles incoming traffic for specific IP addresses and ports. It acts as a proxy, forwarding requests to designated virtual machine instances, facilitating load balancing and traffic management. Target Instances can be used to implement various networking scenarios and improve application availability.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target Instance data model"
@@ -78,8 +80,8 @@ gcp_resource <|--- gcp_target_instance
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target Instance resource relationships"
@@ -123,7 +125,3 @@ gcp_target_instance -[#1A83AF]-> gcp_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

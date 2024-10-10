@@ -9,9 +9,11 @@ sidebar_label: ECS Capacity Provider
 - Provider Link: [ECS Capacity Provider](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html)
 
 ## Description
+
 AWS ECS Capacity Provider is a feature that manages compute capacity for Amazon Elastic Container Service (ECS) clusters. It automates the scaling of EC2 instances based on task demands, balancing resource utilization and availability. Capacity Providers can work with EC2 Auto Scaling groups to add or remove instances as needed, optimizing cluster performance and cost efficiency.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Capacity Provider data model"
@@ -81,8 +83,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Capacity Provider resource relationships"
@@ -135,7 +137,3 @@ aws_ecs_task -[#1A83AF]-> aws_ecs_capacity_provider
 ```
 
 </ZoomPanPinch>
-
-
-
-

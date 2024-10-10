@@ -9,9 +9,11 @@ sidebar_label: EC2 Image
 - Provider Link: [EC2 Image](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 
 ## Description
+
 AWS EC2 Image is a pre-configured virtual machine template for Amazon Elastic Compute Cloud (EC2). It contains an operating system, applications, and settings, serving as a blueprint for launching EC2 instances. Users can create custom images or choose from a library of public images to quickly deploy virtual servers with specific configurations in the cloud.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Image data model"
@@ -119,8 +121,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Image resource relationships"
@@ -163,7 +165,3 @@ aws_ec2_image -[#1A83AF]-> aws_ec2_snapshot
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Cosmos DB Restorable Mongo DB Collection
 - Provider Link: [Cosmos DB Restorable Mongo DB Collection](https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/restorable-mongodb-resources)
 
 ## Description
+
 Azure Cosmos DB Restorable MongoDB Collection is a feature that provides point-in-time recovery for MongoDB databases in Azure Cosmos DB. It creates backups of collections at regular intervals, letting users restore data to a specific timestamp within the retention period. This helps recover from accidental deletions, modifications, or application errors.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable Mongo DB Collection data model"
@@ -80,8 +82,8 @@ resource <|--- phantom_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable Mongo DB Collection resource relationships"
@@ -120,7 +122,3 @@ azure_cosmos_db_restorable_mongo_db_database -[#1A83AF]-> azure_cosmos_db_restor
 ```
 
 </ZoomPanPinch>
-
-
-
-

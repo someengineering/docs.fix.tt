@@ -9,9 +9,11 @@ sidebar_label: EC2 Volume
 - Provider Link: [EC2 Volume](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html)
 
 ## Description
+
 AWS EC2 Volume Type refers to the storage options available for Amazon Elastic Compute Cloud (EC2) instances. These volume types include General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, and Cold HDD. Each type offers different performance characteristics and pricing, catering to various workload requirements such as database storage, log processing, and data archiving.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Volume data model"
@@ -90,8 +92,8 @@ resource <|--- volume
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Volume resource relationships"
@@ -155,7 +157,3 @@ aws_region -[#1A83AF]-> aws_ec2_volume_type
 ```
 
 </ZoomPanPinch>
-
-
-
-

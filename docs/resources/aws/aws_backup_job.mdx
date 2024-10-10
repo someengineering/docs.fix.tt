@@ -9,9 +9,11 @@ sidebar_label: Backup Job
 - Provider Link: [Backup Job](https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-jobs.html)
 
 ## Description
+
 AWS Backup Job is a task that creates and manages backups of AWS resources. It defines the source data, backup frequency, and retention policy. The job executes according to a schedule, creating point-in-time snapshots of specified resources. It handles backup creation, storage, and lifecycle management, ensuring data protection and recovery capabilities for AWS environments.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Job data model"
@@ -95,8 +97,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Job resource relationships"
@@ -151,7 +153,3 @@ aws_backup_vault -[#1A83AF]-> aws_backup_recovery_point
 ```
 
 </ZoomPanPinch>
-
-
-
-

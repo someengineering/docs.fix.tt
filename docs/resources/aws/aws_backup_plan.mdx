@@ -9,9 +9,11 @@ sidebar_label: Backup Plan
 - Provider Link: [Backup Plan](https://docs.aws.amazon.com/aws-backup/latest/devguide/create-a-backup-plan.html)
 
 ## Description
+
 AWS Backup Plan is a feature of AWS Backup that automates and manages data protection for AWS resources. It defines when and how often backups are created, specifies retention periods for backups, and sets rules for copying backups across AWS Regions or accounts. Users can create custom backup plans or use pre-configured plans to meet their data protection requirements.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Plan data model"
@@ -77,8 +79,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Plan resource relationships"
@@ -127,7 +129,3 @@ aws_backup_plan -[#1A83AF]-> aws_backup_recovery_point
 ```
 
 </ZoomPanPinch>
-
-
-
-

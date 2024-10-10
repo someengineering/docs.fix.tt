@@ -9,9 +9,11 @@ sidebar_label: PostgreSQL Server Backup
 - Provider Link: [PostgreSQL Server Backup](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore)
 
 ## Description
+
 Azure PostgreSQL Server Backup is a feature in Azure Database for PostgreSQL that creates backups of your database automatically. It stores these backups in geo-redundant storage for data protection. The service retains backups for a specified period and supports point-in-time recovery, letting users restore their database to a previous state within the retention period.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of PostgreSQL Server Backup data model"
@@ -82,8 +84,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of PostgreSQL Server Backup resource relationships"
@@ -122,7 +124,3 @@ azure_postgresql_server -[#1A83AF]-> azure_postgresql_server_backup
 ```
 
 </ZoomPanPinch>
-
-
-
-

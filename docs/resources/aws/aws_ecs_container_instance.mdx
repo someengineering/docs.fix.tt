@@ -9,9 +9,11 @@ sidebar_label: ECS Container Instance
 - Provider Link: [ECS Container Instance](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html)
 
 ## Description
+
 An AWS ECS Container Instance is a virtual machine that runs the Amazon ECS container agent and Docker daemon. It serves as a host for containers managed by Amazon ECS. These instances provide compute resources for running containers, handle container scheduling, and communicate with the ECS service to manage tasks and report instance status.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Container Instance data model"
@@ -125,8 +127,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Container Instance resource relationships"
@@ -174,7 +176,3 @@ aws_ecs_task -[#1A83AF]-> aws_ecs_container_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: VPC Peering Connection
 - Provider Link: [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
 
 ## Description
+
 AWS VPC Peering Connection is a networking feature that connects two Virtual Private Clouds (VPCs) within the same or different AWS accounts. It establishes direct network routing between VPCs, letting resources in each VPC communicate with each other using private IP addresses. This connection works across regions and improves network performance by bypassing the public internet for inter-VPC traffic.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of VPC Peering Connection data model"
@@ -93,8 +95,8 @@ resource <|--- peering_connection
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of VPC Peering Connection resource relationships"
@@ -138,7 +140,3 @@ aws_vpc -[#1A83AF]-> aws_vpc_peering_connection
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Region
 - Provider Link: [Region](https://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 ## Description
+
 An AWS Region is a geographic area containing multiple data centers called Availability Zones. It provides a distinct set of AWS services and infrastructure. Regions are isolated from each other, enhancing fault tolerance and stability. Users can deploy resources in different Regions to reduce latency and meet data residency requirements.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Region data model"
@@ -76,8 +78,8 @@ phantom_resource <|--- region
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Region resource relationships"
@@ -307,7 +309,3 @@ aws_vpc_endpoint -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Target SSL Proxy
 - Provider Link: [Target SSL Proxy](https://cloud.google.com/load-balancing/docs/target-ssl-proxy)
 
 ## Description
+
 A GCP Target SSL Proxy is a Google Cloud Platform resource that terminates SSL connections from clients and forwards traffic to backend services. It manages SSL certificates, handles encryption/decryption, and distributes incoming requests across multiple backend instances. This proxy supports HTTPS load balancing and can route traffic based on SNI information.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target SSL Proxy data model"
@@ -80,8 +82,8 @@ gcp_resource <|--- gcp_target_ssl_proxy
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target SSL Proxy resource relationships"
@@ -128,7 +130,3 @@ gcp_target_ssl_proxy -[#1A83AF]-> gcp_ssl_certificate
 ```
 
 </ZoomPanPinch>
-
-
-
-

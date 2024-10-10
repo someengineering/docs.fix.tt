@@ -9,9 +9,11 @@ sidebar_label: Glacier Job
 - Provider Link: [Glacier Job](https://docs.aws.amazon.com/amazonglacier/latest/dev/querying-glacier-archives.html)
 
 ## Description
+
 AWS Glacier Job is a process for retrieving data from Amazon S3 Glacier storage. It initiates and manages the retrieval of archives or inventory from Glacier vaults. Users can specify job parameters, including the retrieval type and data range. The job runs asynchronously, and users can track its progress and access results upon completion.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Glacier Job data model"
@@ -121,8 +123,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Glacier Job resource relationships"
@@ -165,7 +167,3 @@ aws_glacier_vault -[#1A83AF]-> aws_glacier_job
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: IAM Instance Profile
 - Provider Link: [IAM Instance Profile](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)
 
 ## Description
+
 An AWS IAM Instance Profile is a container for an IAM role that can be attached to Amazon EC2 instances. It provides temporary security credentials to applications running on the instance, granting them permissions to access AWS resources. This eliminates the need to store long-term credentials on EC2 instances, enhancing security and simplifying credential management.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of IAM Instance Profile data model"
@@ -69,8 +71,8 @@ resource <|--- instance_profile
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of IAM Instance Profile resource relationships"
@@ -119,7 +121,3 @@ aws_region -[#1A83AF]-> aws_iam_role
 ```
 
 </ZoomPanPinch>
-
-
-
-

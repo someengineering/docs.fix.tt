@@ -9,9 +9,11 @@ sidebar_label: Backup Vault
 - Provider Link: [Backup Vault](https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html)
 
 ## Description
+
 AWS Backup Vault is a secure storage container for backup data in AWS Backup. It stores and organizes backup copies, providing encryption and access policies to protect backups. Users can create multiple vaults to separate backups by application, environment, or compliance requirements. AWS Backup Vault supports retention policies and lifecycle management for stored backups.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Vault data model"
@@ -74,8 +76,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Vault resource relationships"
@@ -130,7 +132,3 @@ aws_backup_vault -[#1A83AF]-> aws_backup_recovery_point
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Monitor Diagnostic Settings
 - Provider Link: [Monitor Diagnostic Settings](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings)
 
 ## Description
+
 Azure Monitor Diagnostic Settings is a feature that collects and routes platform logs and metrics from Azure resources to specified destinations. It supports sending data to Log Analytics workspaces, storage accounts, and event hubs. Users can configure multiple settings per resource, selecting specific log categories and metrics to capture, aiding in monitoring and analysis of Azure resources.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Monitor Diagnostic Settings data model"
@@ -93,8 +95,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Monitor Diagnostic Settings resource relationships"
@@ -141,7 +143,3 @@ azure_monitor_diagnostic_settings -[#1A83AF]-> azure_storage_account
 ```
 
 </ZoomPanPinch>
-
-
-
-

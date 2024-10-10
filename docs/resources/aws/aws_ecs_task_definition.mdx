@@ -9,9 +9,11 @@ sidebar_label: ECS Task Definition
 - Provider Link: [ECS Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
 
 ## Description
+
 An AWS ECS Task Definition is a configuration file that specifies how containers should run within an Amazon ECS cluster. It defines container images, resource requirements, environment variables, networking settings, and storage options for tasks. Task Definitions serve as blueprints for deploying and managing containerized applications in Amazon ECS environments.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Task Definition data model"
@@ -300,8 +302,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Task Definition resource relationships"
@@ -345,7 +347,3 @@ aws_iam_role -[#1A83AF]-> aws_ecs_task_definition
 ```
 
 </ZoomPanPinch>
-
-
-
-

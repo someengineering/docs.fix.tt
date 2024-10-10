@@ -9,9 +9,11 @@ sidebar_label: SageMaker Compilation Job
 - Provider Link: [SageMaker Compilation Job](https://docs.aws.amazon.com/sagemaker/latest/dg/neo-job-compilation.html)
 
 ## Description
+
 AWS SageMaker Compilation Job is a service that optimizes machine learning models for specific target hardware. It converts models trained in SageMaker or other platforms into an executable format, reducing the model's size and improving inference performance. This process adapts the model for deployment on various devices, from cloud instances to edge devices with limited resources.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Compilation Job data model"
@@ -110,8 +112,8 @@ aws_sagemaker_output_config --> aws_sagemaker_target_platform
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Compilation Job resource relationships"
@@ -166,7 +168,3 @@ aws_sagemaker_compilation_job -[#1A83AF]-> aws_s3_bucket
 ```
 
 </ZoomPanPinch>
-
-
-
-

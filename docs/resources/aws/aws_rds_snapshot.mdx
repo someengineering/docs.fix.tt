@@ -9,9 +9,11 @@ sidebar_label: RDS Snapshot
 - Provider Link: [RDS Snapshot](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow)
 
 ## Description
+
 AWS RDS Snapshot is a feature of Amazon Relational Database Service that creates point-in-time copies of entire database instances. These snapshots preserve data and configurations, serving as backups or for creating new instances. Users can restore databases to specific points, migrate data between regions, or clone environments for testing and development purposes.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Snapshot data model"
@@ -106,8 +108,8 @@ resource <|--- snapshot
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Snapshot resource relationships"
@@ -151,7 +153,3 @@ aws_vpc -[#1A83AF]-> aws_rds_snapshot
 ```
 
 </ZoomPanPinch>
-
-
-
-

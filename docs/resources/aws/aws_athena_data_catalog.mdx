@@ -9,9 +9,11 @@ sidebar_label: Athena Data Catalog
 - Provider Link: [Athena Data Catalog](https://docs.aws.amazon.com/athena/latest/ug/data-catalog.html)
 
 ## Description
+
 AWS Athena Data Catalog is a metadata repository for data stored in AWS services. It organizes and manages information about databases, tables, and partitions. Users can query this catalog to locate and access data across various sources, facilitating data analysis and exploration without moving or transforming the underlying data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Athena Data Catalog data model"
@@ -66,8 +68,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Athena Data Catalog resource relationships"
@@ -106,7 +108,3 @@ aws_athena_data_catalog -[#1A83AF]-> aws_sagemaker_processing_job
 ```
 
 </ZoomPanPinch>
-
-
-
-

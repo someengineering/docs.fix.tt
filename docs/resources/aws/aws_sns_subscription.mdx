@@ -9,9 +9,11 @@ sidebar_label: SNS Subscription
 - Provider Link: [SNS Subscription](https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html)
 
 ## Description
+
 AWS SNS Subscription is a feature of Amazon Simple Notification Service that lets users receive messages from SNS topics. It supports multiple protocols, including email, SMS, HTTP/S, and AWS Lambda. Subscribers can filter messages based on attributes, ensuring they only receive relevant information. SNS Subscription facilitates message delivery across distributed systems and applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SNS Subscription data model"
@@ -73,8 +75,8 @@ aws_resource <|--- aws_sns_subscription
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SNS Subscription resource relationships"
@@ -117,7 +119,3 @@ aws_sns_topic -[#1A83AF]-> aws_sns_subscription
 ```
 
 </ZoomPanPinch>
-
-
-
-

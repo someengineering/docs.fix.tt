@@ -9,9 +9,11 @@ sidebar_label: EC2 Keypair
 - Provider Link: [EC2 Keypair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ## Description
+
 AWS EC2 Keypair is a security credential for Amazon Elastic Compute Cloud. It consists of a public key stored by AWS and a private key file kept by the user. This keypair authenticates secure SSH connections to EC2 instances, providing access control and encryption for remote management of virtual servers in the AWS cloud environment.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Keypair data model"
@@ -71,8 +73,8 @@ resource <|--- keypair
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Keypair resource relationships"
@@ -116,7 +118,3 @@ aws_region -[#1A83AF]-> aws_ec2_keypair
 ```
 
 </ZoomPanPinch>
-
-
-
-

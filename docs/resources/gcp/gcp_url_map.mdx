@@ -9,9 +9,11 @@ sidebar_label: URL Map
 - Provider Link: [URL Map](https://cloud.google.com/load-balancing/docs/url-map)
 
 ## Description
+
 A GCP URL Map is a Google Cloud Platform resource that routes incoming HTTP(S) requests to specific backend services or buckets based on defined rules. It matches the URL path or host of requests to configured patterns and directs traffic accordingly, supporting load balancing and content-based routing across multiple backends within a single load balancer.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of URL Map data model"
@@ -267,8 +269,8 @@ gcp_weighted_backend_service --> gcp_http_header_action
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of URL Map resource relationships"
@@ -319,7 +321,3 @@ gcp_url_map -[#1A83AF]-> gcp_backend_service
 ```
 
 </ZoomPanPinch>
-
-
-
-

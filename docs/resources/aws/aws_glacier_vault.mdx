@@ -9,9 +9,11 @@ sidebar_label: Glacier Vault
 - Provider Link: [Glacier Vault](https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html)
 
 ## Description
+
 AWS Glacier Vault is a storage container within Amazon S3 Glacier for archiving data. It holds archives, which are objects stored in the vault. Users can create multiple vaults in their AWS account and control access to each vault independently. Glacier Vault provides secure, durable storage for long-term data retention and compliance purposes.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Glacier Vault data model"
@@ -67,8 +69,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Glacier Vault resource relationships"
@@ -107,7 +109,3 @@ aws_glacier_vault -[#1A83AF]-> aws_glacier_job
 ```
 
 </ZoomPanPinch>
-
-
-
-

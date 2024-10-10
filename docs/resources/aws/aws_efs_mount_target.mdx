@@ -9,9 +9,11 @@ sidebar_label: EFS Mount Target
 - Provider Link: [EFS Mount Target](https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html)
 
 ## Description
+
 An AWS EFS Mount Target is a network interface in a Virtual Private Cloud (VPC) subnet that connects to an Elastic File System (EFS). It provides an IP address for accessing the file system within the VPC. Mount targets act as endpoints for NFS clients to connect and mount EFS file systems on EC2 instances.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS Mount Target data model"
@@ -67,8 +69,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS Mount Target resource relationships"
@@ -107,7 +109,3 @@ aws_ec2_network_interface -[#1A83AF]-> aws_efs_mount_target
 ```
 
 </ZoomPanPinch>
-
-
-
-

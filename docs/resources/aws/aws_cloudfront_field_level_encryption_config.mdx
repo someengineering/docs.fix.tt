@@ -9,9 +9,11 @@ sidebar_label: CloudFront Field-Level Encryption Configuration
 - Provider Link: [CloudFront Field-Level Encryption Configuration](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html)
 
 ## Description
+
 AWS CloudFront Field-Level Encryption Configuration is a security feature that encrypts sensitive data fields in web forms before transmission to origin servers. It uses public key cryptography to protect specific information, ensuring that only authorized applications with the corresponding private key can decrypt the data, enhancing security for sensitive user input during transit.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Field-Level Encryption Configuration data model"
@@ -87,8 +89,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Field-Level Encryption Configuration resource relationships"
@@ -131,7 +133,3 @@ aws_cloudfront_field_level_encryption_config -[#1A83AF]-> aws_cloudfront_field_l
 ```
 
 </ZoomPanPinch>
-
-
-
-

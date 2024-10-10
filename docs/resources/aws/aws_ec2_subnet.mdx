@@ -9,9 +9,11 @@ sidebar_label: EC2 Subnet
 - Provider Link: [EC2 Subnet](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
 
 ## Description
+
 An AWS EC2 Subnet is a segmented portion of a Virtual Private Cloud (VPC) network. It defines a range of IP addresses within the VPC and can be configured as public or private. Subnets help organize and isolate resources, control network traffic, and manage security settings. They operate in specific Availability Zones, supporting high availability and fault tolerance.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Subnet data model"
@@ -101,8 +103,8 @@ resource <|--- subnet
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Subnet resource relationships"
@@ -263,7 +265,3 @@ aws_vpc_endpoint -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

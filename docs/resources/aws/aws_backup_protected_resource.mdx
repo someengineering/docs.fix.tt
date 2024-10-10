@@ -9,9 +9,11 @@ sidebar_label: Backup Protected Resource
 - Provider Link: [Backup Protected Resource](https://docs.aws.amazon.com/aws-backup/latest/devguide/protected-resources.html)
 
 ## Description
+
 AWS Backup Protected Resource refers to a specific data entity or system component safeguarded by AWS Backup service. It includes databases, file systems, and storage volumes that are backed up and can be restored as needed. This resource type helps organizations maintain data integrity, comply with retention policies, and recover from potential data loss or system failures.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Protected Resource data model"
@@ -69,8 +71,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Protected Resource resource relationships"
@@ -162,7 +164,3 @@ aws_rds_cluster -[#1A83AF]-> aws_rds_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

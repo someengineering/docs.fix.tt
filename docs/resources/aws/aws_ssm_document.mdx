@@ -9,9 +9,11 @@ sidebar_label: SSM Document
 - Provider Link: [SSM Document](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)
 
 ## Description
+
 An AWS SSM Document is a configuration file that defines a set of actions to be performed on managed instances. It specifies tasks like installing software, configuring settings, or running scripts. SSM Documents can be created in JSON or YAML format and are used by AWS Systems Manager to automate system management and maintenance tasks across multiple instances.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SSM Document data model"
@@ -118,8 +120,8 @@ aws_ssm_document --> aws_ssm_review_information
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SSM Document resource relationships"
@@ -158,7 +160,3 @@ aws_ssm_resource_compliance -[#1A83AF]-> aws_ssm_document
 ```
 
 </ZoomPanPinch>
-
-
-
-

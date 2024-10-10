@@ -9,9 +9,11 @@ sidebar_label: EC2 Security Group
 - Provider Link: [EC2 Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
 
 ## Description
+
 AWS EC2 Security Groups are virtual firewalls that control inbound and outbound traffic for EC2 instances. They act at the instance level, specifying which protocols, ports, and IP ranges can communicate with the associated instances. Security Groups operate on a deny-all-by-default principle, requiring explicit rules to permit traffic, and can be modified while instances are running.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Security Group data model"
@@ -106,8 +108,8 @@ resource <|--- security_group
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Security Group resource relationships"
@@ -264,7 +266,3 @@ aws_vpc_endpoint -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

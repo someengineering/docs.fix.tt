@@ -9,9 +9,11 @@ sidebar_label: Compute Virtual Machine Snapshot
 - Provider Link: [Compute Virtual Machine Snapshot](https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk)
 
 ## Description
+
 Azure Compute Virtual Machine Snapshot is a feature that creates point-in-time copies of virtual machine disks. It captures the disk's data state at a specific moment, including all files and system settings. These snapshots can be used for backup, disaster recovery, or to create new virtual machines with the same configuration and data as the original.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Snapshot data model"
@@ -180,8 +182,8 @@ resource <|--- snapshot
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Snapshot resource relationships"
@@ -224,7 +226,3 @@ azure_compute_disk_access -[#1A83AF]-> azure_compute_virtual_machine_snapshot
 ```
 
 </ZoomPanPinch>
-
-
-
-

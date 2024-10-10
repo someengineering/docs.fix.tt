@@ -9,9 +9,11 @@ sidebar_label: Network Security Group
 - Provider Link: [Network Security Group](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)
 
 ## Description
+
 Azure Network Security Group is a virtual firewall that controls inbound and outbound network traffic for Azure resources. It filters traffic based on rules that specify allowed or denied communication between resources. These rules can be applied to subnets, virtual machines, or network interfaces, providing a layer of protection for Azure-hosted applications and services.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Security Group data model"
@@ -110,8 +112,8 @@ resource <|--- security_group
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Security Group resource relationships"
@@ -176,7 +178,3 @@ azure_network_subnet -[#1A83AF]-> azure_network_security_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

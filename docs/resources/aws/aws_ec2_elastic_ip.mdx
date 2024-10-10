@@ -9,9 +9,11 @@ sidebar_label: EC2 Elastic IP
 - Provider Link: [EC2 Elastic IP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 
 ## Description
+
 AWS EC2 Elastic IP is a static IPv4 address for dynamic cloud computing. It provides a consistent public IP that can be associated with different EC2 instances, masking instance failures or replacements. Users can remap the address to other instances in their account, maintaining a fixed entry point for applications and services running on EC2.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Elastic IP data model"
@@ -80,8 +82,8 @@ resource <|--- ip_address
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Elastic IP resource relationships"
@@ -131,7 +133,3 @@ aws_region -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

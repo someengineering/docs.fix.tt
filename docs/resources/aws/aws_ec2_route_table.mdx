@@ -9,9 +9,11 @@ sidebar_label: EC2 Route Table
 - Provider Link: [EC2 Route Table](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
 
 ## Description
+
 An AWS EC2 Route Table is a networking component in Amazon Web Services that directs traffic between subnets within a Virtual Private Cloud (VPC) and to external networks. It contains rules, called routes, which determine where network traffic is sent based on its destination IP address. Route tables control both inbound and outbound traffic for associated subnets.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Route Table data model"
@@ -105,8 +107,8 @@ resource <|--- routing_table
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Route Table resource relationships"
@@ -156,7 +158,3 @@ aws_vpc -[#1A83AF]-> aws_vpc_endpoint
 ```
 
 </ZoomPanPinch>
-
-
-
-

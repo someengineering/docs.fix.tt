@@ -9,9 +9,11 @@ sidebar_label: Instance Template
 - Provider Link: [Instance Template](https://cloud.google.com/compute/docs/instance-templates)
 
 ## Description
+
 A GCP Instance Template is a resource that defines the configuration for virtual machine instances in Google Cloud Platform. It specifies the machine type, boot disk image, network interfaces, and other settings. Instance Templates serve as blueprints for creating multiple identical instances or instance groups, facilitating consistent and repeatable VM deployments across projects.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Template data model"
@@ -265,8 +267,8 @@ gcp_source_instance_params --> gcp_disk_instantiation_config
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Template resource relationships"
@@ -305,7 +307,3 @@ gcp_machine_type -[#1A83AF]-> gcp_instance_template
 ```
 
 </ZoomPanPinch>
-
-
-
-

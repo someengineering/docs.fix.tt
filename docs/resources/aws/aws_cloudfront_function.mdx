@@ -9,9 +9,11 @@ sidebar_label: CloudFront Function
 - Provider Link: [CloudFront Function](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html)
 
 ## Description
+
 AWS CloudFront Function is a serverless compute platform integrated with CloudFront's content delivery network. It executes lightweight JavaScript code at the edge locations, close to users. This function can modify viewer requests and responses, perform authentication, authorization, and URL rewriting tasks. It operates with low latency and high throughput for improved performance.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Function data model"
@@ -76,8 +78,8 @@ resource <|--- serverless_function
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Function resource relationships"
@@ -116,7 +118,3 @@ aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_function
 ```
 
 </ZoomPanPinch>
-
-
-
-

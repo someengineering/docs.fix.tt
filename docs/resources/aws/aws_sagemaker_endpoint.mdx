@@ -9,9 +9,11 @@ sidebar_label: SageMaker Endpoint
 - Provider Link: [SageMaker Endpoint](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html)
 
 ## Description
+
 AWS SageMaker Endpoint is a fully managed service for deploying machine learning models. It provides an HTTPS endpoint for real-time predictions, handles scaling and load balancing, and supports multiple instance types. Users can deploy models trained in SageMaker or other platforms, monitor performance, and update models without downtime. It integrates with other AWS services for logging and security.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Endpoint data model"
@@ -218,8 +220,8 @@ aws_sagemaker_traffic_routing_config --> aws_sagemaker_capacity_size
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Endpoint resource relationships"
@@ -277,7 +279,3 @@ aws_sns_topic -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

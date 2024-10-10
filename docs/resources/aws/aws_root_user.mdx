@@ -9,9 +9,11 @@ sidebar_label: Root User
 - Provider Link: [Root User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)
 
 ## Description
+
 The AWS Root User is the primary account holder for an Amazon Web Services (AWS) account. It has full access to all AWS services and resources within the account. The Root User can create and manage other users, assign permissions, and make billing changes. It should be used sparingly for security reasons.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Root User data model"
@@ -84,8 +86,8 @@ resource <|--- user
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Root User resource relationships"
@@ -124,7 +126,3 @@ aws_account -[#1A83AF]-> aws_root_user
 ```
 
 </ZoomPanPinch>
-
-
-
-

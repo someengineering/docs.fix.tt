@@ -9,9 +9,11 @@ sidebar_label: SQL Server Job Agent
 - Provider Link: [SQL Server Job Agent](https://learn.microsoft.com/en-us/azure/azure-sql/database/job-agent-overview)
 
 ## Description
+
 Azure SQL Server Job Agent is a component of Azure SQL Managed Instance that automates and schedules database maintenance tasks. It executes jobs containing Transact-SQL scripts across multiple databases, performs routine operations, and manages backups. The agent supports recurring schedules, monitors job status, and provides notifications for successful or failed job runs.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Job Agent data model"
@@ -77,8 +79,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Job Agent resource relationships"
@@ -122,7 +124,3 @@ azure_sql_server_database -[#1A83AF]-> azure_sql_server_job_agent
 ```
 
 </ZoomPanPinch>
-
-
-
-

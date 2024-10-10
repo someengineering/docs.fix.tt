@@ -9,9 +9,11 @@ sidebar_label: EFS File System
 - Provider Link: [EFS File System](https://docs.aws.amazon.com/efs/latest/ug/)
 
 ## Description
+
 AWS EFS (Elastic File System) is a cloud-based network file storage service for Amazon EC2 instances. It provides a shared file system that can be accessed by multiple EC2 instances simultaneously. EFS automatically scales storage capacity as files are added or removed, and users pay only for the storage they use.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS File System data model"
@@ -81,8 +83,8 @@ resource <|--- network_share
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS File System resource relationships"
@@ -129,7 +131,3 @@ aws_efs_file_system -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Target Pool
 - Provider Link: [Target Pool](https://cloud.google.com/load-balancing/docs/target-pools)
 
 ## Description
+
 A GCP Target Pool is a network resource that distributes incoming traffic across multiple instances in a region. It acts as a single endpoint for load balancing, directing requests to healthy instances within the pool. Target Pools can be used with network load balancers to distribute traffic based on IP protocol data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target Pool data model"
@@ -80,8 +82,8 @@ gcp_resource <|--- gcp_target_pool
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target Pool resource relationships"
@@ -120,7 +122,3 @@ gcp_forwarding_rule -[#1A83AF]-> gcp_target_pool
 ```
 
 </ZoomPanPinch>
-
-
-
-

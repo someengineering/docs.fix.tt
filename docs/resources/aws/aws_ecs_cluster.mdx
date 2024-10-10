@@ -9,9 +9,11 @@ sidebar_label: ECS Cluster
 - Provider Link: [ECS Cluster](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html)
 
 ## Description
+
 AWS ECS Cluster is a container management service that organizes and runs Docker containers on EC2 instances. It handles container deployment, scheduling, and scaling across multiple instances. ECS Cluster manages the underlying infrastructure, monitors container health, and balances workloads. It integrates with other AWS services for networking, storage, and security.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Cluster data model"
@@ -117,8 +119,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Cluster resource relationships"
@@ -180,7 +182,3 @@ aws_ecs_task -[#1A83AF]-> aws_ecs_container_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

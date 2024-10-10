@@ -9,9 +9,11 @@ sidebar_label: Kinesis Stream
 - Provider Link: [Kinesis Stream](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)
 
 ## Description
+
 AWS Kinesis Stream is a data streaming service that collects, processes, and analyzes real-time data at scale. It ingests data from multiple sources, stores it in shards, and makes it available for consumption by applications. Kinesis Stream supports various data types and can handle high-throughput data flows for analytics, monitoring, and machine learning purposes.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Kinesis Stream data model"
@@ -94,8 +96,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Kinesis Stream resource relationships"
@@ -144,7 +146,3 @@ aws_rds_cluster -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Autoscaler
 - Provider Link: [Autoscaler](https://cloud.google.com/compute/docs/autoscaler)
 
 ## Description
+
 GCP Autoscaler is a Google Cloud Platform service that adjusts the number of virtual machine instances in a managed instance group based on workload demands. It monitors resource usage and automatically adds or removes instances to maintain performance and optimize costs. Users can set scaling policies and thresholds to control the autoscaling behavior.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Autoscaler data model"
@@ -143,8 +145,8 @@ resource <|--- gcp_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Autoscaler resource relationships"
@@ -183,7 +185,3 @@ gcp_autoscaler -[#1A83AF]-> gcp_instance_group_manager
 ```
 
 </ZoomPanPinch>
-
-
-
-

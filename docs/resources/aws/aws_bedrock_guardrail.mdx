@@ -9,9 +9,11 @@ sidebar_label: Bedrock Guardrail
 - Provider Link: [Bedrock Guardrail](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html)
 
 ## Description
+
 AWS Bedrock Guardrail is a feature that helps manage and control access to foundation models in AWS Bedrock. It applies filters to user inputs and model outputs, enforcing content policies and preventing misuse. Administrators can set rules to block specific topics, limit personal information sharing, and ensure appropriate content generation across applications using AWS Bedrock.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Guardrail data model"
@@ -132,8 +134,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Guardrail resource relationships"
@@ -183,7 +185,3 @@ aws_bedrock_guardrail -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

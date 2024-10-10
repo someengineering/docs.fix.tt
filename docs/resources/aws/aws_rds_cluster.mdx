@@ -9,9 +9,11 @@ sidebar_label: RDS Cluster
 - Provider Link: [RDS Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html)
 
 ## Description
+
 AWS RDS Cluster is a managed database service that groups multiple database instances together. It provides high availability and fault tolerance by replicating data across instances in different availability zones. Users can scale read capacity by adding read replicas and perform automatic failover to maintain database accessibility during instance failures or maintenance.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Cluster data model"
@@ -202,8 +204,8 @@ resource <|--- database
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of RDS Cluster resource relationships"
@@ -272,7 +274,3 @@ aws_rds_instance -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

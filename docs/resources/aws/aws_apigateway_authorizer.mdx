@@ -9,9 +9,11 @@ sidebar_label: API Gateway Authorizer
 - Provider Link: [API Gateway Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html)
 
 ## Description
+
 AWS API Gateway Authorizer is a security feature that controls access to API endpoints. It validates incoming requests by examining tokens or other credentials, applying custom logic to determine authorization. Authorizers can integrate with various authentication systems and provide fine-grained access control, ensuring only authenticated and authorized clients can access protected API resources.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Authorizer data model"
@@ -72,8 +74,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Authorizer resource relationships"
@@ -127,7 +129,3 @@ aws_iam_role -[#1A83AF]-> aws_apigateway_authorizer
 ```
 
 </ZoomPanPinch>
-
-
-
-

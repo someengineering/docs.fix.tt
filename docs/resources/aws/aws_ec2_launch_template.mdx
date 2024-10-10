@@ -9,9 +9,11 @@ sidebar_label: EC2 Launch Template
 - Provider Link: [EC2 Launch Template](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html)
 
 ## Description
+
 AWS EC2 Launch Template is a configuration tool for Amazon EC2 instances. It stores instance settings, including AMI ID, instance type, network configurations, and storage options. Users can create multiple versions of templates and use them to launch instances or auto scaling groups, reducing repetitive configuration steps and ensuring consistent instance deployments across an AWS environment.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Launch Template data model"
@@ -307,8 +309,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Launch Template resource relationships"
@@ -347,7 +349,3 @@ aws_autoscaling_group -[#1A83AF]-> aws_ec2_launch_template
 ```
 
 </ZoomPanPinch>
-
-
-
-

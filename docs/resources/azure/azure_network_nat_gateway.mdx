@@ -9,9 +9,11 @@ sidebar_label: Network NAT Gateway
 - Provider Link: [Network NAT Gateway](https://learn.microsoft.com/en-us/azure/virtual-network/nat-gateway-resource)
 
 ## Description
+
 Azure Network NAT Gateway is a managed service that provides outbound internet connectivity for virtual networks. It translates private IP addresses to public IP addresses, letting multiple resources share a single public IP. This service enhances security by hiding internal network structures and centralizes outbound internet traffic management for Azure resources.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network NAT Gateway data model"
@@ -73,8 +75,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network NAT Gateway resource relationships"
@@ -117,7 +119,3 @@ azure_network_subnet -[#1A83AF]-> azure_network_nat_gateway
 ```
 
 </ZoomPanPinch>
-
-
-
-

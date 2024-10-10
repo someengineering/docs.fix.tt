@@ -9,9 +9,11 @@ sidebar_label: EC2 Network ACL
 - Provider Link: [EC2 Network ACL](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
 
 ## Description
+
 AWS EC2 Network ACL is a security layer for Amazon Virtual Private Clouds (VPCs) that controls inbound and outbound traffic at the subnet level. It acts as a firewall, evaluating network traffic against user-defined rules. Network ACLs filter packets based on protocol, port, and source/destination IP addresses, providing an additional line of defense for EC2 instances within VPCs.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Network ACL data model"
@@ -98,8 +100,8 @@ resource <|--- network_acl
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Network ACL resource relationships"
@@ -149,7 +151,3 @@ aws_vpc -[#1A83AF]-> aws_ec2_subnet
 ```
 
 </ZoomPanPinch>
-
-
-
-

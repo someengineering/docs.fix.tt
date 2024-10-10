@@ -9,9 +9,11 @@ sidebar_label: SQL Server Database Workload Group
 - Provider Link: [SQL Server Database Workload Group](https://learn.microsoft.com/en-us/azure/azure-sql/database/workload-group-resource-governor-overview)
 
 ## Description
+
 Azure SQL Server Database Workload Group is a resource management feature that organizes database queries into groups with defined resource limits. It controls CPU, memory, and concurrent request usage for each group, ensuring fair resource distribution and preventing resource contention. This feature helps manage workload priorities and maintain performance across different database tasks.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Database Workload Group data model"
@@ -71,8 +73,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Database Workload Group resource relationships"
@@ -111,7 +113,3 @@ azure_sql_server_database -[#1A83AF]-> azure_sql_server_database_workload_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

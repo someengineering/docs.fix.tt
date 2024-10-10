@@ -9,9 +9,11 @@ sidebar_label: Network Endpoint Group
 - Provider Link: [Network Endpoint Group](https://cloud.google.com/load-balancing/docs/negs)
 
 ## Description
+
 A GCP Network Endpoint Group (NEG) is a configuration object that specifies a group of backend endpoints or services. It functions as a target for load balancing in Google Cloud Platform. NEGs can contain IP addresses, ports, and instance groups, providing flexibility in defining backend services and supporting various load balancing scenarios across different regions and instance types.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Endpoint Group data model"
@@ -109,8 +111,8 @@ resource <|--- gcp_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Endpoint Group resource relationships"
@@ -159,7 +161,3 @@ gcp_subnetwork -[#1A83AF]-> gcp_network_endpoint_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: CloudWatch Metric Filter
 - Provider Link: [CloudWatch Metric Filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html)
 
 ## Description
+
 AWS CloudWatch Metric Filter is a feature that extracts specific data from CloudWatch Logs and transforms it into metrics. It applies user-defined patterns to log events, creating numerical values that can be graphed, used in alarms, or monitored. This functionality helps users track and analyze log data, converting textual information into quantifiable metrics for monitoring and alerting purposes.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Metric Filter data model"
@@ -75,8 +77,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Metric Filter resource relationships"
@@ -119,7 +121,3 @@ aws_cloudwatch_metric_filter -[#1A83AF]-> aws_cloudwatch_alarm
 ```
 
 </ZoomPanPinch>
-
-
-
-

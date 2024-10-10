@@ -9,9 +9,11 @@ sidebar_label: Cosmos DB Restorable Table
 - Provider Link: [Cosmos DB Restorable Table](https://learn.microsoft.com/en-us/azure/cosmos-db/table/restorable-table-accounts)
 
 ## Description
+
 Azure Cosmos DB Restorable Table is a feature that provides point-in-time recovery for Azure Cosmos DB table data. It creates periodic backups of table data, allowing users to restore tables to a specific timestamp within the retention period. This functionality helps protect against accidental deletions, modifications, or corruption of data in Azure Cosmos DB tables.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable Table data model"
@@ -80,8 +82,8 @@ resource <|--- phantom_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable Table resource relationships"
@@ -120,7 +122,3 @@ azure_cosmos_db_restorable_account -[#1A83AF]-> azure_cosmos_db_restorable_table
 ```
 
 </ZoomPanPinch>
-
-
-
-

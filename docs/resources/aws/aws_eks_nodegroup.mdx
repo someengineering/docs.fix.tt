@@ -9,9 +9,11 @@ sidebar_label: EKS Nodegroup
 - Provider Link: [EKS Nodegroup](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)
 
 ## Description
+
 AWS EKS Nodegroup is a feature of Amazon Elastic Kubernetes Service that manages groups of EC2 instances for Kubernetes clusters. It automates the provisioning and lifecycle of worker nodes, handles node updates and terminations, and integrates with other AWS services. Nodegroups simplify cluster management by reducing manual configuration and maintenance tasks for Kubernetes deployments.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EKS Nodegroup data model"
@@ -126,8 +128,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EKS Nodegroup resource relationships"
@@ -170,7 +172,3 @@ aws_eks_nodegroup -[#1A83AF]-> aws_autoscaling_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Container Service Managed Cluster Snapshot
 - Provider Link: [Container Service Managed Cluster Snapshot](https://learn.microsoft.com/en-us/azure/aks/managed-cluster-snapshot)
 
 ## Description
+
 Azure Container Service Managed Cluster Snapshot is a feature that creates point-in-time copies of Azure Kubernetes Service (AKS) clusters. It captures the cluster's configuration, workloads, and associated resources. These snapshots can be used for backup, disaster recovery, or to replicate cluster environments. Users can restore clusters to previous states or create new clusters from snapshots.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Container Service Managed Cluster Snapshot data model"
@@ -84,8 +86,8 @@ resource <|--- snapshot
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Container Service Managed Cluster Snapshot resource relationships"
@@ -124,7 +126,3 @@ azure_container_service_managed_cluster -[#1A83AF]-> azure_container_service_man
 ```
 
 </ZoomPanPinch>
-
-
-
-

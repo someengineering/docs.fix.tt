@@ -9,9 +9,11 @@ sidebar_label: Target TCP Proxy
 - Provider Link: [Target TCP Proxy](https://cloud.google.com/load-balancing/docs/target-tcp-proxy)
 
 ## Description
+
 GCP Target TCP Proxy is a Google Cloud Platform component that distributes incoming TCP traffic across backend services. It acts as an intermediary, receiving client requests and forwarding them to appropriate backend instances based on configured rules. Target TCP Proxy supports load balancing, SSL termination, and protocol forwarding, improving network performance and security for TCP-based applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target TCP Proxy data model"
@@ -78,8 +80,8 @@ gcp_resource <|--- gcp_target_tcp_proxy
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target TCP Proxy resource relationships"
@@ -122,7 +124,3 @@ gcp_target_tcp_proxy -[#1A83AF]-> gcp_backend_service
 ```
 
 </ZoomPanPinch>
-
-
-
-

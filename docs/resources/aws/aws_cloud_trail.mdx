@@ -9,9 +9,11 @@ sidebar_label: CloudTrail
 - Provider Link: [CloudTrail](https://docs.aws.amazon.com/cloudtrail/)
 
 ## Description
+
 AWS CloudTrail is a service that records API calls and events in AWS accounts. It provides an audit trail of actions taken by users, roles, and services. CloudTrail logs these activities, stores them securely, and offers tools for analysis and compliance. Users can monitor account activity, investigate security incidents, and meet regulatory requirements using CloudTrail's data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudTrail data model"
@@ -132,8 +134,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudTrail resource relationships"
@@ -181,7 +183,3 @@ aws_sns_topic -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

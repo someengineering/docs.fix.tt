@@ -9,9 +9,11 @@ sidebar_label: Storage Account Deleted
 - Provider Link: [Storage Account Deleted](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-delete)
 
 ## Description
+
 Azure Storage Account Deleted is an event that occurs when a storage account is removed from an Azure subscription. This action permanently erases all data within the account, including blobs, files, queues, and tables. Once deleted, the storage account name becomes available for reuse, and associated resources are released back to the Azure infrastructure.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Storage Account Deleted data model"
@@ -74,8 +76,8 @@ resource <|--- phantom_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Storage Account Deleted resource relationships"
@@ -110,7 +112,3 @@ class azure_storage_account_deleted {
 ```
 
 </ZoomPanPinch>
-
-
-
-

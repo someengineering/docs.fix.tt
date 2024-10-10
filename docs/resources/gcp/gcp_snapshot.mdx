@@ -9,9 +9,11 @@ sidebar_label: Snapshot
 - Provider Link: [Snapshot](https://cloud.google.com/compute/docs/disks/snapshots)
 
 ## Description
+
 GCP Snapshot is a data backup feature for Google Cloud Platform. It creates point-in-time copies of persistent disks, providing a way to safeguard data and recover from system failures. Snapshots can be used to clone disks, transfer data between regions, or restore data to a previous state, offering protection against data loss and system disruptions.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Snapshot data model"
@@ -114,8 +116,8 @@ resource <|--- snapshot
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Snapshot resource relationships"
@@ -154,7 +156,3 @@ gcp_disk -[#1A83AF]-> gcp_snapshot
 ```
 
 </ZoomPanPinch>
-
-
-
-

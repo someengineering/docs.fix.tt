@@ -9,9 +9,11 @@ sidebar_label: SQL Server Trust Group
 - Provider Link: [SQL Server Trust Group](https://learn.microsoft.com/en-us/azure/azure-sql/database/trust-group-concept-overview?view=azuresql)
 
 ## Description
+
 Azure SQL Server Trust Group is a security feature that enhances data protection across multiple SQL Server instances. It creates a trusted boundary for data sharing and communication between servers, reducing the need for individual firewall rules. This group facilitates secure cross-server queries and transactions while maintaining isolation from external networks.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Trust Group data model"
@@ -67,8 +69,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Trust Group resource relationships"
@@ -107,7 +109,3 @@ azure_sql_server_managed_instance -[#1A83AF]-> azure_sql_server_trust_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

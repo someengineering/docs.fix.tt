@@ -9,9 +9,11 @@ sidebar_label: SQL Server Managed Instance Failover Group
 - Provider Link: [SQL Server Managed Instance Failover Group](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/auto-failover-group-overview)
 
 ## Description
+
 Azure SQL Server Managed Instance Failover Group is a feature that provides database redundancy and high availability across multiple regions. It automatically replicates databases from a primary managed instance to a secondary instance in a different region. During outages or disasters, it initiates failover to the secondary instance, ensuring continuous data access and minimizing downtime for applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Managed Instance Failover Group data model"
@@ -86,8 +88,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Managed Instance Failover Group resource relationships"
@@ -126,7 +128,3 @@ azure_sql_server_managed_instance -[#1A83AF]-> azure_sql_server_managed_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: Backup Copy Job
 - Provider Link: [Backup Copy Job](https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-copy-job.html)
 
 ## Description
+
 AWS Backup Copy Job is a feature that creates and transfers copies of backup data between AWS Regions or AWS accounts. It automates the process of replicating backups, enhancing disaster recovery capabilities and data protection. Users can specify source and destination locations, schedule copy jobs, and manage retention policies for the copied backups.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Copy Job data model"
@@ -92,8 +94,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Copy Job resource relationships"
@@ -142,7 +144,3 @@ aws_backup_vault -[#1A83AF]-> aws_backup_recovery_point
 ```
 
 </ZoomPanPinch>
-
-
-
-

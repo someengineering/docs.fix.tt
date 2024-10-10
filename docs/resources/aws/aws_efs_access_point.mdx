@@ -9,9 +9,11 @@ sidebar_label: EFS Access Point
 - Provider Link: [EFS Access Point](https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
 
 ## Description
+
 AWS EFS Access Point is a feature of Amazon Elastic File System that creates a unique entry point to an EFS file system. It manages access permissions and enforces a root directory for NFS clients. Access Points simplify sharing data in multi-tenant applications by providing isolated namespaces within a single file system.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS Access Point data model"
@@ -85,8 +87,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EFS Access Point resource relationships"
@@ -125,7 +127,3 @@ aws_efs_file_system -[#1A83AF]-> aws_efs_access_point
 ```
 
 </ZoomPanPinch>
-
-
-
-

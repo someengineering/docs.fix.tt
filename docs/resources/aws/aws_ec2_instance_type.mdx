@@ -9,9 +9,11 @@ sidebar_label: EC2 Instance Type
 - Provider Link: [EC2 Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
 
 ## Description
+
 AWS EC2 Instance Types are predefined virtual server configurations offered by Amazon Web Services. Each type specifies the compute, memory, storage, and networking capacity of the virtual machine. Users select an instance type based on their application's requirements, balancing performance and cost. EC2 instances can be launched, stopped, and terminated as needed for various computing workloads.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Instance Type data model"
@@ -214,8 +216,8 @@ quota <|--- type
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Instance Type resource relationships"
@@ -272,7 +274,3 @@ aws_service_quota -[#1A83AF]-> aws_ec2_instance_type
 ```
 
 </ZoomPanPinch>
-
-
-
-

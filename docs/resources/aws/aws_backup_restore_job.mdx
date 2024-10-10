@@ -9,9 +9,11 @@ sidebar_label: Backup Restore Job
 - Provider Link: [Backup Restore Job](https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-a-backup.html)
 
 ## Description
+
 An AWS Backup Restore Job is a process that retrieves data from an AWS Backup vault and reinstates it to its original or a new location. It recovers backed-up resources, such as databases, file systems, or EC2 instances, to a specified point in time. Users can initiate and monitor restore jobs through the AWS Management Console or API.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Restore Job data model"
@@ -82,8 +84,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Restore Job resource relationships"
@@ -122,7 +124,3 @@ aws_backup_recovery_point -[#1A83AF]-> aws_backup_restore_job
 ```
 
 </ZoomPanPinch>
-
-
-
-

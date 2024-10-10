@@ -9,9 +9,11 @@ sidebar_label: Route53 Resource Record
 - Provider Link: [Route53 Resource Record](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html)
 
 ## Description
+
 AWS Route 53 Resource Record is a DNS record that defines how traffic is routed for a specific domain or subdomain. It contains information such as IP addresses, domain names, or values specific to the record type. Route 53 uses these records to respond to DNS queries and direct internet traffic to the appropriate destinations.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Resource Record data model"
@@ -84,8 +86,8 @@ resource <|--- dns_record
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Route53 Resource Record resource relationships"
@@ -124,7 +126,3 @@ aws_route53_resource_record_set -[#1A83AF]-> aws_route53_resource_record
 ```
 
 </ZoomPanPinch>
-
-
-
-

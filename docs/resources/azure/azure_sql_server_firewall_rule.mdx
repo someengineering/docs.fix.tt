@@ -9,9 +9,11 @@ sidebar_label: SQL Server Firewall Rule
 - Provider Link: [SQL Server Firewall Rule](https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure)
 
 ## Description
+
 Azure SQL Server Firewall Rule is a security feature that controls network access to Azure SQL databases and servers. It defines IP address ranges permitted to connect to the database, blocking unauthorized access attempts. Administrators can configure rules at the server or database level, specifying individual IP addresses or address ranges to grant or restrict access.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Firewall Rule data model"
@@ -67,8 +69,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Firewall Rule resource relationships"
@@ -107,7 +109,3 @@ azure_sql_server -[#1A83AF]-> azure_sql_server_firewall_rule
 ```
 
 </ZoomPanPinch>
-
-
-
-

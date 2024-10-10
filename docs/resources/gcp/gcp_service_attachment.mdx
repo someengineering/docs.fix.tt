@@ -9,9 +9,11 @@ sidebar_label: Service Attachment
 - Provider Link: [Service Attachment](https://cloud.google.com/vpc/docs/private-service-connect#service-attachments)
 
 ## Description
+
 GCP Service Attachment is a networking feature that connects services across different Google Cloud projects or organizations. It creates private endpoints for services, restricting access to specific consumers while maintaining network isolation. Service Attachment facilitates secure communication between services without exposing them to the public internet, enhancing data security and network control.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Service Attachment data model"
@@ -102,8 +104,8 @@ gcp_service_attachment --> gcp_uint128
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Service Attachment resource relationships"
@@ -146,7 +148,3 @@ gcp_service_attachment -[#1A83AF]-> gcp_subnetwork
 ```
 
 </ZoomPanPinch>
-
-
-
-

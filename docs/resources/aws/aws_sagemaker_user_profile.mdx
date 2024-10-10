@@ -9,9 +9,11 @@ sidebar_label: SageMaker User Profile
 - Provider Link: [SageMaker User Profile](https://docs.aws.amazon.com/sagemaker/latest/dg/domain-user-profile.html)
 
 ## Description
+
 AWS SageMaker User Profile is a feature within Amazon SageMaker that manages individual user settings and permissions in a SageMaker Domain. It stores user-specific configurations, including execution roles, security groups, and custom settings. User Profiles control access to SageMaker resources and define user-specific environments, ensuring proper isolation and resource allocation for machine learning projects.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker User Profile data model"
@@ -65,8 +67,8 @@ aws_resource <|--- aws_sagemaker_user_profile
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SageMaker User Profile resource relationships"
@@ -125,7 +127,3 @@ aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_trial
 ```
 
 </ZoomPanPinch>
-
-
-
-

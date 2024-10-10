@@ -9,9 +9,11 @@ sidebar_label: API Gateway Stage
 - Provider Link: [API Gateway Stage](https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html)
 
 ## Description
+
 AWS API Gateway Stage represents a deployment snapshot of an API, providing a distinct endpoint for client access. It acts as a named reference to a deployment, allowing version control and management of different API iterations. Stages facilitate the separation of development, testing, and production environments, enabling API versioning and controlled updates to API configurations.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Stage data model"
@@ -83,8 +85,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of API Gateway Stage resource relationships"
@@ -123,7 +125,3 @@ aws_apigateway_deployment -[#1A83AF]-> aws_apigateway_stage
 ```
 
 </ZoomPanPinch>
-
-
-
-

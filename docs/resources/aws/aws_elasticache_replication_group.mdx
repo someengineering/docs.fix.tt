@@ -9,9 +9,11 @@ sidebar_label: ElastiCache Replication Group
 - Provider Link: [ElastiCache Replication Group](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.html)
 
 ## Description
+
 AWS ElastiCache Replication Group is a feature that creates multiple interconnected cache nodes. It provides redundancy and improves read performance by distributing data across nodes. The group consists of a primary node for write operations and one or more read replicas. It supports automatic failover and data synchronization between nodes, enhancing reliability and availability of cached data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Replication Group data model"
@@ -157,8 +159,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Replication Group resource relationships"
@@ -201,7 +203,3 @@ aws_elasticache_replication_group -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

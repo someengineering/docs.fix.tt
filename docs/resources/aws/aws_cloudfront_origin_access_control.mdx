@@ -9,9 +9,11 @@ sidebar_label: CloudFront Origin Access Control
 - Provider Link: [CloudFront Origin Access Control](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
 
 ## Description
+
 AWS CloudFront Origin Access Control is a security feature that restricts access to Amazon S3 bucket content, ensuring it's only accessible through CloudFront. It creates a trust relationship between CloudFront and S3, preventing direct access to S3 objects. This mechanism enhances content protection by controlling who can retrieve files from the origin, reducing potential security risks.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Origin Access Control data model"
@@ -67,8 +69,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Origin Access Control resource relationships"
@@ -107,7 +109,3 @@ aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_origin_access_control
 ```
 
 </ZoomPanPinch>
-
-
-
-

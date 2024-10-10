@@ -9,9 +9,11 @@ sidebar_label: CloudFront Cache Policy
 - Provider Link: [CloudFront Cache Policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#cache-policy-reference)
 
 ## Description
+
 AWS CloudFront Cache Policy is a configuration component for CloudFront distributions. It defines how CloudFront caches and serves content from edge locations. The policy specifies caching behaviors, including TTL settings, cache key composition, and compression support. It controls which HTTP headers, cookies, and query strings are included in the cache key for content delivery optimization.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Cache Policy data model"
@@ -96,8 +98,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Cache Policy resource relationships"
@@ -136,7 +138,3 @@ aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_cache_policy
 ```
 
 </ZoomPanPinch>
-
-
-
-

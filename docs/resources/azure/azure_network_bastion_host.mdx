@@ -9,9 +9,11 @@ sidebar_label: Network Bastion Host
 - Provider Link: [Network Bastion Host](https://learn.microsoft.com/en-us/azure/bastion/bastion-overview)
 
 ## Description
+
 Azure Network Bastion Host is a managed service that provides secure remote access to virtual machines in Azure virtual networks. It acts as a jump server, eliminating the need for public IP addresses on VMs. Users connect through the Azure portal or via SSH/RDP protocols, with Bastion handling authentication and network traversal.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Bastion Host data model"
@@ -90,8 +92,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Network Bastion Host resource relationships"
@@ -139,7 +141,3 @@ azure_network_virtual_network -[#1A83AF]-> azure_network_subnet
 ```
 
 </ZoomPanPinch>
-
-
-
-

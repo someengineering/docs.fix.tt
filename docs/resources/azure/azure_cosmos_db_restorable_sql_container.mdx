@@ -9,9 +9,11 @@ sidebar_label: Cosmos DB Restorable SQL Container
 - Provider Link: [Cosmos DB Restorable SQL Container](https://learn.microsoft.com/en-us/azure/cosmos-db/sql/restorable-container-properties)
 
 ## Description
+
 Azure Cosmos DB Restorable SQL Container is a feature that provides point-in-time recovery for SQL API containers in Azure Cosmos DB. It creates continuous backups of container data, letting users restore to any timestamp within the retention period. This functionality helps protect against accidental deletions, modifications, or corruption of data.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable SQL Container data model"
@@ -77,8 +79,8 @@ resource <|--- phantom_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Restorable SQL Container resource relationships"
@@ -117,7 +119,3 @@ azure_cosmos_db_restorable_sql_database -[#1A83AF]-> azure_cosmos_db_restorable_
 ```
 
 </ZoomPanPinch>
-
-
-
-

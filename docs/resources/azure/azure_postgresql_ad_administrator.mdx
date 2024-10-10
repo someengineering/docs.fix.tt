@@ -9,9 +9,11 @@ sidebar_label: PostgreSQL Ad Administrator
 - Provider Link: [PostgreSQL Ad Administrator](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-configure-sign-in-azure-ad-authentication)
 
 ## Description
+
 Azure PostgreSQL AD Administrator is a role that manages access to Azure Database for PostgreSQL using Azure Active Directory credentials. It controls user authentication, assigns database roles, and sets permissions for AD users and groups. This administrator can create and manage logins, ensuring secure and centralized identity management for PostgreSQL databases in Azure.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of PostgreSQL Ad Administrator data model"
@@ -83,8 +85,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of PostgreSQL Ad Administrator resource relationships"
@@ -123,7 +125,3 @@ azure_postgresql_server -[#1A83AF]-> azure_postgresql_ad_administrator
 ```
 
 </ZoomPanPinch>
-
-
-
-

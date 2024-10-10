@@ -9,9 +9,11 @@ sidebar_label: Instance Group Manager
 - Provider Link: [Instance Group Manager](https://cloud.google.com/compute/docs/instance-groups/working-with-managed-instance-groups)
 
 ## Description
+
 GCP Instance Group Manager is a Google Cloud Platform service that automates the creation, management, and scaling of virtual machine instances. It maintains a specified number of instances, replaces unhealthy ones, and adjusts the group size based on defined rules. The service handles load balancing, rolling updates, and auto-scaling to meet application demands.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Group Manager data model"
@@ -168,8 +170,8 @@ gcp_stateful_policy_preserved_state --> gcp_stateful_policy_preserved_state_disk
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Instance Group Manager resource relationships"
@@ -224,7 +226,3 @@ gcp_instance_group_manager -[#1A83AF]-> gcp_https_health_check
 ```
 
 </ZoomPanPinch>
-
-
-
-

@@ -9,9 +9,11 @@ sidebar_label: ECS Service
 - Provider Link: [ECS Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
 
 ## Description
+
 AWS ECS Service is a container management feature within Amazon Elastic Container Service. It maintains and scales a specified number of task instances, automatically replaces failed tasks, and integrates with Elastic Load Balancing for distributing traffic. ECS Service handles task placement, scheduling, and service discovery, simplifying the deployment and management of containerized applications on AWS infrastructure.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Service data model"
@@ -203,8 +205,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of ECS Service resource relationships"
@@ -270,7 +272,3 @@ aws_iam_role -[#1A83AF]-> aws_ecs_service
 ```
 
 </ZoomPanPinch>
-
-
-
-

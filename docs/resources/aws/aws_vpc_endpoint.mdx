@@ -9,9 +9,11 @@ sidebar_label: VPC Endpoint
 - Provider Link: [VPC Endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html)
 
 ## Description
+
 An AWS VPC Endpoint is a service that provides private connectivity between Amazon Virtual Private Clouds (VPCs) and supported AWS services. It routes traffic within the Amazon network, bypassing the public internet. VPC Endpoints improve security by keeping data within the AWS infrastructure and can reduce data transfer costs for certain services.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of VPC Endpoint data model"
@@ -90,8 +92,8 @@ resource <|--- endpoint
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of VPC Endpoint resource relationships"
@@ -169,7 +171,3 @@ aws_vpc_endpoint -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

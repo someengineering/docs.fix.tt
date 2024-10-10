@@ -9,9 +9,11 @@ sidebar_label: CloudFront Public Key
 - Provider Link: [CloudFront Public Key](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html#private-content-trusted-signers)
 
 ## Description
+
 AWS CloudFront Public Key is a component of Amazon's content delivery network service. It is used to verify signed URLs and signed cookies, which control access to private content distributed through CloudFront. The public key is paired with a private key to create trusted signatures, ensuring that only authorized users can access protected content across CloudFront's global edge locations.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Public Key data model"
@@ -65,8 +67,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Public Key resource relationships"
@@ -105,7 +107,3 @@ aws_cloudfront_field_level_encryption_profile -[#1A83AF]-> aws_cloudfront_public
 ```
 
 </ZoomPanPinch>
-
-
-
-

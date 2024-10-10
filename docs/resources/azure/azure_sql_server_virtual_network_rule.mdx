@@ -9,9 +9,11 @@ sidebar_label: SQL Server Virtual Network Rule
 - Provider Link: [SQL Server Virtual Network Rule](https://learn.microsoft.com/en-us/azure/azure-sql/database/vnet-service-endpoint-rule-overview)
 
 ## Description
+
 Azure SQL Server Virtual Network Rule is a security feature that controls network access to SQL Server instances. It defines which subnet within an Azure Virtual Network can connect to the SQL Server. This rule enhances database security by restricting access to specific virtual networks, reducing potential attack surfaces and improving data protection.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Virtual Network Rule data model"
@@ -68,8 +70,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Virtual Network Rule resource relationships"
@@ -108,7 +110,3 @@ azure_sql_server -[#1A83AF]-> azure_sql_server_virtual_network_rule
 ```
 
 </ZoomPanPinch>
-
-
-
-

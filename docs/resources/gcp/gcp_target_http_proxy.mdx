@@ -9,9 +9,11 @@ sidebar_label: Target HTTP Proxy
 - Provider Link: [Target HTTP Proxy](https://cloud.google.com/load-balancing/docs/target-proxies)
 
 ## Description
+
 A GCP Target HTTP Proxy is a Google Cloud Platform resource that routes incoming HTTP requests to backend services. It acts as an intermediary between external clients and internal services, distributing traffic based on URL maps. Target HTTP Proxies work with global load balancers to manage and direct incoming HTTP traffic across multiple regions.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target HTTP Proxy data model"
@@ -78,8 +80,8 @@ gcp_resource <|--- gcp_target_http_proxy
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target HTTP Proxy resource relationships"
@@ -122,7 +124,3 @@ gcp_target_http_proxy -[#1A83AF]-> gcp_url_map
 ```
 
 </ZoomPanPinch>
-
-
-
-

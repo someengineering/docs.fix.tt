@@ -9,9 +9,11 @@ sidebar_label: Alb Target Group
 - Provider Link: [Alb Target Group](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
 
 ## Description
+
 AWS ALB Target Group is a component of the Application Load Balancer service that routes incoming traffic to registered targets. It defines rules for health checks, load balancing algorithms, and target selection. Target Groups can include EC2 instances, containers, IP addresses, or Lambda functions, providing flexibility in distributing traffic across various backend resources.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Alb Target Group data model"
@@ -102,8 +104,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Alb Target Group resource relationships"
@@ -163,7 +165,3 @@ aws_vpc -[#1A83AF]-> aws_ec2_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

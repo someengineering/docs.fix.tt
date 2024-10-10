@@ -9,9 +9,11 @@ sidebar_label: SSM Instance
 - Provider Link: [SSM Instance](https://docs.aws.amazon.com/systems-manager/latest/userguide/managed_instances.html)
 
 ## Description
+
 AWS Systems Manager (SSM) Instance is a managed service that provides visibility and control over AWS infrastructure. It automates operational tasks, manages configuration, and maintains security compliance across EC2 instances and on-premises servers. SSM Instance collects system data, applies patches, executes commands, and configures instances according to defined policies, simplifying IT operations and enhancing system management capabilities.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SSM Instance data model"
@@ -88,8 +90,8 @@ aws_ssm_instance --> aws_ssm_instance_aggregated_association_overview
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SSM Instance resource relationships"
@@ -128,7 +130,3 @@ aws_ssm_instance -[#1A83AF]-> aws_ec2_instance
 ```
 
 </ZoomPanPinch>
-
-
-
-

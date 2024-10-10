@@ -9,9 +9,11 @@ sidebar_label: EC2 Network Interface
 - Provider Link: [EC2 Network Interface](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)
 
 ## Description
+
 An AWS EC2 Network Interface is a virtual network card that can be attached to EC2 instances. It provides network connectivity for instances within a VPC, allowing them to communicate with other resources and the internet. Network Interfaces can have multiple IP addresses, security groups, and can be moved between instances to maintain network configurations.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Network Interface data model"
@@ -129,8 +131,8 @@ resource <|--- network_interface
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Network Interface resource relationships"
@@ -223,7 +225,3 @@ aws_vpc_endpoint -[#1A83AF]-> aws_ec2_network_interface
 ```
 
 </ZoomPanPinch>
-
-
-
-

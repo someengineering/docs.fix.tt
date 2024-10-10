@@ -9,9 +9,11 @@ sidebar_label: EC2 Reserved Instances
 - Provider Link: [EC2 Reserved Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html)
 
 ## Description
+
 AWS EC2 Reserved Instances are a purchasing option for Amazon Elastic Compute Cloud (EC2) that provide discounted hourly rates in exchange for a one-time upfront payment and commitment to a specific instance type in a chosen region for a term of one or three years. They offer cost savings compared to On-Demand Instance pricing for workloads with predictable usage.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Reserved Instances data model"
@@ -85,8 +87,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Reserved Instances resource relationships"
@@ -125,7 +127,3 @@ aws_ec2_instance_type -[#1A83AF]-> aws_ec2_reserved_instances
 ```
 
 </ZoomPanPinch>
-
-
-
-

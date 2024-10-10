@@ -9,9 +9,11 @@ sidebar_label: SNS Endpoint
 - Provider Link: [SNS Endpoint](https://docs.aws.amazon.com/sns/latest/dg/sns-create-endpoint.html)
 
 ## Description
+
 AWS SNS Endpoint is a destination for Amazon Simple Notification Service (SNS) messages. It represents a specific target where notifications are sent, such as mobile devices, email addresses, or web servers. SNS Endpoints receive messages published to SNS topics, facilitating the distribution of information across various platforms and applications within AWS infrastructure.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SNS Endpoint data model"
@@ -65,8 +67,8 @@ aws_resource <|--- aws_sns_endpoint
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SNS Endpoint resource relationships"
@@ -105,7 +107,3 @@ aws_sns_platform_application -[#1A83AF]-> aws_sns_endpoint
 ```
 
 </ZoomPanPinch>
-
-
-
-

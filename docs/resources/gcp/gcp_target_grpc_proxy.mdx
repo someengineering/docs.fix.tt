@@ -9,9 +9,11 @@ sidebar_label: Target gRPC Proxy
 - Provider Link: [Target gRPC Proxy](https://cloud.google.com/load-balancing/docs/target-grpc-proxy)
 
 ## Description
+
 A GCP Target gRPC Proxy is a Google Cloud Platform component that routes gRPC traffic to backend services. It acts as an intermediary between clients and servers, handling load balancing, authentication, and protocol conversion. This proxy supports HTTP/2 and can distribute incoming requests across multiple backend instances, improving performance and reliability for gRPC-based applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target gRPC Proxy data model"
@@ -79,8 +81,8 @@ gcp_resource <|--- gcp_target_grpc_proxy
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Target gRPC Proxy resource relationships"
@@ -123,7 +125,3 @@ gcp_target_grpc_proxy -[#1A83AF]-> gcp_url_map
 ```
 
 </ZoomPanPinch>
-
-
-
-

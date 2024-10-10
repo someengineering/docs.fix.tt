@@ -9,9 +9,11 @@ sidebar_label: HTTPS Health Check
 - Provider Link: [HTTPS Health Check](https://cloud.google.com/load-balancing/docs/health-checks#https-hc)
 
 ## Description
+
 GCP HTTPS Health Check is a Google Cloud Platform service that monitors the health of HTTPS endpoints. It performs regular checks on specified URLs, verifying their availability and response status. The service helps maintain system reliability by detecting issues and facilitating automated responses, such as rerouting traffic or triggering alerts when problems are identified.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of HTTPS Health Check data model"
@@ -82,8 +84,8 @@ resource <|--- gcp_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of HTTPS Health Check resource relationships"
@@ -126,7 +128,3 @@ gcp_instance_group_manager -[#1A83AF]-> gcp_https_health_check
 ```
 
 </ZoomPanPinch>
-
-
-
-

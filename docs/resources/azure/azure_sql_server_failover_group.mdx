@@ -9,9 +9,11 @@ sidebar_label: SQL Server Failover Group
 - Provider Link: [SQL Server Failover Group](https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-overview)
 
 ## Description
+
 Azure SQL Server Failover Group is a feature that manages automatic failover for multiple databases across Azure regions. It maintains data synchronization between primary and secondary servers, ensuring database availability during outages or disasters. When failover occurs, the group redirects client connections to the secondary server, minimizing downtime and data loss for mission-critical applications.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Failover Group data model"
@@ -82,8 +84,8 @@ resource <|--- microsoft_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of SQL Server Failover Group resource relationships"
@@ -127,7 +129,3 @@ azure_sql_server_database -[#1A83AF]-> azure_sql_server_failover_group
 ```
 
 </ZoomPanPinch>
-
-
-
-

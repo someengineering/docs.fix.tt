@@ -9,9 +9,11 @@ sidebar_label: DynamoDB Global Table
 - Provider Link: [DynamoDB Global Table](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html)
 
 ## Description
+
 AWS DynamoDB Global Table is a feature that replicates DynamoDB tables across multiple AWS regions. It provides multi-region read and write access to data, ensuring low-latency access for globally distributed applications. Global Table maintains consistency across regions, handles conflict resolution, and offers automatic failover, improving availability and disaster recovery capabilities for applications with global user bases.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of DynamoDB Global Table data model"
@@ -88,8 +90,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of DynamoDB Global Table resource relationships"
@@ -132,7 +134,3 @@ aws_dynamodb_global_table -[#1A83AF]-> aws_kms_key
 ```
 
 </ZoomPanPinch>
-
-
-
-

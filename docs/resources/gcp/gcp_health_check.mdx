@@ -9,9 +9,11 @@ sidebar_label: Health Check
 - Provider Link: [Health Check](https://cloud.google.com/load-balancing/docs/health-checks)
 
 ## Description
+
 GCP Health Check is a Google Cloud Platform service that monitors the health of backend instances in load balancing configurations. It performs periodic checks on specified endpoints to determine instance availability and readiness. Health Check reports instance status to load balancers, which use this information to direct traffic only to healthy instances, improving application reliability and performance.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Health Check data model"
@@ -149,8 +151,8 @@ resource <|--- health_check
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Health Check resource relationships"
@@ -193,7 +195,3 @@ gcp_instance_group_manager -[#1A83AF]-> gcp_health_check
 ```
 
 </ZoomPanPinch>
-
-
-
-

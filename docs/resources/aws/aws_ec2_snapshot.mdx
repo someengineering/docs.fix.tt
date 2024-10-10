@@ -9,9 +9,11 @@ sidebar_label: EC2 Snapshot
 - Provider Link: [EC2 Snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html)
 
 ## Description
+
 AWS EC2 Snapshot is a backup tool for Amazon Elastic Compute Cloud (EC2) instances. It creates point-in-time copies of Elastic Block Store (EBS) volumes, preserving data at a specific moment. Users can restore snapshots to new EBS volumes, create images for launching new instances, or transfer data between AWS regions for disaster recovery and data migration purposes.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Snapshot data model"
@@ -81,8 +83,8 @@ resource <|--- snapshot
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of EC2 Snapshot resource relationships"
@@ -135,7 +137,3 @@ aws_region -[#1A83AF]-> aws_ec2_volume
 ```
 
 </ZoomPanPinch>
-
-
-
-

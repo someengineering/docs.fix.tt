@@ -9,9 +9,11 @@ sidebar_label: Backup Recovery Point
 - Provider Link: [Backup Recovery Point](https://docs.aws.amazon.com/aws-backup/latest/devguide/recovery-points.html)
 
 ## Description
+
 AWS Backup Recovery Point is a snapshot of data created by AWS Backup. It represents a point-in-time copy of resources, such as EBS volumes, RDS databases, or EFS file systems. Recovery Points can be used to restore data to a specific state, helping organizations recover from data loss or system failures.
 
 ## Properties
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Recovery Point data model"
@@ -104,8 +106,8 @@ resource <|--- aws_resource
 
 </ZoomPanPinch>
 
-
 ## Relationship to other Resources
+
 <ZoomPanPinch>
 
 ```kroki imgType="plantuml" imgAlt="Diagram of Backup Recovery Point resource relationships"
@@ -170,7 +172,3 @@ aws_backup_vault -[#1A83AF]-> aws_backup_recovery_point
 ```
 
 </ZoomPanPinch>
-
-
-
-
