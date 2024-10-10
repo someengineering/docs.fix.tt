@@ -68,30 +68,6 @@ class azure_cosmos_db_account_usage {
 class azure_cosmos_db_location {
 
 }
-class azure_cosmos_db_restorable_account {
-
-}
-class azure_cosmos_db_restorable_gremlin_database {
-
-}
-class azure_cosmos_db_restorable_gremlin_graph {
-
-}
-class azure_cosmos_db_restorable_mongo_db_collection {
-
-}
-class azure_cosmos_db_restorable_mongo_db_database {
-
-}
-class azure_cosmos_db_restorable_sql_container {
-
-}
-class azure_cosmos_db_restorable_sql_database {
-
-}
-class azure_cosmos_db_restorable_table {
-
-}
 class azure_location {
 
 }
@@ -243,14 +219,6 @@ volume_type <|--- azure_compute_disk_type
 instance_type <|--- azure_compute_virtual_machine_size
 azure_usage <|--- azure_cosmos_db_account_usage
 phantom_resource <|--- azure_cosmos_db_location
-phantom_resource <|--- azure_cosmos_db_restorable_account
-phantom_resource <|--- azure_cosmos_db_restorable_gremlin_database
-phantom_resource <|--- azure_cosmos_db_restorable_gremlin_graph
-phantom_resource <|--- azure_cosmos_db_restorable_mongo_db_collection
-phantom_resource <|--- azure_cosmos_db_restorable_mongo_db_database
-phantom_resource <|--- azure_cosmos_db_restorable_sql_container
-phantom_resource <|--- azure_cosmos_db_restorable_sql_database
-phantom_resource <|--- azure_cosmos_db_restorable_table
 region <|--- azure_location
 phantom_resource <|--- azure_machine_learning_environment_version_base
 phantom_resource <|--- azure_machine_learning_quota

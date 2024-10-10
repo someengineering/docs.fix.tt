@@ -89,6 +89,11 @@ class Kind:
     def categories(self) -> List[str]:
         return [known_categories.get(cat, cat.capitalize()) for cat in self.metadata.categories]
 
+    @property
+    def path(self) -> str:
+        prefix = "" if self.metadata.source=="base" else (self.metadata.service or "root") + "/"
+        return f'{prefix}{self.fqn}.mdx'
+
     @staticmethod
     def from_json(js: Dict[str, Any]) -> 'Kind':
         metadata = js.get('metadata', {})
@@ -195,7 +200,9 @@ sidebar_label: {kind.no_provider_name}
 
 
 """
-    with open(docs_dir / provider /  f"{kind.fqn}.mdx", "w+") as file:
+    file = docs_dir / provider /  kind.path
+    file.parent.mkdir(parents=True, exist_ok=True)
+    with open(file, "w+") as file:
         file.write(kind_text)
 
 
@@ -230,7 +237,7 @@ def provider_md(
         # write the list of resources alphabetically
         file.write(f"## Alphabetical\n\n")
         for kind in sorted(kinds, key=lambda k: k.no_provider_name):
-            file.write(f"- [{kind.no_provider_name}]({kind.fqn}.mdx)\n")
+            file.write(f"- [{kind.no_provider_name}]({kind.path})\n")
         file.write("\n")
 
         # write the list of resources by category
@@ -242,7 +249,7 @@ def provider_md(
         for category, cat_kinds in sorted(categories.items()):
             file.write(f"### {category}\n\n")
             for kind in sorted(cat_kinds, key=lambda k: k.no_provider_name):
-                file.write(f"- [{kind.no_provider_name}]({kind.fqn}.mdx)\n")
+                file.write(f"- [{kind.no_provider_name}]({kind.path})\n")
             file.write("\n")
 
     for kind in sorted(kinds, key=lambda k: k.fqn):
