@@ -12,6 +12,92 @@ sidebar_label: Vertex AI Model Evaluation
 
 A Model Evaluation in Vertex AI provides performance metrics and results of a machine learning model tested on a specific dataset.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Vertex AI Model Evaluation"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_resource {
+
+}
+class gcp_vertex_ai_model_evaluation {
+
+}
+class resource {
+
+}
+resource <|--- gcp_resource
+gcp_resource <|--- gcp_vertex_ai_model_evaluation
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Model Evaluation resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_vertex_ai_model {
+
+}
+class gcp_vertex_ai_model_evaluation {
+
+}
+gcp_vertex_ai_model -[#1A83AF]-> gcp_vertex_ai_model_evaluation
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -160,47 +246,6 @@ gcp_vertex_ai_model_evaluation_model_evaluation_explanation_spec --> gcp_vertex_
 gcp_vertex_ai_model_explanation --> gcp_vertex_ai_attribution
 gcp_vertex_ai_smooth_grad_config --> gcp_vertex_ai_feature_noise_sigma
 gcp_vertex_ai_xrai_attribution --> gcp_vertex_ai_smooth_grad_config
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Model Evaluation resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_vertex_ai_model {
-
-}
-class gcp_vertex_ai_model_evaluation {
-
-}
-gcp_vertex_ai_model -[#1A83AF]-> gcp_vertex_ai_model_evaluation
 
 @enduml
 ```

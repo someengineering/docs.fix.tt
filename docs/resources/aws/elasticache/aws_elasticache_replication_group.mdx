@@ -12,6 +12,96 @@ sidebar_label: ElastiCache Replication Group
 
 AWS ElastiCache Replication Group is a feature that creates multiple interconnected cache nodes. It provides redundancy and improves read performance by distributing data across nodes. The group consists of a primary node for write operations and one or more read replicas. It supports automatic failover and data synchronization between nodes, enhancing reliability and availability of cached data.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of ElastiCache Replication Group"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_elasticache_replication_group {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_elasticache_replication_group
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Replication Group resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_elasticache_cache_cluster {
+
+}
+class aws_elasticache_replication_group {
+
+}
+class aws_kms_key {
+
+}
+aws_elasticache_replication_group -[#1A83AF]-> aws_elasticache_cache_cluster
+aws_elasticache_replication_group -[#1A83AF]-> aws_kms_key
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -153,51 +243,6 @@ aws_elasticache_replication_group_pending_modified_values --> aws_elasticache_pe
 aws_elasticache_replication_group_pending_modified_values --> aws_elasticache_resharding_status
 aws_elasticache_replication_group_pending_modified_values --> aws_elasticache_user_groups_update_status
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Replication Group resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_elasticache_cache_cluster {
-
-}
-class aws_elasticache_replication_group {
-
-}
-class aws_kms_key {
-
-}
-aws_elasticache_replication_group -[#1A83AF]-> aws_elasticache_cache_cluster
-aws_elasticache_replication_group -[#1A83AF]-> aws_kms_key
 
 @enduml
 ```

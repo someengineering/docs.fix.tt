@@ -12,6 +12,97 @@ sidebar_label: Network Virtual WAN VPN Connection
 
 Azure Network Virtual WAN VPN Connection is a service that establishes secure tunnels between on-premises networks and Azure's Virtual WAN. It creates encrypted connections over the internet, facilitating data transfer and resource access across distributed locations. This service integrates with Azure's global network infrastructure to provide connectivity for branch offices and remote sites.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Network Virtual WAN VPN Connection"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_virtual_wan_vpn_connection {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+class tunnel {
+
+}
+microsoft_resource <|--- azure_network_virtual_wan_vpn_connection
+tunnel <|--- azure_network_virtual_wan_vpn_connection
+resource <|--- microsoft_resource
+resource <|--- tunnel
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Network Virtual WAN VPN Connection resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_virtual_wan_vpn_connection {
+
+}
+class azure_network_virtual_wan_vpn_gateway {
+
+}
+azure_network_virtual_wan_vpn_gateway -[#1A83AF]-> azure_network_virtual_wan_vpn_connection
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -159,47 +250,6 @@ azure_vpn_site_link_connection --> azure_gateway_custom_bgp_ip_address_ip_config
 azure_vpn_site_link_connection --> azure_ipsec_policy
 resource <|--- microsoft_resource
 resource <|--- tunnel
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Network Virtual WAN VPN Connection resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_network_virtual_wan_vpn_connection {
-
-}
-class azure_network_virtual_wan_vpn_gateway {
-
-}
-azure_network_virtual_wan_vpn_gateway -[#1A83AF]-> azure_network_virtual_wan_vpn_connection
 
 @enduml
 ```

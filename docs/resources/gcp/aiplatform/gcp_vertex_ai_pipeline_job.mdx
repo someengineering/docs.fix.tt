@@ -4,13 +4,104 @@ sidebar_label: Vertex AI Pipeline Job
 
 # `gcp_vertex_ai_pipeline_job`
 
-- Categories: Compute, Machine Learning & AI
+- Categories: Machine Learning & AI, Compute
 - Service: aiplatform
 - Provider Link: [Vertex AI Pipeline Job](https://cloud.google.com/docs)
 
 ## Description
 
 A Pipeline Job defines a workflow that orchestrates multiple machine learning steps, such as data preparation, model training, and evaluation.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Vertex AI Pipeline Job"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class ai_job {
+
+}
+class ai_resource {
+
+}
+class gcp_resource {
+
+}
+class gcp_vertex_ai_pipeline_job {
+
+}
+class resource {
+
+}
+ai_resource <|--- ai_job
+resource <|--- ai_resource
+resource <|--- gcp_resource
+ai_job <|--- gcp_vertex_ai_pipeline_job
+gcp_resource <|--- gcp_vertex_ai_pipeline_job
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Pipeline Job resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_vertex_ai_pipeline_job {
+
+}
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -216,43 +307,6 @@ gcp_vertex_ai_pipeline_task_detail_artifact_list --> gcp_vertex_ai_artifact
 gcp_vertex_ai_pipeline_task_detail_pipeline_task_status --> gcp_google_rpc_status
 gcp_vertex_ai_pipeline_task_executor_detail --> gcp_vertex_ai_pipeline_task_executor_detail_container_detail
 gcp_vertex_ai_pipeline_task_executor_detail --> gcp_vertex_ai_pipeline_task_executor_detail_custom_job_detail
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Pipeline Job resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_vertex_ai_pipeline_job {
-
-}
 
 @enduml
 ```

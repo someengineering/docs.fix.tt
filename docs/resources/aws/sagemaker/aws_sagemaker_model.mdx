@@ -12,6 +12,118 @@ sidebar_label: SageMaker Model
 
 AWS SageMaker Model is a component of Amazon SageMaker that manages machine learning models. It stores, versions, and deploys trained models for inference. Users can create models from their own algorithms or pre-trained models, configure them for different hardware, and deploy them to production environments. It integrates with other SageMaker features for end-to-end machine learning workflows.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of SageMaker Model"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_resource {
+
+}
+class aws_sagemaker_model {
+
+}
+class resource {
+
+}
+resource <|--- aws_resource
+aws_resource <|--- aws_sagemaker_model
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Model resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_iam_role {
+
+}
+class aws_s3_bucket {
+
+}
+class aws_sagemaker_labeling_job {
+
+}
+class aws_sagemaker_model {
+
+}
+class aws_sagemaker_transform_job {
+
+}
+aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_model
+aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_model
+aws_iam_role -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_iam_role -[#1A83AF]-> aws_sagemaker_model
+aws_sagemaker_labeling_job -[#1A83AF]-> aws_s3_bucket
+aws_sagemaker_labeling_job -[#1A83AF]-> aws_sagemaker_transform_job
+aws_sagemaker_model -[#1A83AF]-> aws_s3_bucket
+aws_sagemaker_model -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_sagemaker_model -[#1A83AF]-> aws_sagemaker_transform_job
+aws_sagemaker_transform_job -[#1A83AF]-> aws_s3_bucket
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -86,73 +198,6 @@ aws_sagemaker_container_definition --> aws_sagemaker_image_config
 aws_resource <|--- aws_sagemaker_model
 aws_sagemaker_model --> aws_sagemaker_container_definition
 aws_sagemaker_model --> aws_sagemaker_vpc_config
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Model resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_iam_role {
-
-}
-class aws_s3_bucket {
-
-}
-class aws_sagemaker_labeling_job {
-
-}
-class aws_sagemaker_model {
-
-}
-class aws_sagemaker_transform_job {
-
-}
-aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_model
-aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_model
-aws_iam_role -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_iam_role -[#1A83AF]-> aws_sagemaker_model
-aws_sagemaker_labeling_job -[#1A83AF]-> aws_s3_bucket
-aws_sagemaker_labeling_job -[#1A83AF]-> aws_sagemaker_transform_job
-aws_sagemaker_model -[#1A83AF]-> aws_s3_bucket
-aws_sagemaker_model -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_sagemaker_model -[#1A83AF]-> aws_sagemaker_transform_job
-aws_sagemaker_transform_job -[#1A83AF]-> aws_s3_bucket
 
 @enduml
 ```

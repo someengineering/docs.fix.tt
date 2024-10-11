@@ -12,6 +12,101 @@ sidebar_label: Compute Virtual Machine Snapshot
 
 Azure Compute Virtual Machine Snapshot is a feature that creates point-in-time copies of virtual machine disks. It captures the disk's data state at a specific moment, including all files and system settings. These snapshots can be used for backup, disaster recovery, or to create new virtual machines with the same configuration and data as the original.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Compute Virtual Machine Snapshot"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_virtual_machine_snapshot {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+class snapshot {
+
+}
+microsoft_resource <|--- azure_compute_virtual_machine_snapshot
+snapshot <|--- azure_compute_virtual_machine_snapshot
+resource <|--- microsoft_resource
+resource <|--- snapshot
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Snapshot resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_disk {
+
+}
+class azure_compute_disk_access {
+
+}
+class azure_compute_virtual_machine_snapshot {
+
+}
+azure_compute_disk -[#1A83AF]-> azure_compute_virtual_machine_snapshot
+azure_compute_disk_access -[#1A83AF]-> azure_compute_virtual_machine_snapshot
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -176,51 +271,6 @@ azure_encryption_settings_element --> azure_key_vault_and_key_reference
 azure_encryption_settings_element --> azure_key_vault_and_secret_reference
 resource <|--- microsoft_resource
 resource <|--- snapshot
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Snapshot resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_compute_disk {
-
-}
-class azure_compute_disk_access {
-
-}
-class azure_compute_virtual_machine_snapshot {
-
-}
-azure_compute_disk -[#1A83AF]-> azure_compute_virtual_machine_snapshot
-azure_compute_disk_access -[#1A83AF]-> azure_compute_virtual_machine_snapshot
 
 @enduml
 ```

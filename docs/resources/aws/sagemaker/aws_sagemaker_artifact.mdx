@@ -12,6 +12,106 @@ sidebar_label: SageMaker Artifact
 
 AWS SageMaker Artifact is a feature within Amazon SageMaker that manages and stores machine learning artifacts. It provides a central repository for model versions, datasets, and other resources used in ML workflows. SageMaker Artifact tracks lineage, ensures reproducibility, and supports compliance requirements by maintaining records of artifacts throughout the machine learning lifecycle.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of SageMaker Artifact"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_resource {
+
+}
+class aws_sagemaker_artifact {
+
+}
+class resource {
+
+}
+resource <|--- aws_resource
+aws_resource <|--- aws_sagemaker_artifact
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Artifact resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_sagemaker_artifact {
+
+}
+class aws_sagemaker_code_repository {
+
+}
+class aws_sagemaker_domain {
+
+}
+class aws_sagemaker_project {
+
+}
+class aws_sagemaker_user_profile {
+
+}
+aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_domain
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_user_profile
+aws_sagemaker_project -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_artifact
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -87,61 +187,6 @@ aws_sagemaker_artifact --> aws_sagemaker_artifact_source
 aws_sagemaker_artifact --> aws_sagemaker_metadata_properties
 aws_sagemaker_artifact --> aws_sagemaker_user_context
 aws_sagemaker_artifact_source --> aws_sagemaker_artifact_source_type
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Artifact resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_sagemaker_artifact {
-
-}
-class aws_sagemaker_code_repository {
-
-}
-class aws_sagemaker_domain {
-
-}
-class aws_sagemaker_project {
-
-}
-class aws_sagemaker_user_profile {
-
-}
-aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_domain
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_user_profile
-aws_sagemaker_project -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_artifact
 
 @enduml
 ```

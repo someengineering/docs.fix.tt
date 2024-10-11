@@ -12,6 +12,133 @@ sidebar_label: Service Quota
 
 AWS Service Quota manages and tracks usage limits for AWS resources across an account or organization. It provides a centralized view of quotas, lets users request increases, and monitors quota utilization. The service helps prevent resource overuse, ensures compliance with AWS limits, and supports capacity planning for applications and workloads running on AWS.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Service Quota"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_resource {
+
+}
+class aws_service_quota {
+
+}
+class phantom_resource {
+
+}
+class quota {
+
+}
+class resource {
+
+}
+resource <|--- aws_resource
+aws_resource <|--- aws_service_quota
+quota <|--- aws_service_quota
+resource <|--- phantom_resource
+phantom_resource <|--- quota
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Service Quota resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_alb {
+
+}
+class aws_ec2_instance_type {
+
+}
+class aws_ec2_volume_type {
+
+}
+class aws_elb {
+
+}
+class aws_iam_server_certificate {
+
+}
+class aws_region {
+
+}
+class aws_service_quota {
+
+}
+class aws_vpc {
+
+}
+aws_region -[#1A83AF]-> aws_alb
+aws_region -[#1A83AF]-> aws_ec2_instance_type
+aws_region -[#1A83AF]-> aws_ec2_volume_type
+aws_region -[#1A83AF]-> aws_elb
+aws_region -[#1A83AF]-> aws_iam_server_certificate
+aws_region -[#1A83AF]-> aws_service_quota
+aws_region -[#1A83AF]-> aws_vpc
+aws_service_quota -[#1A83AF]-> aws_alb
+aws_service_quota -[#1A83AF]-> aws_ec2_instance_type
+aws_service_quota -[#1A83AF]-> aws_ec2_volume_type
+aws_service_quota -[#1A83AF]-> aws_elb
+aws_service_quota -[#1A83AF]-> aws_iam_server_certificate
+aws_service_quota -[#1A83AF]-> aws_vpc
+aws_vpc -[#1A83AF]-> aws_alb
+aws_vpc -[#1A83AF]-> aws_elb
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -93,79 +220,6 @@ aws_resource <|--- aws_service_quota
 quota <|--- aws_service_quota
 resource <|--- phantom_resource
 phantom_resource <|--- quota
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Service Quota resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_alb {
-
-}
-class aws_ec2_instance_type {
-
-}
-class aws_ec2_volume_type {
-
-}
-class aws_elb {
-
-}
-class aws_iam_server_certificate {
-
-}
-class aws_region {
-
-}
-class aws_service_quota {
-
-}
-class aws_vpc {
-
-}
-aws_region -[#1A83AF]-> aws_alb
-aws_region -[#1A83AF]-> aws_ec2_instance_type
-aws_region -[#1A83AF]-> aws_ec2_volume_type
-aws_region -[#1A83AF]-> aws_elb
-aws_region -[#1A83AF]-> aws_iam_server_certificate
-aws_region -[#1A83AF]-> aws_service_quota
-aws_region -[#1A83AF]-> aws_vpc
-aws_service_quota -[#1A83AF]-> aws_alb
-aws_service_quota -[#1A83AF]-> aws_ec2_instance_type
-aws_service_quota -[#1A83AF]-> aws_ec2_volume_type
-aws_service_quota -[#1A83AF]-> aws_elb
-aws_service_quota -[#1A83AF]-> aws_iam_server_certificate
-aws_service_quota -[#1A83AF]-> aws_vpc
-aws_vpc -[#1A83AF]-> aws_alb
-aws_vpc -[#1A83AF]-> aws_elb
 
 @enduml
 ```

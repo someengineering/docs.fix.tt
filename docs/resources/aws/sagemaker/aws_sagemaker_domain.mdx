@@ -12,6 +12,145 @@ sidebar_label: SageMaker Domain
 
 AWS SageMaker Domain is a managed environment for machine learning workflows. It provides a unified interface for data scientists and developers to access SageMaker tools, including notebooks, data preparation, model training, and deployment. Users can collaborate on projects, share resources, and manage access controls within the domain, simplifying the end-to-end machine learning process on AWS.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of SageMaker Domain"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_resource {
+
+}
+class aws_sagemaker_domain {
+
+}
+class resource {
+
+}
+resource <|--- aws_resource
+aws_resource <|--- aws_sagemaker_domain
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Domain resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_iam_role {
+
+}
+class aws_kms_key {
+
+}
+class aws_s3_bucket {
+
+}
+class aws_sagemaker_app {
+
+}
+class aws_sagemaker_artifact {
+
+}
+class aws_sagemaker_code_repository {
+
+}
+class aws_sagemaker_domain {
+
+}
+class aws_sagemaker_image {
+
+}
+class aws_sagemaker_pipeline {
+
+}
+class aws_sagemaker_trial {
+
+}
+class aws_sagemaker_user_profile {
+
+}
+aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_domain
+aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_domain
+aws_iam_role -[#1A83AF]-> aws_sagemaker_domain
+aws_iam_role -[#1A83AF]-> aws_sagemaker_image
+aws_iam_role -[#1A83AF]-> aws_sagemaker_pipeline
+aws_sagemaker_app -[#1A83AF]-> aws_sagemaker_image
+aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_domain
+aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_trial
+aws_sagemaker_domain -[#1A83AF]-> aws_kms_key
+aws_sagemaker_domain -[#1A83AF]-> aws_s3_bucket
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_app
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_image
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_pipeline
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_trial
+aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_user_profile
+aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_app
+aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_artifact
+aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_pipeline
+aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_trial
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -167,100 +306,6 @@ aws_sagemaker_user_settings --> aws_sagemaker_r_session_app_settings
 aws_sagemaker_user_settings --> aws_sagemaker_r_studio_server_pro_app_settings
 aws_sagemaker_user_settings --> aws_sagemaker_sharing_settings
 aws_sagemaker_user_settings --> aws_sagemaker_tensor_board_app_settings
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of SageMaker Domain resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_iam_role {
-
-}
-class aws_kms_key {
-
-}
-class aws_s3_bucket {
-
-}
-class aws_sagemaker_app {
-
-}
-class aws_sagemaker_artifact {
-
-}
-class aws_sagemaker_code_repository {
-
-}
-class aws_sagemaker_domain {
-
-}
-class aws_sagemaker_image {
-
-}
-class aws_sagemaker_pipeline {
-
-}
-class aws_sagemaker_trial {
-
-}
-class aws_sagemaker_user_profile {
-
-}
-aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_domain
-aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_domain
-aws_iam_role -[#1A83AF]-> aws_sagemaker_domain
-aws_iam_role -[#1A83AF]-> aws_sagemaker_image
-aws_iam_role -[#1A83AF]-> aws_sagemaker_pipeline
-aws_sagemaker_app -[#1A83AF]-> aws_sagemaker_image
-aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_domain
-aws_sagemaker_code_repository -[#1A83AF]-> aws_sagemaker_trial
-aws_sagemaker_domain -[#1A83AF]-> aws_kms_key
-aws_sagemaker_domain -[#1A83AF]-> aws_s3_bucket
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_app
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_image
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_pipeline
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_trial
-aws_sagemaker_domain -[#1A83AF]-> aws_sagemaker_user_profile
-aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_app
-aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_artifact
-aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_pipeline
-aws_sagemaker_user_profile -[#1A83AF]-> aws_sagemaker_trial
 
 @enduml
 ```

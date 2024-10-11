@@ -12,6 +12,109 @@ sidebar_label: Elastic Beanstalk Environment
 
 AWS Elastic Beanstalk Environment is a managed service that automates application deployment and infrastructure provisioning. It handles capacity provisioning, load balancing, auto-scaling, and application health monitoring. Users can deploy applications in multiple languages and frameworks while AWS manages the underlying infrastructure, reducing the complexity of server management and application maintenance.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Elastic Beanstalk Environment"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_beanstalk_environment {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_beanstalk_environment
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Elastic Beanstalk Environment resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_alb {
+
+}
+class aws_autoscaling_group {
+
+}
+class aws_beanstalk_application {
+
+}
+class aws_beanstalk_environment {
+
+}
+class aws_ec2_instance {
+
+}
+class aws_sqs_queue {
+
+}
+aws_autoscaling_group -[#1A83AF]-> aws_ec2_instance
+aws_beanstalk_application -[#1A83AF]-> aws_beanstalk_environment
+aws_beanstalk_environment -[#1A83AF]-> aws_alb
+aws_beanstalk_environment -[#1A83AF]-> aws_autoscaling_group
+aws_beanstalk_environment -[#1A83AF]-> aws_ec2_instance
+aws_beanstalk_environment -[#1A83AF]-> aws_sqs_queue
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -110,64 +213,6 @@ aws_beanstalk_environment_resources --> aws_beanstalk_instances_description
 aws_beanstalk_environment_resources --> aws_beanstalk_load_balancer_description
 aws_beanstalk_environment_resources --> aws_beanstalk_queue_description
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Elastic Beanstalk Environment resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_alb {
-
-}
-class aws_autoscaling_group {
-
-}
-class aws_beanstalk_application {
-
-}
-class aws_beanstalk_environment {
-
-}
-class aws_ec2_instance {
-
-}
-class aws_sqs_queue {
-
-}
-aws_autoscaling_group -[#1A83AF]-> aws_ec2_instance
-aws_beanstalk_application -[#1A83AF]-> aws_beanstalk_environment
-aws_beanstalk_environment -[#1A83AF]-> aws_alb
-aws_beanstalk_environment -[#1A83AF]-> aws_autoscaling_group
-aws_beanstalk_environment -[#1A83AF]-> aws_ec2_instance
-aws_beanstalk_environment -[#1A83AF]-> aws_sqs_queue
 
 @enduml
 ```

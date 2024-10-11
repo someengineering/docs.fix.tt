@@ -12,6 +12,97 @@ sidebar_label: Bedrock Provisioned Model Throughput
 
 AWS Bedrock Provisioned Model Throughput is a feature that allocates dedicated compute resources for foundation models in AWS Bedrock. It provides consistent performance and response times for AI workloads by reserving capacity for specific models. Users can set and adjust throughput levels to meet their application's demands, ensuring reliable access to AI capabilities during peak usage periods.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Bedrock Provisioned Model Throughput"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_bedrock_provisioned_model_throughput {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_bedrock_provisioned_model_throughput
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Provisioned Model Throughput resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_bedrock_custom_model {
+
+}
+class aws_bedrock_foundation_model {
+
+}
+class aws_bedrock_provisioned_model_throughput {
+
+}
+aws_bedrock_custom_model -[#1A83AF]-> aws_bedrock_provisioned_model_throughput
+aws_bedrock_foundation_model -[#1A83AF]-> aws_bedrock_custom_model
+aws_bedrock_foundation_model -[#1A83AF]-> aws_bedrock_provisioned_model_throughput
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -71,52 +162,6 @@ class resource {
 }
 aws_resource <|--- aws_bedrock_provisioned_model_throughput
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Provisioned Model Throughput resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_bedrock_custom_model {
-
-}
-class aws_bedrock_foundation_model {
-
-}
-class aws_bedrock_provisioned_model_throughput {
-
-}
-aws_bedrock_custom_model -[#1A83AF]-> aws_bedrock_provisioned_model_throughput
-aws_bedrock_foundation_model -[#1A83AF]-> aws_bedrock_custom_model
-aws_bedrock_foundation_model -[#1A83AF]-> aws_bedrock_provisioned_model_throughput
 
 @enduml
 ```

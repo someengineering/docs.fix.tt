@@ -12,6 +12,108 @@ sidebar_label: Key Vault
 
 Azure Key Vault is a cloud service for storing and managing cryptographic keys, secrets, and certificates. It provides secure storage and access control for sensitive information used by applications and services. Key Vault offers encryption, key rotation, and monitoring features to protect data and comply with security standards in cloud environments.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Key Vault"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_key_vault {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+microsoft_resource <|--- azure_key_vault
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Key Vault resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_key_vault {
+
+}
+class azure_key_vault_key {
+
+}
+class azure_key_vault_managed_hsm {
+
+}
+class azure_machine_learning_workspace {
+
+}
+class azure_monitor_diagnostic_settings {
+
+}
+class azure_web_certificate {
+
+}
+azure_key_vault -[#1A83AF]-> azure_key_vault_key
+azure_key_vault -[#1A83AF]-> azure_key_vault_managed_hsm
+azure_key_vault -[#1A83AF]-> azure_machine_learning_workspace
+azure_key_vault -[#1A83AF]-> azure_monitor_diagnostic_settings
+azure_key_vault -[#1A83AF]-> azure_web_certificate
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -137,63 +239,6 @@ azure_key_vault_network_rule_set --> azure_key_vault_virtual_network_rule
 azure_private_endpoint_connection --> azure_private_link_service_connection_state
 azure_private_endpoint_connection --> azure_system_data
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Key Vault resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_key_vault {
-
-}
-class azure_key_vault_key {
-
-}
-class azure_key_vault_managed_hsm {
-
-}
-class azure_machine_learning_workspace {
-
-}
-class azure_monitor_diagnostic_settings {
-
-}
-class azure_web_certificate {
-
-}
-azure_key_vault -[#1A83AF]-> azure_key_vault_key
-azure_key_vault -[#1A83AF]-> azure_key_vault_managed_hsm
-azure_key_vault -[#1A83AF]-> azure_machine_learning_workspace
-azure_key_vault -[#1A83AF]-> azure_monitor_diagnostic_settings
-azure_key_vault -[#1A83AF]-> azure_web_certificate
 
 @enduml
 ```

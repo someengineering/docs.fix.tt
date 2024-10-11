@@ -12,6 +12,100 @@ sidebar_label: ElastiCache Cache Cluster
 
 AWS ElastiCache Cache Cluster is a managed service that deploys and operates in-memory cache engines Redis or Memcached in the cloud. It stores frequently accessed data in memory, reducing database load and improving application response times. Users can create, configure, and maintain cache clusters without managing the underlying infrastructure or software installation.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of ElastiCache Cache Cluster"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_elasticache_cache_cluster {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_elasticache_cache_cluster
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Cache Cluster resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_ec2_security_group {
+
+}
+class aws_elasticache_cache_cluster {
+
+}
+class aws_elasticache_replication_group {
+
+}
+class aws_sns_topic {
+
+}
+aws_ec2_security_group -[#1A83AF]-> aws_elasticache_cache_cluster
+aws_elasticache_cache_cluster -[#1A83AF]-> aws_sns_topic
+aws_elasticache_replication_group -[#1A83AF]-> aws_elasticache_cache_cluster
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -155,55 +249,6 @@ aws_elasticache_log_delivery_configuration --> aws_elasticache_destination_detai
 aws_elasticache_pending_log_delivery_configuration --> aws_elasticache_destination_details
 aws_elasticache_pending_modified_values --> aws_elasticache_pending_log_delivery_configuration
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of ElastiCache Cache Cluster resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_ec2_security_group {
-
-}
-class aws_elasticache_cache_cluster {
-
-}
-class aws_elasticache_replication_group {
-
-}
-class aws_sns_topic {
-
-}
-aws_ec2_security_group -[#1A83AF]-> aws_elasticache_cache_cluster
-aws_elasticache_cache_cluster -[#1A83AF]-> aws_sns_topic
-aws_elasticache_replication_group -[#1A83AF]-> aws_elasticache_cache_cluster
 
 @enduml
 ```

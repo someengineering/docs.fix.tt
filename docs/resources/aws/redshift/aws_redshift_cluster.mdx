@@ -4,13 +4,129 @@ sidebar_label: Redshift Cluster
 
 # `aws_redshift_cluster`
 
-- Categories: Database, Storage, Analytics
+- Categories: Analytics, Database, Storage
 - Service: redshift
 - Provider Link: [Redshift Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-console.html)
 
 ## Description
 
 An Amazon Redshift Cluster is a managed data warehouse service that stores and processes large datasets. It uses columnar storage and parallel query execution to analyze data across multiple nodes. Amazon Redshift can handle structured and semi-structured data, integrates with various data analysis tools, and offers options for scaling compute and storage resources independently.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Redshift Cluster"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_redshift_cluster {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_redshift_cluster
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Redshift Cluster resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_backup_protected_resource {
+
+}
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_iam_role {
+
+}
+class aws_kms_key {
+
+}
+class aws_redshift_cluster {
+
+}
+class aws_sagemaker_processing_job {
+
+}
+class aws_vpc {
+
+}
+aws_backup_protected_resource -[#1A83AF]-> aws_redshift_cluster
+aws_ec2_security_group -[#1A83AF]-> aws_redshift_cluster
+aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_processing_job
+aws_ec2_subnet -[#1A83AF]-> aws_redshift_cluster
+aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_processing_job
+aws_iam_role -[#1A83AF]-> aws_redshift_cluster
+aws_iam_role -[#1A83AF]-> aws_sagemaker_processing_job
+aws_redshift_cluster -[#1A83AF]-> aws_kms_key
+aws_redshift_cluster -[#1A83AF]-> aws_sagemaker_processing_job
+aws_sagemaker_processing_job -[#1A83AF]-> aws_kms_key
+aws_vpc -[#1A83AF]-> aws_ec2_security_group
+aws_vpc -[#1A83AF]-> aws_ec2_subnet
+aws_vpc -[#1A83AF]-> aws_redshift_cluster
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -250,77 +366,6 @@ aws_redshift_cluster_parameter_group_status --> aws_redshift_cluster_parameter_s
 aws_redshift_endpoint --> aws_redshift_vpc_endpoint
 aws_redshift_vpc_endpoint --> aws_redshift_network_interface
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Redshift Cluster resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_backup_protected_resource {
-
-}
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_iam_role {
-
-}
-class aws_kms_key {
-
-}
-class aws_redshift_cluster {
-
-}
-class aws_sagemaker_processing_job {
-
-}
-class aws_vpc {
-
-}
-aws_backup_protected_resource -[#1A83AF]-> aws_redshift_cluster
-aws_ec2_security_group -[#1A83AF]-> aws_redshift_cluster
-aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_processing_job
-aws_ec2_subnet -[#1A83AF]-> aws_redshift_cluster
-aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_processing_job
-aws_iam_role -[#1A83AF]-> aws_redshift_cluster
-aws_iam_role -[#1A83AF]-> aws_sagemaker_processing_job
-aws_redshift_cluster -[#1A83AF]-> aws_kms_key
-aws_redshift_cluster -[#1A83AF]-> aws_sagemaker_processing_job
-aws_sagemaker_processing_job -[#1A83AF]-> aws_kms_key
-aws_vpc -[#1A83AF]-> aws_ec2_security_group
-aws_vpc -[#1A83AF]-> aws_ec2_subnet
-aws_vpc -[#1A83AF]-> aws_redshift_cluster
 
 @enduml
 ```

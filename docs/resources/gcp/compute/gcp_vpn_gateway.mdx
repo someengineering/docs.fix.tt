@@ -12,6 +12,105 @@ sidebar_label: VPN Gateway
 
 GCP VPN Gateway is a network component in Google Cloud Platform that establishes secure connections between on-premises networks and Google Cloud resources. It encrypts traffic over the public internet, creating a virtual private network. The gateway manages multiple tunnels, supports both static and dynamic routing, and provides secure access to cloud-based applications and data.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of VPN Gateway"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gateway {
+
+}
+class gcp_resource {
+
+}
+class gcp_vpn_gateway {
+
+}
+class resource {
+
+}
+resource <|--- gateway
+resource <|--- gcp_resource
+gateway <|--- gcp_vpn_gateway
+gcp_resource <|--- gcp_vpn_gateway
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of VPN Gateway resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_interconnect_attachment {
+
+}
+class gcp_network {
+
+}
+class gcp_vpn_gateway {
+
+}
+class gcp_vpn_tunnel {
+
+}
+gcp_network -[#1A83AF]-> gcp_vpn_gateway
+gcp_vpn_gateway -[#1A83AF]-> gcp_interconnect_attachment
+gcp_vpn_tunnel -[#1A83AF]-> gcp_vpn_gateway
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -85,55 +184,6 @@ gateway <|--- gcp_vpn_gateway
 gcp_vpn_gateway --> gcp_deprecation_status
 gcp_resource <|--- gcp_vpn_gateway
 gcp_vpn_gateway --> gcp_vpn_gateway_vpn_gateway_interface
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of VPN Gateway resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_interconnect_attachment {
-
-}
-class gcp_network {
-
-}
-class gcp_vpn_gateway {
-
-}
-class gcp_vpn_tunnel {
-
-}
-gcp_network -[#1A83AF]-> gcp_vpn_gateway
-gcp_vpn_gateway -[#1A83AF]-> gcp_interconnect_attachment
-gcp_vpn_tunnel -[#1A83AF]-> gcp_vpn_gateway
 
 @enduml
 ```

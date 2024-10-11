@@ -12,6 +12,105 @@ sidebar_label: VPN Tunnel
 
 GCP VPN Tunnel is a secure connection service in Google Cloud Platform. It creates encrypted links between on-premises networks and Google Cloud resources over the public internet. This service helps organizations extend their private networks to the cloud, ensuring data transmission security and enabling hybrid cloud architectures while maintaining network isolation and control.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of VPN Tunnel"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_resource {
+
+}
+class gcp_vpn_tunnel {
+
+}
+class resource {
+
+}
+class tunnel {
+
+}
+resource <|--- gcp_resource
+gcp_resource <|--- gcp_vpn_tunnel
+tunnel <|--- gcp_vpn_tunnel
+resource <|--- tunnel
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of VPN Tunnel resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_router {
+
+}
+class gcp_target_vpn_gateway {
+
+}
+class gcp_vpn_gateway {
+
+}
+class gcp_vpn_tunnel {
+
+}
+gcp_vpn_tunnel -[#1A83AF]-> gcp_router
+gcp_vpn_tunnel -[#1A83AF]-> gcp_target_vpn_gateway
+gcp_vpn_tunnel -[#1A83AF]-> gcp_vpn_gateway
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -91,55 +190,6 @@ gcp_vpn_tunnel --> gcp_deprecation_status
 gcp_resource <|--- gcp_vpn_tunnel
 tunnel <|--- gcp_vpn_tunnel
 resource <|--- tunnel
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of VPN Tunnel resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_router {
-
-}
-class gcp_target_vpn_gateway {
-
-}
-class gcp_vpn_gateway {
-
-}
-class gcp_vpn_tunnel {
-
-}
-gcp_vpn_tunnel -[#1A83AF]-> gcp_router
-gcp_vpn_tunnel -[#1A83AF]-> gcp_target_vpn_gateway
-gcp_vpn_tunnel -[#1A83AF]-> gcp_vpn_gateway
 
 @enduml
 ```

@@ -12,6 +12,118 @@ sidebar_label: Compute Virtual Machine Scale Set
 
 Azure Compute Virtual Machine Scale Set is a service that manages and scales multiple identical virtual machines. It automates the creation, updating, and deletion of VMs based on demand or schedules. The service distributes traffic, handles load balancing, and integrates with Azure monitoring tools to maintain performance and availability across the scaled instances.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Compute Virtual Machine Scale Set"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class autoscaling_group {
+
+}
+class azure_compute_virtual_machine_scale_set {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+resource <|--- autoscaling_group
+autoscaling_group <|--- azure_compute_virtual_machine_scale_set
+microsoft_resource <|--- azure_compute_virtual_machine_scale_set
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Scale Set resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_proximity_placement_group {
+
+}
+class azure_compute_virtual_machine_scale_set {
+
+}
+class azure_compute_virtual_machine_scale_set_instance {
+
+}
+class azure_container_service_managed_cluster {
+
+}
+class azure_network_load_balancer {
+
+}
+class azure_network_subnet {
+
+}
+azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
+azure_compute_virtual_machine_scale_set -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
+azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+azure_container_service_managed_cluster -[#1A83AF]-> azure_network_load_balancer
+azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
+azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
+azure_network_subnet -[#1A83AF]-> azure_network_load_balancer
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -524,68 +636,6 @@ azure_windows_configuration --> azure_additional_unattend_content
 azure_windows_configuration --> azure_patch_settings
 azure_windows_configuration --> azure_win_rm_configuration
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Scale Set resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_compute_proximity_placement_group {
-
-}
-class azure_compute_virtual_machine_scale_set {
-
-}
-class azure_compute_virtual_machine_scale_set_instance {
-
-}
-class azure_container_service_managed_cluster {
-
-}
-class azure_network_load_balancer {
-
-}
-class azure_network_subnet {
-
-}
-azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_scale_set
-azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
-azure_compute_virtual_machine_scale_set -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
-azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_virtual_machine_scale_set
-azure_container_service_managed_cluster -[#1A83AF]-> azure_network_load_balancer
-azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set
-azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
-azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_scale_set
-azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_scale_set_instance
-azure_network_subnet -[#1A83AF]-> azure_network_load_balancer
 
 @enduml
 ```

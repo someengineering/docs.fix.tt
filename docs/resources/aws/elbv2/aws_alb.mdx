@@ -12,6 +12,134 @@ sidebar_label: ALB
 
 AWS Application Load Balancer (ALB) is a Layer 7 load balancing service that distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses. It supports content-based routing, can handle HTTP/HTTPS traffic, and provides features like SSL termination, health checks, and integration with other AWS services for improved application performance and availability.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of ALB"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_alb {
+
+}
+class aws_resource {
+
+}
+class load_balancer {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_alb
+load_balancer <|--- aws_alb
+resource <|--- aws_resource
+resource <|--- load_balancer
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of ALB resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_alb {
+
+}
+class aws_alb_target_group {
+
+}
+class aws_beanstalk_environment {
+
+}
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_region {
+
+}
+class aws_service_quota {
+
+}
+class aws_vpc {
+
+}
+class aws_waf_web_acl {
+
+}
+aws_alb -[#1A83AF]-> aws_alb_target_group
+aws_beanstalk_environment -[#1A83AF]-> aws_alb
+aws_ec2_security_group -[#1A83AF]-> aws_alb
+aws_ec2_subnet -[#1A83AF]-> aws_alb
+aws_region -[#1A83AF]-> aws_alb
+aws_region -[#1A83AF]-> aws_alb_target_group
+aws_region -[#1A83AF]-> aws_ec2_security_group
+aws_region -[#1A83AF]-> aws_ec2_subnet
+aws_region -[#1A83AF]-> aws_service_quota
+aws_region -[#1A83AF]-> aws_vpc
+aws_service_quota -[#1A83AF]-> aws_alb
+aws_service_quota -[#1A83AF]-> aws_vpc
+aws_vpc -[#1A83AF]-> aws_alb
+aws_vpc -[#1A83AF]-> aws_alb_target_group
+aws_vpc -[#1A83AF]-> aws_ec2_security_group
+aws_vpc -[#1A83AF]-> aws_ec2_subnet
+aws_waf_web_acl -[#1A83AF]-> aws_alb
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -178,84 +306,6 @@ aws_alb_listener --> aws_alb_action
 aws_alb_listener --> aws_alb_certificate
 resource <|--- aws_resource
 resource <|--- load_balancer
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of ALB resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_alb {
-
-}
-class aws_alb_target_group {
-
-}
-class aws_beanstalk_environment {
-
-}
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_region {
-
-}
-class aws_service_quota {
-
-}
-class aws_vpc {
-
-}
-class aws_waf_web_acl {
-
-}
-aws_alb -[#1A83AF]-> aws_alb_target_group
-aws_beanstalk_environment -[#1A83AF]-> aws_alb
-aws_ec2_security_group -[#1A83AF]-> aws_alb
-aws_ec2_subnet -[#1A83AF]-> aws_alb
-aws_region -[#1A83AF]-> aws_alb
-aws_region -[#1A83AF]-> aws_alb_target_group
-aws_region -[#1A83AF]-> aws_ec2_security_group
-aws_region -[#1A83AF]-> aws_ec2_subnet
-aws_region -[#1A83AF]-> aws_service_quota
-aws_region -[#1A83AF]-> aws_vpc
-aws_service_quota -[#1A83AF]-> aws_alb
-aws_service_quota -[#1A83AF]-> aws_vpc
-aws_vpc -[#1A83AF]-> aws_alb
-aws_vpc -[#1A83AF]-> aws_alb_target_group
-aws_vpc -[#1A83AF]-> aws_ec2_security_group
-aws_vpc -[#1A83AF]-> aws_ec2_subnet
-aws_waf_web_acl -[#1A83AF]-> aws_alb
 
 @enduml
 ```

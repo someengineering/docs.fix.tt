@@ -12,11 +12,11 @@ sidebar_label: Backup Protected Resource
 
 AWS Backup Protected Resource refers to a specific data entity or system component safeguarded by AWS Backup service. It includes databases, file systems, and storage volumes that are backed up and can be restored as needed. This resource type helps organizations maintain data integrity, comply with retention policies, and recover from potential data loss or system failures.
 
-## Properties
+## Base Hierarchy
 
 <ZoomPanPinch>
 
-```kroki imgType="plantuml" imgAlt="Diagram of Backup Protected Resource data model"
+```kroki imgType="plantuml" imgAlt="Hierarchy of Backup Protected Resource"
 @startuml
 hide empty members
 skinparam ArrowColor #ffaf37
@@ -41,27 +41,13 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 
 class aws_backup_protected_resource {
-**last_backup_time**: datetime
-**last_backup_vault_arn**: string
-**last_recovery_point_arn**: string
-**resource_arn**: string
-**resource_name**: string
-**resource_type**: string
+
 }
 class aws_resource {
-**arn**: string
+
 }
 class resource {
-**age**: duration
-**atime**: datetime
-**ctime**: datetime
-**id**: string
-**kind**: string
-**last_access**: duration
-**last_update**: duration
-**mtime**: datetime
-**name**: string
-**tags**: dictionary[string, string]
+
 }
 aws_resource <|--- aws_backup_protected_resource
 resource <|--- aws_resource
@@ -159,6 +145,65 @@ aws_backup_vault -[#1A83AF]-> aws_backup_protected_resource
 aws_backup_vault -[#1A83AF]-> aws_backup_recovery_point
 aws_ec2_instance -[#1A83AF]-> aws_ec2_volume
 aws_rds_cluster -[#1A83AF]-> aws_rds_instance
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Properties
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Backup Protected Resource data model"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_backup_protected_resource {
+**last_backup_time**: datetime
+**last_backup_vault_arn**: string
+**last_recovery_point_arn**: string
+**resource_arn**: string
+**resource_name**: string
+**resource_type**: string
+}
+class aws_resource {
+**arn**: string
+}
+class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
+}
+aws_resource <|--- aws_backup_protected_resource
+resource <|--- aws_resource
 
 @enduml
 ```

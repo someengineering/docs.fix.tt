@@ -12,6 +12,150 @@ sidebar_label: Compute Virtual Machine Base
 
 Azure Compute Virtual Machine Base is a foundational service in Microsoft Azure that provides virtual machines for computing tasks. It offers a range of virtual machine sizes and types, supporting various operating systems and workloads. Users can create, manage, and scale virtual machines to run applications, host services, and perform computational operations in the cloud environment.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Compute Virtual Machine Base"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_virtual_machine_base {
+
+}
+class instance {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+instance <|--- azure_compute_virtual_machine_base
+microsoft_resource <|--- azure_compute_virtual_machine_base
+resource <|--- instance
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Base resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_availability_set {
+
+}
+class azure_compute_capacity_reservation_group {
+
+}
+class azure_compute_disk {
+
+}
+class azure_compute_image {
+
+}
+class azure_compute_proximity_placement_group {
+
+}
+class azure_compute_restore_point_collection {
+
+}
+class azure_compute_virtual_machine_base {
+
+}
+class azure_compute_virtual_machine_size {
+
+}
+class azure_machine_learning_compute {
+
+}
+class azure_network_interface {
+
+}
+class azure_network_load_balancer {
+
+}
+class azure_network_profile {
+
+}
+class azure_network_security_group {
+
+}
+class azure_network_subnet {
+
+}
+azure_compute_availability_set -[#1A83AF]-> azure_compute_proximity_placement_group
+azure_compute_availability_set -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_compute_capacity_reservation_group -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_compute_restore_point_collection -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_disk
+azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_image
+azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_virtual_machine_size
+azure_compute_virtual_machine_base -[#1A83AF]-> azure_network_interface
+azure_machine_learning_compute -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_network_profile -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_network_security_group -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_network_security_group -[#1A83AF]-> azure_network_interface
+azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_base
+azure_network_subnet -[#1A83AF]-> azure_network_load_balancer
+azure_network_subnet -[#1A83AF]-> azure_network_profile
+azure_network_subnet -[#1A83AF]-> azure_network_security_group
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -578,100 +722,6 @@ azure_windows_configuration --> azure_patch_settings
 azure_windows_configuration --> azure_win_rm_configuration
 resource <|--- instance
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Compute Virtual Machine Base resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_compute_availability_set {
-
-}
-class azure_compute_capacity_reservation_group {
-
-}
-class azure_compute_disk {
-
-}
-class azure_compute_image {
-
-}
-class azure_compute_proximity_placement_group {
-
-}
-class azure_compute_restore_point_collection {
-
-}
-class azure_compute_virtual_machine_base {
-
-}
-class azure_compute_virtual_machine_size {
-
-}
-class azure_machine_learning_compute {
-
-}
-class azure_network_interface {
-
-}
-class azure_network_load_balancer {
-
-}
-class azure_network_profile {
-
-}
-class azure_network_security_group {
-
-}
-class azure_network_subnet {
-
-}
-azure_compute_availability_set -[#1A83AF]-> azure_compute_proximity_placement_group
-azure_compute_availability_set -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_compute_capacity_reservation_group -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_compute_proximity_placement_group -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_compute_restore_point_collection -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_disk
-azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_image
-azure_compute_virtual_machine_base -[#1A83AF]-> azure_compute_virtual_machine_size
-azure_compute_virtual_machine_base -[#1A83AF]-> azure_network_interface
-azure_machine_learning_compute -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_network_profile -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_network_security_group -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_network_security_group -[#1A83AF]-> azure_network_interface
-azure_network_subnet -[#1A83AF]-> azure_compute_virtual_machine_base
-azure_network_subnet -[#1A83AF]-> azure_network_load_balancer
-azure_network_subnet -[#1A83AF]-> azure_network_profile
-azure_network_subnet -[#1A83AF]-> azure_network_security_group
 
 @enduml
 ```

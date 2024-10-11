@@ -4,13 +4,125 @@ sidebar_label: Container Service Managed Cluster
 
 # `azure_container_service_managed_cluster`
 
-- Categories: Compute, Management, Managed Kubernetes
+- Categories: Compute, Managed Kubernetes, Management
 - Service: containers
 - Provider Link: [Container Service Managed Cluster](https://learn.microsoft.com/en-us/azure/aks/)
 
 ## Description
 
 Azure Container Service Managed Cluster is a Kubernetes-based container orchestration platform offered by Microsoft Azure. It automates the deployment, scaling, and management of containerized applications. The service handles cluster provisioning, upgrades, and monitoring, while providing integration with Azure services for networking, storage, and security. Users can focus on application development and deployment without managing the underlying infrastructure.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Container Service Managed Cluster"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_container_service_managed_cluster {
+
+}
+class managed_kubernetes_cluster_provider {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+managed_kubernetes_cluster_provider <|--- azure_container_service_managed_cluster
+microsoft_resource <|--- azure_container_service_managed_cluster
+resource <|--- managed_kubernetes_cluster_provider
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Container Service Managed Cluster resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_compute_disk_encryption_set {
+
+}
+class azure_compute_virtual_machine_scale_set {
+
+}
+class azure_container_service_fleet {
+
+}
+class azure_container_service_managed_cluster {
+
+}
+class azure_container_service_managed_cluster_snapshot {
+
+}
+class azure_machine_learning_compute {
+
+}
+class azure_network_load_balancer {
+
+}
+azure_container_service_fleet -[#1A83AF]-> azure_container_service_managed_cluster
+azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_disk_encryption_set
+azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+azure_container_service_managed_cluster -[#1A83AF]-> azure_container_service_managed_cluster_snapshot
+azure_container_service_managed_cluster -[#1A83AF]-> azure_network_load_balancer
+azure_machine_learning_compute -[#1A83AF]-> azure_container_service_managed_cluster
+azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -425,68 +537,6 @@ azure_managed_cluster_windows_profile --> azure_windows_gmsa_profile
 azure_service_mesh_profile --> azure_istio_service_mesh
 resource <|--- managed_kubernetes_cluster_provider
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Container Service Managed Cluster resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_compute_disk_encryption_set {
-
-}
-class azure_compute_virtual_machine_scale_set {
-
-}
-class azure_container_service_fleet {
-
-}
-class azure_container_service_managed_cluster {
-
-}
-class azure_container_service_managed_cluster_snapshot {
-
-}
-class azure_machine_learning_compute {
-
-}
-class azure_network_load_balancer {
-
-}
-azure_container_service_fleet -[#1A83AF]-> azure_container_service_managed_cluster
-azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_disk_encryption_set
-azure_container_service_managed_cluster -[#1A83AF]-> azure_compute_virtual_machine_scale_set
-azure_container_service_managed_cluster -[#1A83AF]-> azure_container_service_managed_cluster_snapshot
-azure_container_service_managed_cluster -[#1A83AF]-> azure_network_load_balancer
-azure_machine_learning_compute -[#1A83AF]-> azure_container_service_managed_cluster
-azure_network_load_balancer -[#1A83AF]-> azure_compute_virtual_machine_scale_set
 
 @enduml
 ```

@@ -12,6 +12,108 @@ sidebar_label: Cosmos DB PostgreSQL Cluster
 
 Azure Cosmos DB PostgreSQL Cluster is a managed database service that provides PostgreSQL compatibility within the Azure cloud environment. It offers distributed data storage and processing capabilities, supporting multi-region deployments and automatic scaling. The service handles database administration tasks, including backups, updates, and security, while maintaining PostgreSQL compatibility for existing applications and tools.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Cosmos DB PostgreSQL Cluster"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_cosmos_db_postgresql_cluster {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+microsoft_resource <|--- azure_cosmos_db_postgresql_cluster
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB PostgreSQL Cluster resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_cosmos_db_postgresql_cluster {
+
+}
+class azure_cosmos_db_postgresql_cluster_configuration {
+
+}
+class azure_cosmos_db_postgresql_cluster_private_endpoint_connection {
+
+}
+class azure_cosmos_db_postgresql_cluster_private_link {
+
+}
+class azure_cosmos_db_postgresql_cluster_role {
+
+}
+class azure_cosmos_db_postgresql_cluster_server {
+
+}
+azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_configuration
+azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_private_endpoint_connection
+azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_private_link
+azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_role
+azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_server
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -135,63 +237,6 @@ microsoft_resource <|--- azure_cosmos_db_postgresql_cluster
 azure_private_endpoint_connection --> azure_private_link_service_connection_state
 azure_private_endpoint_connection --> azure_system_data
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB PostgreSQL Cluster resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_cosmos_db_postgresql_cluster {
-
-}
-class azure_cosmos_db_postgresql_cluster_configuration {
-
-}
-class azure_cosmos_db_postgresql_cluster_private_endpoint_connection {
-
-}
-class azure_cosmos_db_postgresql_cluster_private_link {
-
-}
-class azure_cosmos_db_postgresql_cluster_role {
-
-}
-class azure_cosmos_db_postgresql_cluster_server {
-
-}
-azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_configuration
-azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_private_endpoint_connection
-azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_private_link
-azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_role
-azure_cosmos_db_postgresql_cluster -[#1A83AF]-> azure_cosmos_db_postgresql_cluster_server
 
 @enduml
 ```

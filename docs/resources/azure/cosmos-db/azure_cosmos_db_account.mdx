@@ -4,13 +4,170 @@ sidebar_label: Cosmos DB Account
 
 # `azure_cosmos_db_account`
 
-- Categories: Database, Compute
+- Categories: Compute, Database
 - Service: cosmos-db
 - Provider Link: [Cosmos DB Account](https://learn.microsoft.com/en-us/azure/cosmos-db/)
 
 ## Description
 
 Azure Cosmos DB Account is a cloud-based database service offered by Microsoft Azure. It provides a globally distributed, multi-model database platform for storing and managing data. Users can create and manage databases, containers, and items within the account. It supports multiple APIs, including SQL, MongoDB, Cassandra, Gremlin, and Table, offering flexibility for various application needs.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Cosmos DB Account"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_cosmos_db_account {
+
+}
+class database {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+database <|--- azure_cosmos_db_account
+microsoft_resource <|--- azure_cosmos_db_account
+resource <|--- database
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Account resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_cosmos_db_account {
+
+}
+class azure_cosmos_db_account_usage {
+
+}
+class azure_cosmos_db_cassandra_keyspace {
+
+}
+class azure_cosmos_db_gremlin_database {
+
+}
+class azure_cosmos_db_location {
+
+}
+class azure_cosmos_db_mongo_db_database {
+
+}
+class azure_cosmos_db_mongo_db_role_definition {
+
+}
+class azure_cosmos_db_mongo_db_user_definition {
+
+}
+class azure_cosmos_db_notebook_workspace {
+
+}
+class azure_cosmos_db_private_link {
+
+}
+class azure_cosmos_db_sql_database {
+
+}
+class azure_cosmos_db_sql_role_assignment {
+
+}
+class azure_cosmos_db_sql_role_definition {
+
+}
+class azure_cosmos_db_table {
+
+}
+class azure_key_vault_key {
+
+}
+class azure_network_subnet {
+
+}
+class microsoft_graph_service_principal {
+
+}
+class microsoft_graph_user {
+
+}
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_account_usage
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_cassandra_keyspace
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_gremlin_database
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_database
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_role_definition
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_user_definition
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_notebook_workspace
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_private_link
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_database
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_role_assignment
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_role_definition
+azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_table
+azure_cosmos_db_account -[#1A83AF]-> microsoft_graph_service_principal
+azure_cosmos_db_account -[#1A83AF]-> microsoft_graph_user
+azure_cosmos_db_location -[#1A83AF]-> azure_cosmos_db_account
+azure_cosmos_db_sql_role_assignment -[#1A83AF]-> microsoft_graph_service_principal
+azure_cosmos_db_sql_role_definition -[#1A83AF]-> azure_cosmos_db_sql_role_assignment
+azure_key_vault_key -[#1A83AF]-> azure_cosmos_db_account
+azure_network_subnet -[#1A83AF]-> azure_cosmos_db_account
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -222,113 +379,6 @@ azure_restore_parameters --> azure_database_restore_resource
 azure_restore_parameters --> azure_gremlin_database_restore_resource
 resource <|--- database
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Cosmos DB Account resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_cosmos_db_account {
-
-}
-class azure_cosmos_db_account_usage {
-
-}
-class azure_cosmos_db_cassandra_keyspace {
-
-}
-class azure_cosmos_db_gremlin_database {
-
-}
-class azure_cosmos_db_location {
-
-}
-class azure_cosmos_db_mongo_db_database {
-
-}
-class azure_cosmos_db_mongo_db_role_definition {
-
-}
-class azure_cosmos_db_mongo_db_user_definition {
-
-}
-class azure_cosmos_db_notebook_workspace {
-
-}
-class azure_cosmos_db_private_link {
-
-}
-class azure_cosmos_db_sql_database {
-
-}
-class azure_cosmos_db_sql_role_assignment {
-
-}
-class azure_cosmos_db_sql_role_definition {
-
-}
-class azure_cosmos_db_table {
-
-}
-class azure_key_vault_key {
-
-}
-class azure_network_subnet {
-
-}
-class microsoft_graph_service_principal {
-
-}
-class microsoft_graph_user {
-
-}
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_account_usage
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_cassandra_keyspace
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_gremlin_database
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_database
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_role_definition
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_mongo_db_user_definition
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_notebook_workspace
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_private_link
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_database
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_role_assignment
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_sql_role_definition
-azure_cosmos_db_account -[#1A83AF]-> azure_cosmos_db_table
-azure_cosmos_db_account -[#1A83AF]-> microsoft_graph_service_principal
-azure_cosmos_db_account -[#1A83AF]-> microsoft_graph_user
-azure_cosmos_db_location -[#1A83AF]-> azure_cosmos_db_account
-azure_cosmos_db_sql_role_assignment -[#1A83AF]-> microsoft_graph_service_principal
-azure_cosmos_db_sql_role_definition -[#1A83AF]-> azure_cosmos_db_sql_role_assignment
-azure_key_vault_key -[#1A83AF]-> azure_cosmos_db_account
-azure_network_subnet -[#1A83AF]-> azure_cosmos_db_account
 
 @enduml
 ```

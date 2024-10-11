@@ -4,13 +4,112 @@ sidebar_label: Network Firewall
 
 # `azure_network_firewall`
 
-- Categories: Security, Networking
+- Categories: Networking, Security
 - Service: networking
 - Provider Link: [Network Firewall](https://docs.microsoft.com/en-us/azure/firewall/)
 
 ## Description
 
 Azure Network Firewall is a cloud-based security service that protects Azure Virtual Network resources. It filters incoming and outgoing traffic using stateful inspection, application-level filtering, and threat intelligence. The firewall supports both IPv4 and IPv6 protocols, implements network address translation, and provides logging and analytics capabilities for monitoring network activity.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Network Firewall"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_firewall {
+
+}
+class firewall {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+firewall <|--- azure_network_firewall
+microsoft_resource <|--- azure_network_firewall
+resource <|--- firewall
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Network Firewall resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_firewall {
+
+}
+class azure_network_firewall_policy {
+
+}
+class azure_network_subnet {
+
+}
+class azure_network_virtual_hub {
+
+}
+azure_network_firewall -[#1A83AF]-> azure_network_firewall_policy
+azure_network_firewall -[#1A83AF]-> azure_network_virtual_hub
+azure_network_subnet -[#1A83AF]-> azure_network_firewall
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -174,55 +273,6 @@ firewall <|--- azure_network_firewall
 microsoft_resource <|--- azure_network_firewall
 resource <|--- firewall
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Network Firewall resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_network_firewall {
-
-}
-class azure_network_firewall_policy {
-
-}
-class azure_network_subnet {
-
-}
-class azure_network_virtual_hub {
-
-}
-azure_network_firewall -[#1A83AF]-> azure_network_firewall_policy
-azure_network_firewall -[#1A83AF]-> azure_network_virtual_hub
-azure_network_subnet -[#1A83AF]-> azure_network_firewall
 
 @enduml
 ```

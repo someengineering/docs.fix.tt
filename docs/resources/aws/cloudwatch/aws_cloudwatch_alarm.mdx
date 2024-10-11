@@ -12,6 +12,105 @@ sidebar_label: CloudWatch Alarm
 
 AWS CloudWatch Alarm is a monitoring service that tracks metrics from AWS resources and applications. It sends notifications or performs automated actions when predefined thresholds are breached. Users can set alarms for various metrics, including CPU utilization, network traffic, and custom application metrics. CloudWatch Alarm integrates with other AWS services to trigger responses based on specified conditions.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of CloudWatch Alarm"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_cloudwatch_alarm {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_cloudwatch_alarm
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Alarm resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_cloudwatch_alarm {
+
+}
+class aws_cloudwatch_metric_filter {
+
+}
+class aws_ec2_instance {
+
+}
+class aws_region {
+
+}
+class aws_sagemaker_endpoint {
+
+}
+aws_cloudwatch_metric_filter -[#1A83AF]-> aws_cloudwatch_alarm
+aws_ec2_instance -[#1A83AF]-> aws_cloudwatch_alarm
+aws_region -[#1A83AF]-> aws_cloudwatch_alarm
+aws_region -[#1A83AF]-> aws_ec2_instance
+aws_sagemaker_endpoint -[#1A83AF]-> aws_cloudwatch_alarm
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -112,60 +211,6 @@ aws_cloudwatch_metric --> aws_cloudwatch_dimension
 aws_cloudwatch_metric_data_query --> aws_cloudwatch_metric_stat
 aws_cloudwatch_metric_stat --> aws_cloudwatch_metric
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of CloudWatch Alarm resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_cloudwatch_alarm {
-
-}
-class aws_cloudwatch_metric_filter {
-
-}
-class aws_ec2_instance {
-
-}
-class aws_region {
-
-}
-class aws_sagemaker_endpoint {
-
-}
-aws_cloudwatch_metric_filter -[#1A83AF]-> aws_cloudwatch_alarm
-aws_ec2_instance -[#1A83AF]-> aws_cloudwatch_alarm
-aws_region -[#1A83AF]-> aws_cloudwatch_alarm
-aws_region -[#1A83AF]-> aws_ec2_instance
-aws_sagemaker_endpoint -[#1A83AF]-> aws_cloudwatch_alarm
 
 @enduml
 ```

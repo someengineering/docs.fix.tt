@@ -12,6 +12,120 @@ sidebar_label: Instance
 
 A GCP Instance is a virtual machine running on Google Cloud Platform. It provides computing resources for applications and services. Users can choose from various machine types, operating systems, and configurations to meet their specific needs. GCP Instances can be created, modified, and terminated as required, offering flexibility for workload management and resource allocation.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Instance"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_instance {
+
+}
+class gcp_resource {
+
+}
+class instance {
+
+}
+class resource {
+
+}
+gcp_resource <|--- gcp_instance
+instance <|--- gcp_instance
+resource <|--- gcp_resource
+resource <|--- instance
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Instance resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_disk {
+
+}
+class gcp_instance {
+
+}
+class gcp_machine_type {
+
+}
+class gcp_network {
+
+}
+class gcp_packet_mirroring {
+
+}
+class gcp_subnetwork {
+
+}
+class gcp_target_instance {
+
+}
+gcp_instance -[#1A83AF]-> gcp_disk
+gcp_instance -[#1A83AF]-> gcp_packet_mirroring
+gcp_machine_type -[#1A83AF]-> gcp_instance
+gcp_network -[#1A83AF]-> gcp_instance
+gcp_network -[#1A83AF]-> gcp_subnetwork
+gcp_network -[#1A83AF]-> gcp_target_instance
+gcp_subnetwork -[#1A83AF]-> gcp_instance
+gcp_subnetwork -[#1A83AF]-> gcp_packet_mirroring
+gcp_target_instance -[#1A83AF]-> gcp_instance
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -271,70 +385,6 @@ gcp_resource --> gcp_deprecation_status
 resource <|--- gcp_resource
 gcp_scheduling --> gcp_scheduling_node_affinity
 resource <|--- instance
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Instance resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_disk {
-
-}
-class gcp_instance {
-
-}
-class gcp_machine_type {
-
-}
-class gcp_network {
-
-}
-class gcp_packet_mirroring {
-
-}
-class gcp_subnetwork {
-
-}
-class gcp_target_instance {
-
-}
-gcp_instance -[#1A83AF]-> gcp_disk
-gcp_instance -[#1A83AF]-> gcp_packet_mirroring
-gcp_machine_type -[#1A83AF]-> gcp_instance
-gcp_network -[#1A83AF]-> gcp_instance
-gcp_network -[#1A83AF]-> gcp_subnetwork
-gcp_network -[#1A83AF]-> gcp_target_instance
-gcp_subnetwork -[#1A83AF]-> gcp_instance
-gcp_subnetwork -[#1A83AF]-> gcp_packet_mirroring
-gcp_target_instance -[#1A83AF]-> gcp_instance
 
 @enduml
 ```

@@ -9,6 +9,116 @@ sidebar_label: Graph Group
 
 ## Description
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Graph Group"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class group {
+
+}
+class microsoft_graph_entity {
+
+}
+class microsoft_graph_group {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+resource <|--- group
+microsoft_resource <|--- microsoft_graph_entity
+group <|--- microsoft_graph_group
+microsoft_graph_entity <|--- microsoft_graph_group
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Graph Group resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_authorization_role_assignment {
+
+}
+class microsoft_graph_device {
+
+}
+class microsoft_graph_group {
+
+}
+class microsoft_graph_service_principal {
+
+}
+class microsoft_graph_user {
+
+}
+azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_device
+azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_group
+azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_service_principal
+azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_user
+microsoft_graph_group -[#1A83AF]-> microsoft_graph_device
+microsoft_graph_group -[#1A83AF]-> microsoft_graph_service_principal
+microsoft_graph_group -[#1A83AF]-> microsoft_graph_user
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -147,62 +257,6 @@ microsoft_graph_group --> microsoft_graph_membership_rule_processing_status
 microsoft_graph_group --> microsoft_graph_on_premises_provisioning_error
 microsoft_graph_group --> microsoft_graph_service_provisioning_error
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Graph Group resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_authorization_role_assignment {
-
-}
-class microsoft_graph_device {
-
-}
-class microsoft_graph_group {
-
-}
-class microsoft_graph_service_principal {
-
-}
-class microsoft_graph_user {
-
-}
-azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_device
-azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_group
-azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_service_principal
-azure_authorization_role_assignment -[#1A83AF]-> microsoft_graph_user
-microsoft_graph_group -[#1A83AF]-> microsoft_graph_device
-microsoft_graph_group -[#1A83AF]-> microsoft_graph_service_principal
-microsoft_graph_group -[#1A83AF]-> microsoft_graph_user
 
 @enduml
 ```

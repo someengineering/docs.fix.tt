@@ -12,6 +12,147 @@ sidebar_label: Lambda Function
 
 AWS Lambda is a serverless computing service that lets you run your code without provisioning or managing servers. Lambda functions are the compute units that run your code in response to events.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Lambda Function"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_lambda_function {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+class serverless_function {
+
+}
+aws_resource <|--- aws_lambda_function
+serverless_function <|--- aws_lambda_function
+resource <|--- aws_resource
+resource <|--- serverless_function
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Lambda Function resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_apigateway_authorizer {
+
+}
+class aws_apigateway_resource {
+
+}
+class aws_apigateway_rest_api {
+
+}
+class aws_bedrock_agent_flow {
+
+}
+class aws_cloudfront_distribution {
+
+}
+class aws_cognito_user_pool {
+
+}
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_kms_key {
+
+}
+class aws_lambda_function {
+
+}
+class aws_sagemaker_labeling_job {
+
+}
+class aws_vpc {
+
+}
+aws_apigateway_authorizer -[#1A83AF]-> aws_lambda_function
+aws_apigateway_resource -[#1A83AF]-> aws_apigateway_authorizer
+aws_apigateway_resource -[#1A83AF]-> aws_lambda_function
+aws_apigateway_rest_api -[#1A83AF]-> aws_apigateway_authorizer
+aws_apigateway_rest_api -[#1A83AF]-> aws_apigateway_resource
+aws_apigateway_rest_api -[#1A83AF]-> aws_lambda_function
+aws_bedrock_agent_flow -[#1A83AF]-> aws_kms_key
+aws_bedrock_agent_flow -[#1A83AF]-> aws_lambda_function
+aws_cloudfront_distribution -[#1A83AF]-> aws_lambda_function
+aws_cognito_user_pool -[#1A83AF]-> aws_kms_key
+aws_cognito_user_pool -[#1A83AF]-> aws_lambda_function
+aws_ec2_security_group -[#1A83AF]-> aws_lambda_function
+aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_ec2_subnet -[#1A83AF]-> aws_lambda_function
+aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_labeling_job
+aws_lambda_function -[#1A83AF]-> aws_kms_key
+aws_sagemaker_labeling_job -[#1A83AF]-> aws_kms_key
+aws_sagemaker_labeling_job -[#1A83AF]-> aws_lambda_function
+aws_vpc -[#1A83AF]-> aws_ec2_security_group
+aws_vpc -[#1A83AF]-> aws_ec2_subnet
+aws_vpc -[#1A83AF]-> aws_lambda_function
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -151,97 +292,6 @@ aws_lambda_image_config_response --> aws_lambda_image_config
 aws_lambda_image_config_response --> aws_lambda_image_config_error
 resource <|--- aws_resource
 resource <|--- serverless_function
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Lambda Function resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_apigateway_authorizer {
-
-}
-class aws_apigateway_resource {
-
-}
-class aws_apigateway_rest_api {
-
-}
-class aws_bedrock_agent_flow {
-
-}
-class aws_cloudfront_distribution {
-
-}
-class aws_cognito_user_pool {
-
-}
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_kms_key {
-
-}
-class aws_lambda_function {
-
-}
-class aws_sagemaker_labeling_job {
-
-}
-class aws_vpc {
-
-}
-aws_apigateway_authorizer -[#1A83AF]-> aws_lambda_function
-aws_apigateway_resource -[#1A83AF]-> aws_apigateway_authorizer
-aws_apigateway_resource -[#1A83AF]-> aws_lambda_function
-aws_apigateway_rest_api -[#1A83AF]-> aws_apigateway_authorizer
-aws_apigateway_rest_api -[#1A83AF]-> aws_apigateway_resource
-aws_apigateway_rest_api -[#1A83AF]-> aws_lambda_function
-aws_bedrock_agent_flow -[#1A83AF]-> aws_kms_key
-aws_bedrock_agent_flow -[#1A83AF]-> aws_lambda_function
-aws_cloudfront_distribution -[#1A83AF]-> aws_lambda_function
-aws_cognito_user_pool -[#1A83AF]-> aws_kms_key
-aws_cognito_user_pool -[#1A83AF]-> aws_lambda_function
-aws_ec2_security_group -[#1A83AF]-> aws_lambda_function
-aws_ec2_security_group -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_ec2_subnet -[#1A83AF]-> aws_lambda_function
-aws_ec2_subnet -[#1A83AF]-> aws_sagemaker_labeling_job
-aws_lambda_function -[#1A83AF]-> aws_kms_key
-aws_sagemaker_labeling_job -[#1A83AF]-> aws_kms_key
-aws_sagemaker_labeling_job -[#1A83AF]-> aws_lambda_function
-aws_vpc -[#1A83AF]-> aws_ec2_security_group
-aws_vpc -[#1A83AF]-> aws_ec2_subnet
-aws_vpc -[#1A83AF]-> aws_lambda_function
 
 @enduml
 ```

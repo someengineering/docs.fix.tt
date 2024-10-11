@@ -12,6 +12,100 @@ sidebar_label: Vertex AI Endpoint
 
 An Endpoint is a deployment resource in Vertex AI that hosts one or more machine learning models. It enables online prediction requests from clients.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Vertex AI Endpoint"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_resource {
+
+}
+class gcp_vertex_ai_endpoint {
+
+}
+class resource {
+
+}
+resource <|--- gcp_resource
+gcp_resource <|--- gcp_vertex_ai_endpoint
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Endpoint resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_vertex_ai_endpoint {
+
+}
+class gcp_vertex_ai_model {
+
+}
+class gcp_vertex_ai_model_deployment_monitoring_job {
+
+}
+class gcp_vertex_ai_tuning_job {
+
+}
+gcp_vertex_ai_endpoint -[#1A83AF]-> gcp_vertex_ai_model_deployment_monitoring_job
+gcp_vertex_ai_endpoint -[#1A83AF]-> gcp_vertex_ai_tuning_job
+gcp_vertex_ai_model -[#1A83AF]-> gcp_vertex_ai_endpoint
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -207,55 +301,6 @@ gcp_vertex_ai_feature_noise_sigma --> gcp_vertex_ai_feature_noise_sigma_noise_si
 gcp_vertex_ai_integrated_gradients_attribution --> gcp_vertex_ai_smooth_grad_config
 gcp_vertex_ai_smooth_grad_config --> gcp_vertex_ai_feature_noise_sigma
 gcp_vertex_ai_xrai_attribution --> gcp_vertex_ai_smooth_grad_config
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Vertex AI Endpoint resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_vertex_ai_endpoint {
-
-}
-class gcp_vertex_ai_model {
-
-}
-class gcp_vertex_ai_model_deployment_monitoring_job {
-
-}
-class gcp_vertex_ai_tuning_job {
-
-}
-gcp_vertex_ai_endpoint -[#1A83AF]-> gcp_vertex_ai_model_deployment_monitoring_job
-gcp_vertex_ai_endpoint -[#1A83AF]-> gcp_vertex_ai_tuning_job
-gcp_vertex_ai_model -[#1A83AF]-> gcp_vertex_ai_endpoint
 
 @enduml
 ```

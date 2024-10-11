@@ -12,6 +12,119 @@ sidebar_label: Autoscaling Group
 
 AWS Auto Scaling Group is a service that manages multiple EC2 instances as a collective unit. It automatically adjusts the number of instances based on defined conditions, ensuring optimal performance and resource utilization. It maintains a specified number of instances, replaces unhealthy ones, and scales capacity up or down according to demand or schedule.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Autoscaling Group"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class autoscaling_group {
+
+}
+class aws_autoscaling_group {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+resource <|--- autoscaling_group
+autoscaling_group <|--- aws_autoscaling_group
+aws_resource <|--- aws_autoscaling_group
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Autoscaling Group resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_autoscaling_group {
+
+}
+class aws_beanstalk_environment {
+
+}
+class aws_ec2_instance {
+
+}
+class aws_ec2_launch_template {
+
+}
+class aws_ecs_capacity_provider {
+
+}
+class aws_eks_nodegroup {
+
+}
+class aws_region {
+
+}
+aws_autoscaling_group -[#1A83AF]-> aws_ec2_instance
+aws_autoscaling_group -[#1A83AF]-> aws_ec2_launch_template
+aws_beanstalk_environment -[#1A83AF]-> aws_autoscaling_group
+aws_beanstalk_environment -[#1A83AF]-> aws_ec2_instance
+aws_ecs_capacity_provider -[#1A83AF]-> aws_autoscaling_group
+aws_eks_nodegroup -[#1A83AF]-> aws_autoscaling_group
+aws_region -[#1A83AF]-> aws_autoscaling_group
+aws_region -[#1A83AF]-> aws_ec2_instance
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -185,69 +298,6 @@ aws_autoscaling_launch_template_overrides --> aws_autoscaling_launch_template_sp
 aws_autoscaling_mixed_instances_policy --> aws_autoscaling_instances_distribution
 aws_autoscaling_mixed_instances_policy --> aws_autoscaling_launch_template
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Autoscaling Group resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_autoscaling_group {
-
-}
-class aws_beanstalk_environment {
-
-}
-class aws_ec2_instance {
-
-}
-class aws_ec2_launch_template {
-
-}
-class aws_ecs_capacity_provider {
-
-}
-class aws_eks_nodegroup {
-
-}
-class aws_region {
-
-}
-aws_autoscaling_group -[#1A83AF]-> aws_ec2_instance
-aws_autoscaling_group -[#1A83AF]-> aws_ec2_launch_template
-aws_beanstalk_environment -[#1A83AF]-> aws_autoscaling_group
-aws_beanstalk_environment -[#1A83AF]-> aws_ec2_instance
-aws_ecs_capacity_provider -[#1A83AF]-> aws_autoscaling_group
-aws_eks_nodegroup -[#1A83AF]-> aws_autoscaling_group
-aws_region -[#1A83AF]-> aws_autoscaling_group
-aws_region -[#1A83AF]-> aws_ec2_instance
 
 @enduml
 ```

@@ -12,6 +12,105 @@ sidebar_label: DynamoDB Table
 
 AWS DynamoDB Table is a fully managed NoSQL database service that stores and retrieves data. It supports key-value and document data models, offering automatic scaling and low-latency performance. DynamoDB Tables handle data storage, indexing, and querying, providing consistent read and write throughput. They offer data encryption, backup, and recovery features for secure and reliable data management.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of DynamoDB Table"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_dynamodb_table {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_dynamodb_table
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of DynamoDB Table resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_backup_protected_resource {
+
+}
+class aws_dynamodb_table {
+
+}
+class aws_kinesis_stream {
+
+}
+class aws_kms_key {
+
+}
+class aws_ssm_resource_compliance {
+
+}
+aws_backup_protected_resource -[#1A83AF]-> aws_dynamodb_table
+aws_dynamodb_table -[#1A83AF]-> aws_kinesis_stream
+aws_dynamodb_table -[#1A83AF]-> aws_kms_key
+aws_kinesis_stream -[#1A83AF]-> aws_kms_key
+aws_ssm_resource_compliance -[#1A83AF]-> aws_dynamodb_table
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -191,60 +290,6 @@ aws_dynamodb_table --> aws_dynamodb_stream_specification
 aws_dynamodb_table --> aws_dynamodb_table_class_summary
 aws_resource <|--- aws_dynamodb_table
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of DynamoDB Table resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_backup_protected_resource {
-
-}
-class aws_dynamodb_table {
-
-}
-class aws_kinesis_stream {
-
-}
-class aws_kms_key {
-
-}
-class aws_ssm_resource_compliance {
-
-}
-aws_backup_protected_resource -[#1A83AF]-> aws_dynamodb_table
-aws_dynamodb_table -[#1A83AF]-> aws_kinesis_stream
-aws_dynamodb_table -[#1A83AF]-> aws_kms_key
-aws_kinesis_stream -[#1A83AF]-> aws_kms_key
-aws_ssm_resource_compliance -[#1A83AF]-> aws_dynamodb_table
 
 @enduml
 ```

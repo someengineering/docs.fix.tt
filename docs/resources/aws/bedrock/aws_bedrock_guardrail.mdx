@@ -12,6 +12,103 @@ sidebar_label: Bedrock Guardrail
 
 AWS Bedrock Guardrail is a feature that helps manage and control access to foundation models in AWS Bedrock. It applies filters to user inputs and model outputs, enforcing content policies and preventing misuse. Administrators can set rules to block specific topics, limit personal information sharing, and ensure appropriate content generation across applications using AWS Bedrock.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Bedrock Guardrail"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_bedrock_guardrail {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_bedrock_guardrail
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Guardrail resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_bedrock_agent {
+
+}
+class aws_bedrock_agent_version {
+
+}
+class aws_bedrock_guardrail {
+
+}
+class aws_kms_key {
+
+}
+aws_bedrock_agent -[#1A83AF]-> aws_bedrock_agent_version
+aws_bedrock_agent -[#1A83AF]-> aws_bedrock_guardrail
+aws_bedrock_agent -[#1A83AF]-> aws_kms_key
+aws_bedrock_agent_version -[#1A83AF]-> aws_bedrock_guardrail
+aws_bedrock_agent_version -[#1A83AF]-> aws_kms_key
+aws_bedrock_guardrail -[#1A83AF]-> aws_kms_key
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -128,58 +225,6 @@ aws_bedrock_guardrail_sensitive_information_policy --> aws_bedrock_guardrail_pii
 aws_bedrock_guardrail_sensitive_information_policy --> aws_bedrock_guardrail_regex
 aws_bedrock_guardrail_topic_policy --> aws_bedrock_guardrail_topic
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Bedrock Guardrail resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_bedrock_agent {
-
-}
-class aws_bedrock_agent_version {
-
-}
-class aws_bedrock_guardrail {
-
-}
-class aws_kms_key {
-
-}
-aws_bedrock_agent -[#1A83AF]-> aws_bedrock_agent_version
-aws_bedrock_agent -[#1A83AF]-> aws_bedrock_guardrail
-aws_bedrock_agent -[#1A83AF]-> aws_kms_key
-aws_bedrock_agent_version -[#1A83AF]-> aws_bedrock_guardrail
-aws_bedrock_agent_version -[#1A83AF]-> aws_kms_key
-aws_bedrock_guardrail -[#1A83AF]-> aws_kms_key
 
 @enduml
 ```

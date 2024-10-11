@@ -12,6 +12,104 @@ sidebar_label: URL Map
 
 A GCP URL Map is a Google Cloud Platform resource that routes incoming HTTP(S) requests to specific backend services or buckets based on defined rules. It matches the URL path or host of requests to configured patterns and directs traffic accordingly, supporting load balancing and content-based routing across multiple backends within a single load balancer.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of URL Map"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_resource {
+
+}
+class gcp_url_map {
+
+}
+class resource {
+
+}
+resource <|--- gcp_resource
+gcp_resource <|--- gcp_url_map
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of URL Map resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class gcp_backend_service {
+
+}
+class gcp_target_grpc_proxy {
+
+}
+class gcp_target_http_proxy {
+
+}
+class gcp_target_https_proxy {
+
+}
+class gcp_url_map {
+
+}
+gcp_target_grpc_proxy -[#1A83AF]-> gcp_url_map
+gcp_target_http_proxy -[#1A83AF]-> gcp_url_map
+gcp_target_https_proxy -[#1A83AF]-> gcp_url_map
+gcp_url_map -[#1A83AF]-> gcp_backend_service
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -263,59 +361,6 @@ gcp_resource <|--- gcp_url_map
 gcp_url_map --> gcp_url_map_test
 gcp_url_map_test --> gcp_url_map_test_header
 gcp_weighted_backend_service --> gcp_http_header_action
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of URL Map resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class gcp_backend_service {
-
-}
-class gcp_target_grpc_proxy {
-
-}
-class gcp_target_http_proxy {
-
-}
-class gcp_target_https_proxy {
-
-}
-class gcp_url_map {
-
-}
-gcp_target_grpc_proxy -[#1A83AF]-> gcp_url_map
-gcp_target_http_proxy -[#1A83AF]-> gcp_url_map
-gcp_target_https_proxy -[#1A83AF]-> gcp_url_map
-gcp_url_map -[#1A83AF]-> gcp_backend_service
 
 @enduml
 ```

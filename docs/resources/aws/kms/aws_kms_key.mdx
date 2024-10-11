@@ -4,7 +4,7 @@ sidebar_label: KMS Key
 
 # `aws_kms_key`
 
-- Categories: Security, Management, Access Control
+- Categories: Access Control, Management, Security
 - Service: kms
 - Provider Link: [KMS Key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys)
 
@@ -12,11 +12,11 @@ sidebar_label: KMS Key
 
 AWS KMS Key is a managed service that creates and controls cryptographic keys used to protect data in AWS services and applications. It generates, stores, and manages keys for encryption and decryption operations. KMS Keys integrate with other AWS services, providing a centralized system for key management and helping users meet compliance requirements for data security and access control.
 
-## Properties
+## Base Hierarchy
 
 <ZoomPanPinch>
 
-```kroki imgType="plantuml" imgAlt="Diagram of KMS Key data model"
+```kroki imgType="plantuml" imgAlt="Hierarchy of KMS Key"
 @startuml
 hide empty members
 skinparam ArrowColor #ffaf37
@@ -41,65 +41,20 @@ skinparam stereotypeCBackgroundColor #e98df7
 skinparam stereotypeIBackgroundColor #e98df7
 
 class access_key {
-**access_key_status**: string
+
 }
 class aws_kms_key {
-**kms_aws_account_id**: string
-**kms_cloud_hsm_cluster_id**: string
-**kms_custom_key_store_id**: string
-**kms_customer_master_key_spec**: string
-**kms_deletion_date**: string
-**kms_description**: string
-**kms_enabled**: boolean
-**kms_encryption_algorithms**: string[]
-**kms_expiration_model**: string
-**kms_key_manager**: string
-**kms_key_policy**: dictionary[string, any]
-**kms_key_rotation_enabled**: boolean
-**kms_key_spec**: string
-**kms_key_usage**: string
-**kms_mac_algorithms**: string[]
-**kms_multi_region**: boolean
-**kms_multiregion_configuration**: aws_kms_multiregion_config
-**kms_origin**: string
-**kms_pending_deletion_window_in_days**: int64
-**kms_signing_algorithms**: string[]
-**kms_valid_to**: string
-}
-class aws_kms_multiregion_config {
-**multi_region_key_type**: string
-**primary_key**: aws_kms_multiregion_primary_key
-**replica_keys**: aws_kms_multiregion_replica_key[]
-}
-class aws_kms_multiregion_primary_key {
-**arn**: string
-**region**: string
-}
-class aws_kms_multiregion_replica_key {
-**arn**: string
-**region**: string
+
 }
 class aws_resource {
-**arn**: string
+
 }
 class resource {
-**age**: duration
-**atime**: datetime
-**ctime**: datetime
-**id**: string
-**kind**: string
-**last_access**: duration
-**last_update**: duration
-**mtime**: datetime
-**name**: string
-**tags**: dictionary[string, string]
+
 }
 resource <|--- access_key
 access_key <|--- aws_kms_key
-aws_kms_key --> aws_kms_multiregion_config
 aws_resource <|--- aws_kms_key
-aws_kms_multiregion_config --> aws_kms_multiregion_primary_key
-aws_kms_multiregion_config --> aws_kms_multiregion_replica_key
 resource <|--- aws_resource
 
 @enduml
@@ -329,6 +284,101 @@ aws_sagemaker_transform_job -[#1A83AF]-> aws_kms_key
 aws_secretsmanager_secret -[#1A83AF]-> aws_kms_key
 aws_sns_topic -[#1A83AF]-> aws_kms_key
 aws_sqs_queue -[#1A83AF]-> aws_kms_key
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Properties
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of KMS Key data model"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class access_key {
+**access_key_status**: string
+}
+class aws_kms_key {
+**kms_aws_account_id**: string
+**kms_cloud_hsm_cluster_id**: string
+**kms_custom_key_store_id**: string
+**kms_customer_master_key_spec**: string
+**kms_deletion_date**: string
+**kms_description**: string
+**kms_enabled**: boolean
+**kms_encryption_algorithms**: string[]
+**kms_expiration_model**: string
+**kms_key_manager**: string
+**kms_key_policy**: dictionary[string, any]
+**kms_key_rotation_enabled**: boolean
+**kms_key_spec**: string
+**kms_key_usage**: string
+**kms_mac_algorithms**: string[]
+**kms_multi_region**: boolean
+**kms_multiregion_configuration**: aws_kms_multiregion_config
+**kms_origin**: string
+**kms_pending_deletion_window_in_days**: int64
+**kms_signing_algorithms**: string[]
+**kms_valid_to**: string
+}
+class aws_kms_multiregion_config {
+**multi_region_key_type**: string
+**primary_key**: aws_kms_multiregion_primary_key
+**replica_keys**: aws_kms_multiregion_replica_key[]
+}
+class aws_kms_multiregion_primary_key {
+**arn**: string
+**region**: string
+}
+class aws_kms_multiregion_replica_key {
+**arn**: string
+**region**: string
+}
+class aws_resource {
+**arn**: string
+}
+class resource {
+**age**: duration
+**atime**: datetime
+**ctime**: datetime
+**id**: string
+**kind**: string
+**last_access**: duration
+**last_update**: duration
+**mtime**: datetime
+**name**: string
+**tags**: dictionary[string, string]
+}
+resource <|--- access_key
+access_key <|--- aws_kms_key
+aws_kms_key --> aws_kms_multiregion_config
+aws_resource <|--- aws_kms_key
+aws_kms_multiregion_config --> aws_kms_multiregion_primary_key
+aws_kms_multiregion_config --> aws_kms_multiregion_replica_key
+resource <|--- aws_resource
 
 @enduml
 ```

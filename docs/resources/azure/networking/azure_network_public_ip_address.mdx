@@ -12,6 +12,113 @@ sidebar_label: Network Public IP Address
 
 Azure Network Public IP Address is a resource that provides a static or dynamic public IP address for Azure resources. It assigns an internet-facing IP to virtual machines, load balancers, and other services, enabling inbound and outbound communication with the internet. This address can be associated with network interfaces or used as a frontend IP for load balancers.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of Network Public IP Address"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_public_ip_address {
+
+}
+class ip_address {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+ip_address <|--- azure_network_public_ip_address
+microsoft_resource <|--- azure_network_public_ip_address
+resource <|--- ip_address
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of Network Public IP Address resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_network_bastion_host {
+
+}
+class azure_network_ddos_protection_plan {
+
+}
+class azure_network_nat_gateway {
+
+}
+class azure_network_public_ip_address {
+
+}
+class azure_network_public_ip_prefix {
+
+}
+class azure_network_virtual_hub {
+
+}
+azure_network_bastion_host -[#1A83AF]-> azure_network_public_ip_address
+azure_network_ddos_protection_plan -[#1A83AF]-> azure_network_public_ip_address
+azure_network_nat_gateway -[#1A83AF]-> azure_network_public_ip_address
+azure_network_public_ip_prefix -[#1A83AF]-> azure_network_public_ip_address
+azure_network_virtual_hub -[#1A83AF]-> azure_network_public_ip_address
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -111,63 +218,6 @@ ip_address <|--- azure_network_public_ip_address
 microsoft_resource <|--- azure_network_public_ip_address
 resource <|--- ip_address
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of Network Public IP Address resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_network_bastion_host {
-
-}
-class azure_network_ddos_protection_plan {
-
-}
-class azure_network_nat_gateway {
-
-}
-class azure_network_public_ip_address {
-
-}
-class azure_network_public_ip_prefix {
-
-}
-class azure_network_virtual_hub {
-
-}
-azure_network_bastion_host -[#1A83AF]-> azure_network_public_ip_address
-azure_network_ddos_protection_plan -[#1A83AF]-> azure_network_public_ip_address
-azure_network_nat_gateway -[#1A83AF]-> azure_network_public_ip_address
-azure_network_public_ip_prefix -[#1A83AF]-> azure_network_public_ip_address
-azure_network_virtual_hub -[#1A83AF]-> azure_network_public_ip_address
 
 @enduml
 ```

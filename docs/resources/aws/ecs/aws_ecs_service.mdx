@@ -12,6 +12,119 @@ sidebar_label: ECS Service
 
 AWS ECS Service is a container management feature within Amazon Elastic Container Service. It maintains and scales a specified number of task instances, automatically replaces failed tasks, and integrates with Elastic Load Balancing for distributing traffic. ECS Service handles task placement, scheduling, and service discovery, simplifying the deployment and management of containerized applications on AWS infrastructure.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of ECS Service"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_ecs_service {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_ecs_service
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of ECS Service resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_alb_target_group {
+
+}
+class aws_ec2_security_group {
+
+}
+class aws_ec2_subnet {
+
+}
+class aws_ecs_capacity_provider {
+
+}
+class aws_ecs_cluster {
+
+}
+class aws_ecs_service {
+
+}
+class aws_elb {
+
+}
+class aws_iam_role {
+
+}
+aws_ec2_security_group -[#1A83AF]-> aws_ecs_service
+aws_ec2_security_group -[#1A83AF]-> aws_elb
+aws_ec2_subnet -[#1A83AF]-> aws_ecs_service
+aws_ec2_subnet -[#1A83AF]-> aws_elb
+aws_ecs_cluster -[#1A83AF]-> aws_ecs_capacity_provider
+aws_ecs_cluster -[#1A83AF]-> aws_ecs_service
+aws_ecs_service -[#1A83AF]-> aws_alb_target_group
+aws_ecs_service -[#1A83AF]-> aws_ecs_capacity_provider
+aws_ecs_service -[#1A83AF]-> aws_elb
+aws_iam_role -[#1A83AF]-> aws_ecs_service
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -199,74 +312,6 @@ aws_ecs_task_set --> aws_ecs_network_configuration
 aws_ecs_task_set --> aws_ecs_scale
 aws_ecs_task_set --> aws_ecs_service_registry
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of ECS Service resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_alb_target_group {
-
-}
-class aws_ec2_security_group {
-
-}
-class aws_ec2_subnet {
-
-}
-class aws_ecs_capacity_provider {
-
-}
-class aws_ecs_cluster {
-
-}
-class aws_ecs_service {
-
-}
-class aws_elb {
-
-}
-class aws_iam_role {
-
-}
-aws_ec2_security_group -[#1A83AF]-> aws_ecs_service
-aws_ec2_security_group -[#1A83AF]-> aws_elb
-aws_ec2_subnet -[#1A83AF]-> aws_ecs_service
-aws_ec2_subnet -[#1A83AF]-> aws_elb
-aws_ecs_cluster -[#1A83AF]-> aws_ecs_capacity_provider
-aws_ecs_cluster -[#1A83AF]-> aws_ecs_service
-aws_ecs_service -[#1A83AF]-> aws_alb_target_group
-aws_ecs_service -[#1A83AF]-> aws_ecs_capacity_provider
-aws_ecs_service -[#1A83AF]-> aws_elb
-aws_iam_role -[#1A83AF]-> aws_ecs_service
 
 @enduml
 ```

@@ -12,6 +12,132 @@ sidebar_label: CloudFront Distribution
 
 AWS CloudFront Distribution is a content delivery network service that caches and serves web content from edge locations worldwide. It reduces latency by delivering data, videos, applications, and APIs to users from the nearest server. CloudFront integrates with other AWS services and supports custom domain names, SSL certificates, and security features like DDoS protection.
 
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of CloudFront Distribution"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_cloudfront_distribution {
+
+}
+class aws_resource {
+
+}
+class resource {
+
+}
+aws_resource <|--- aws_cloudfront_distribution
+resource <|--- aws_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Distribution resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class aws_acm_certificate {
+
+}
+class aws_cloudfront_cache_policy {
+
+}
+class aws_cloudfront_distribution {
+
+}
+class aws_cloudfront_field_level_encryption_config {
+
+}
+class aws_cloudfront_function {
+
+}
+class aws_cloudfront_origin_access_control {
+
+}
+class aws_cloudfront_realtime_log_config {
+
+}
+class aws_cloudfront_response_headers_policy {
+
+}
+class aws_iam_server_certificate {
+
+}
+class aws_lambda_function {
+
+}
+class aws_s3_bucket {
+
+}
+class aws_waf_web_acl {
+
+}
+aws_cloudfront_distribution -[#1A83AF]-> aws_acm_certificate
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_cache_policy
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_field_level_encryption_config
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_function
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_origin_access_control
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_realtime_log_config
+aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_response_headers_policy
+aws_cloudfront_distribution -[#1A83AF]-> aws_iam_server_certificate
+aws_cloudfront_distribution -[#1A83AF]-> aws_lambda_function
+aws_cloudfront_distribution -[#1A83AF]-> aws_s3_bucket
+aws_cloudfront_distribution -[#1A83AF]-> aws_waf_web_acl
+
+@enduml
+```
+
+</ZoomPanPinch>
+
 ## Properties
 
 <ZoomPanPinch>
@@ -252,87 +378,6 @@ aws_cloudfront_origin --> aws_cloudfront_origin_shield
 aws_cloudfront_origin_group --> aws_cloudfront_origin_group_failover_criteria
 aws_cloudfront_origin_group --> aws_cloudfront_origin_group_members
 resource <|--- aws_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of CloudFront Distribution resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class aws_acm_certificate {
-
-}
-class aws_cloudfront_cache_policy {
-
-}
-class aws_cloudfront_distribution {
-
-}
-class aws_cloudfront_field_level_encryption_config {
-
-}
-class aws_cloudfront_function {
-
-}
-class aws_cloudfront_origin_access_control {
-
-}
-class aws_cloudfront_realtime_log_config {
-
-}
-class aws_cloudfront_response_headers_policy {
-
-}
-class aws_iam_server_certificate {
-
-}
-class aws_lambda_function {
-
-}
-class aws_s3_bucket {
-
-}
-class aws_waf_web_acl {
-
-}
-aws_cloudfront_distribution -[#1A83AF]-> aws_acm_certificate
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_cache_policy
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_field_level_encryption_config
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_function
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_origin_access_control
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_realtime_log_config
-aws_cloudfront_distribution -[#1A83AF]-> aws_cloudfront_response_headers_policy
-aws_cloudfront_distribution -[#1A83AF]-> aws_iam_server_certificate
-aws_cloudfront_distribution -[#1A83AF]-> aws_lambda_function
-aws_cloudfront_distribution -[#1A83AF]-> aws_s3_bucket
-aws_cloudfront_distribution -[#1A83AF]-> aws_waf_web_acl
 
 @enduml
 ```

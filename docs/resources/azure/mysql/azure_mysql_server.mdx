@@ -4,13 +4,141 @@ sidebar_label: MySQL Server
 
 # `azure_mysql_server`
 
-- Categories: Database, Compute
+- Categories: Compute, Database
 - Service: mysql
 - Provider Link: [MySQL Server](https://learn.microsoft.com/en-us/azure/mysql/)
 
 ## Description
 
 Azure MySQL Server is a managed database service offered by Microsoft Azure. It provides a MySQL-compatible relational database in the cloud. Users can create, operate, and scale MySQL databases without managing infrastructure. The service offers automated backups, security features, and performance optimization tools. It supports various application types and integrates with other Azure services.
+
+## Base Hierarchy
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Hierarchy of MySQL Server"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_mysql_server {
+
+}
+class database {
+
+}
+class microsoft_resource {
+
+}
+class resource {
+
+}
+database <|--- azure_mysql_server
+microsoft_resource <|--- azure_mysql_server
+resource <|--- database
+resource <|--- microsoft_resource
+
+@enduml
+```
+
+</ZoomPanPinch>
+
+## Relationship to other Resources
+
+<ZoomPanPinch>
+
+```kroki imgType="plantuml" imgAlt="Diagram of MySQL Server resource relationships"
+@startuml
+hide empty members
+skinparam ArrowColor #ffaf37
+skinparam ArrowFontColor #ffaf37
+skinparam ArrowFontName Helvetica
+skinparam ArrowThickness 2
+skinparam BackgroundColor transparent
+skinparam ClassAttributeFontColor #d9b8ff
+skinparam ClassBackgroundColor #3d176e
+skinparam ClassBorderColor #000d19
+skinparam ClassFontColor #d9b8ff
+skinparam ClassFontName Helvetica
+skinparam ClassFontSize 17
+skinparam NoteBackgroundColor #d9b8ff
+skinparam NoteBorderColor #000d19
+skinparam NoteFontColor #3d176e
+skinparam NoteFontName Helvetica
+skinparam Padding 5
+skinparam RoundCorner 5
+skinparam Shadowing false
+skinparam stereotypeCBackgroundColor #e98df7
+skinparam stereotypeIBackgroundColor #e98df7
+
+class azure_mysql_server {
+
+}
+class azure_mysql_server_ad_administrator {
+
+}
+class azure_mysql_server_backup {
+
+}
+class azure_mysql_server_configuration {
+
+}
+class azure_mysql_server_database {
+
+}
+class azure_mysql_server_firewall_rule {
+
+}
+class azure_mysql_server_log_file {
+
+}
+class azure_mysql_server_maintenance {
+
+}
+class azure_mysql_server_type {
+
+}
+class microsoft_graph_service_principal {
+
+}
+class microsoft_graph_user {
+
+}
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_ad_administrator
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_backup
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_configuration
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_database
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_firewall_rule
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_log_file
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_maintenance
+azure_mysql_server -[#1A83AF]-> azure_mysql_server_type
+azure_mysql_server -[#1A83AF]-> microsoft_graph_service_principal
+azure_mysql_server -[#1A83AF]-> microsoft_graph_user
+azure_mysql_server_ad_administrator -[#1A83AF]-> microsoft_graph_user
+
+@enduml
+```
+
+</ZoomPanPinch>
 
 ## Properties
 
@@ -188,84 +316,6 @@ azure_private_endpoint_connection --> azure_private_link_service_connection_stat
 azure_private_endpoint_connection --> azure_system_data
 resource <|--- database
 resource <|--- microsoft_resource
-
-@enduml
-```
-
-</ZoomPanPinch>
-
-## Relationship to other Resources
-
-<ZoomPanPinch>
-
-```kroki imgType="plantuml" imgAlt="Diagram of MySQL Server resource relationships"
-@startuml
-hide empty members
-skinparam ArrowColor #ffaf37
-skinparam ArrowFontColor #ffaf37
-skinparam ArrowFontName Helvetica
-skinparam ArrowThickness 2
-skinparam BackgroundColor transparent
-skinparam ClassAttributeFontColor #d9b8ff
-skinparam ClassBackgroundColor #3d176e
-skinparam ClassBorderColor #000d19
-skinparam ClassFontColor #d9b8ff
-skinparam ClassFontName Helvetica
-skinparam ClassFontSize 17
-skinparam NoteBackgroundColor #d9b8ff
-skinparam NoteBorderColor #000d19
-skinparam NoteFontColor #3d176e
-skinparam NoteFontName Helvetica
-skinparam Padding 5
-skinparam RoundCorner 5
-skinparam Shadowing false
-skinparam stereotypeCBackgroundColor #e98df7
-skinparam stereotypeIBackgroundColor #e98df7
-
-class azure_mysql_server {
-
-}
-class azure_mysql_server_ad_administrator {
-
-}
-class azure_mysql_server_backup {
-
-}
-class azure_mysql_server_configuration {
-
-}
-class azure_mysql_server_database {
-
-}
-class azure_mysql_server_firewall_rule {
-
-}
-class azure_mysql_server_log_file {
-
-}
-class azure_mysql_server_maintenance {
-
-}
-class azure_mysql_server_type {
-
-}
-class microsoft_graph_service_principal {
-
-}
-class microsoft_graph_user {
-
-}
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_ad_administrator
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_backup
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_configuration
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_database
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_firewall_rule
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_log_file
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_maintenance
-azure_mysql_server -[#1A83AF]-> azure_mysql_server_type
-azure_mysql_server -[#1A83AF]-> microsoft_graph_service_principal
-azure_mysql_server -[#1A83AF]-> microsoft_graph_user
-azure_mysql_server_ad_administrator -[#1A83AF]-> microsoft_graph_user
 
 @enduml
 ```
