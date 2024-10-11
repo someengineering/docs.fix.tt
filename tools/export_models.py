@@ -314,7 +314,7 @@ def export() -> None:
             f"Create provider file: {source} with {len(kinds_by_source[source])} service kinds"
         )
         if source == "base":
-            provider_md("base-kinds", items, base_diagram)
+            provider_md(source, items, base_diagram)
         else:
             provider_md(source, items, class_diagram, relationship=relationship_diagram, hierarchy=hierarchy_diagram)
 
