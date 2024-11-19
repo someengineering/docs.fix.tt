@@ -1793,10 +1793,10 @@
     fs-extra "^11.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/tsconfig@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@docusaurus/tsconfig/-/tsconfig-3.4.0.tgz#2b6ea208e580facc6e3330433e9b4321ef0eb3f5"
-  integrity sha512-0qENiJ+TRaeTzcg4olrnh0BQ7eCxTgbYWBnWUeQDc84UYkt/T3pDNnm3SiQkqPb+YQ1qtYFlC0RriAElclo8Dg==
+"@docusaurus/tsconfig@3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@docusaurus/tsconfig/-/tsconfig-3.6.2.tgz#a6d3fec19ae45a67da678b54c019b0e3839b6711"
+  integrity sha512-TWLkyYHBYhIJNcXCEc3D1M9R8UFV4IZ82rGef5U9mE1ZrcgDUlZxYaYdoSuHrPrzPRIl3orjmpscO2FAk2gdZw==
 
 "@docusaurus/types@3.4.0":
   version "3.4.0"
