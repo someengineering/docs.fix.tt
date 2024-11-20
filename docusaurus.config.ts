@@ -9,10 +9,13 @@ import remarkKroki from 'remark-kroki-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
 const isBuildFast = isDev || !!process.env.BUILD_FAST;
-const isNetlify = !!process.env.NETLIFY;
-const isProd = isNetlify && process.env.CONTEXT === 'production';
+const isProd =
+  process.env.CURRENT_BRANCH === 'main' && process.env.CONTEXT === 'production';
 
 const config: Config = {
+  organizationName: 'someengineering',
+  projectName: 'docs.fix.security',
+  deploymentBranch: 'gh-pages',
   title: 'Fix Security Documentation',
   url: 'https://docs.fix.security',
   baseUrl: '/',
@@ -25,14 +28,13 @@ const config: Config = {
   noIndex: !isProd,
   customFields: {
     isDev,
-    isNetlify,
     isProd,
     posthogProjectApiKey: process.env.POSTHOG_PROJECT_API_KEY,
   },
   scripts: isProd
     ? [
         {
-          src: 'https://docs.fix.security/js/script.js',
+          src: 'https://plausible.io/js/script.js',
           defer: true,
           'data-domain': 'docs.fix.security',
         },
