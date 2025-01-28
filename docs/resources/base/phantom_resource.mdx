@@ -110,9 +110,6 @@ class azure_network_virtual_appliance_sku {
 class azure_postgresql_server_type {
 
 }
-class azure_security_assessment {
-
-}
 class azure_security_pricing {
 
 }
@@ -234,7 +231,6 @@ azure_usage <|--- azure_network_usage
 network_quota <|--- azure_network_usage
 phantom_resource <|--- azure_network_virtual_appliance_sku
 database_instance_type <|--- azure_postgresql_server_type
-phantom_resource <|--- azure_security_assessment
 phantom_resource <|--- azure_security_pricing
 phantom_resource <|--- azure_storage_account_deleted
 azure_usage <|--- azure_storage_account_usage
